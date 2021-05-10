@@ -16,7 +16,7 @@
           android:layout_height="200dp"
           android:layout_weight="2"
           android:src="@drawable/bg_header"
-          android:contentDescription="Header" />
+          android:contentDescription="@string/app_name" />
 
     <com.google.android.material.card.MaterialCardView
           android:layout_width="match_parent"

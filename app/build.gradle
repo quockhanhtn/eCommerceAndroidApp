@@ -39,6 +39,24 @@ dependencies {
     //https://github.com/hdodenhof/CircleImageView
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
+    // https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp
+    implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.9.0'
+
+    // https://docs.gradle.org/current/userguide/dependency_version_alignment.html
+    // a dependency on Jackson DataBind
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.8.9'
+
+//    // and a dependency on vertx
+//    implementation 'io.vertx:vertx-core:3.5.3'
+//
+//    // Import the BoM for the Firebase platform
+//    implementation platform('com.google.firebase:firebase-bom:27.1.0')
+//
+//    // Declare the dependency for the Firebase Authentication library
+//    // When using the BoM, you don't specify versions in Firebase library dependencies
+//    implementation 'com.google.firebase:firebase-auth'
+
+
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
