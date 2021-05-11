@@ -1,6 +1,10 @@
 package hcmute.edu.vn.id18110304.Activities;
 
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -13,8 +17,14 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
 import hcmute.edu.vn.id18110304.Interfaces.IGenericActivity;
 import hcmute.edu.vn.id18110304.R;
+import hcmute.edu.vn.id18110304.Utils.NavigationViewUtils;
 
 public class MainActivity extends AppCompatActivity implements IGenericActivity {
 
@@ -38,6 +48,35 @@ public class MainActivity extends AppCompatActivity implements IGenericActivity 
       imageViewMenu = findViewById(R.id.image_view_menu);
       navigationView = findViewById(R.id.navigation_view);
       navigationView.setItemIconTintList(null);
+      navigationView.getMenu().findItem(R.id.menu_main).getIcon().setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN);
+
+      NavigationViewUtils.setIconColor(
+            navigationView,
+            Arrays.asList(
+                  R.id.menu_main,
+                  R.id.menu_notification,
+                  R.id.menu_carts,
+                  R.id.menu_bills,
+                  R.id.menu_message,
+                  R.id.menu_profile,
+                  R.id.menu_setting,
+                  R.id.menu_support,
+                  R.id.menu_about,
+                  R.id.menu_logout
+            ),
+            Arrays.asList(
+                  "#536def",
+                  "#6c757d",
+                  "#28a745",
+                  "#dc3545",
+                  "#ffc107",
+                  "#17a2b8",
+                  "#536def",
+                  "#6c757d",
+                  "#28a745",
+                  "#dc3545"
+            )
+      );
 
       navController = Navigation.findNavController(this, R.id.fragment_nav_host);
       NavigationUI.setupWithNavController(navigationView, navController);
@@ -49,6 +88,15 @@ public class MainActivity extends AppCompatActivity implements IGenericActivity 
          @Override
          public void onClick(View v) {
             drawerLayout.openDrawer(GravityCompat.START);
+         }
+      });
+
+      navigationView.getMenu().findItem(R.id.menu_logout).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+         @Override
+         public boolean onMenuItemClick(MenuItem item) {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+            return false;
          }
       });
    }
