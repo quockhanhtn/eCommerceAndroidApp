@@ -8,11 +8,13 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import hcmute.edu.vn.id18110304.Interfaces.IGenericActivity;
 import hcmute.edu.vn.id18110304.R;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements IGenericActivity {
 
    Button btnSignUp = null;
+   Button btnLogin = null;
    TextView tvForgotPassword = null;
 
    @Override
@@ -20,22 +22,31 @@ public class LoginActivity extends AppCompatActivity {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_log_in);
 
-      findViews();
-      setViewsListener();
+      initialViews();
+      setViewListeners();
    }
 
-   void findViews() {
+   @Override
+   public void initialViews() {
       btnSignUp = findViewById(R.id.button_sign_up);
+      btnLogin = findViewById(R.id.button_log_in);
       tvForgotPassword = findViewById(R.id.textview_forgot_password);
    }
 
-
-   private void setViewsListener() {
+   @Override
+   public void setViewListeners() {
       btnSignUp.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View v) {
             Intent signUpIntent = new Intent(LoginActivity.this, SignUpActivity.class);
             startActivity(signUpIntent);
+         }
+      });
+
+      btnLogin.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View v) {
+            finish();
          }
       });
 

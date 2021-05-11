@@ -4,9 +4,11 @@ import java.util.Arrays;
 import java.util.List;
 
 import hcmute.edu.vn.id18110304.Domains.CountryDomain;
+import hcmute.edu.vn.id18110304.Interfaces.IGenericDao;
 import hcmute.edu.vn.id18110304.R;
 
-public class CountryDao {
+public class CountryDao implements IGenericDao {
+   
    private static CountryDao instance = null;
 
    private CountryDao() {
@@ -19,8 +21,9 @@ public class CountryDao {
       return instance;
    }
 
-   public static List<CountryDomain> getAll() {
-      List<CountryDomain> result = Arrays.asList(
+   @Override
+   public List<CountryDomain> getAll() {
+      return Arrays.asList(
             new CountryDomain("Afghanistan", "93", "af", "afg", R.drawable.z_flag_af),
             new CountryDomain("Albania", "355", "al", "alb", R.drawable.z_flag_al),
             new CountryDomain("Algeria", "213", "dz", "dza", R.drawable.z_flag_dz),
@@ -262,6 +265,20 @@ public class CountryDao {
             new CountryDomain("Zambia", "260", "zm", "zmb", R.drawable.z_flag_zm),
             new CountryDomain("Zimbabwe", "263", "zw", "zwe", R.drawable.z_flag_zw)
       );
-      return result;
+   }
+
+   @Override
+   public List getById(Object id) {
+      return null;
+   }
+
+   @Override
+   public boolean update(Object object) {
+      return false;
+   }
+
+   @Override
+   public boolean delete(Object id) {
+      return false;
    }
 }

@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/navigation_home">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_home"
+    app:startDestination="@id/menu_main">
 
+  <fragment
+      android:id="@+id/menu_main"
+      android:name="hcmute.edu.vn.id18110304.Fragments.MainFragment"
+      android:label="fragment_main"
+      tools:layout="@layout/fragment_main" />
+
+  <fragment
+      android:id="@+id/menu_notification"
+      android:name="hcmute.edu.vn.id18110304.Fragments.NotificationsFragment"
+      android:label="fragment_notifications"
+      tools:layout="@layout/fragment_notifications" />
+
+  <fragment
+      android:id="@+id/menu_carts"
+      android:name="hcmute.edu.vn.id18110304.Fragments.CartsFragment"
+      android:label="fragment_carts"
+      tools:layout="@layout/fragment_carts" />
+
+  <fragment
+      android:id="@+id/menu_bills"
+      android:name="hcmute.edu.vn.id18110304.Fragments.BillsFragment"
+      android:label="fragment_bills"
+      tools:layout="@layout/fragment_bills" />
+
+  <fragment
+      android:id="@+id/menu_message"
+      android:name="hcmute.edu.vn.id18110304.MessageFragment"
+      android:label="fragment_message"
+      tools:layout="@layout/fragment_message" />
+
+  <fragment
+      android:id="@+id/menu_profile"
+      android:name="hcmute.edu.vn.id18110304.Fragments.ProfileFragment"
+      android:label="fragment_profile"
+      tools:layout="@layout/fragment_profile" />
+
+  <fragment
+      android:id="@+id/menu_setting"
+      android:name="hcmute.edu.vn.id18110304.Fragments.SettingFragment"
+      android:label="fragment_setting"
+      tools:layout="@layout/fragment_setting" />
+
+  <fragment
+      android:id="@+id/menu_support"
+      android:name="hcmute.edu.vn.id18110304.Fragments.SupportFragment"
+      android:label="fragment_support"
+      tools:layout="@layout/fragment_support" />
+
+  <fragment
+      android:id="@+id/menu_about"
+      android:name="hcmute.edu.vn.id18110304.Fragments.AboutFragment"
+      android:label="fragment_about"
+      tools:layout="@layout/fragment_about" />
 </navigation>

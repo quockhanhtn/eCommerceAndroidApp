@@ -2,10 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
   <item
-      android:id="@+id/menu_profile"
-      android:icon="@drawable/round_info_24"
+      android:id="@+id/menu_main"
+      android:icon="@drawable/round_home_24"
       android:iconTint="@color/black"
-      android:title="@string/txt_profile" />
+      android:title="@string/txt_home" />
 
   <item
       android:id="@+id/menu_notification"
@@ -13,25 +13,29 @@
       android:iconTint="@color/black"
       android:title="@string/txt_notifications" />
 
-
-  <item
-      android:id="@+id/menu_inbox"
-      android:icon="@drawable/round_inbox_24"
-      android:iconTint="@color/black"
-      android:title="@string/txt_inbox" />
-
   <item
       android:id="@+id/menu_carts"
       android:icon="@drawable/round_shopping_cart_24"
       android:iconTint="@color/black"
       android:title="@string/txt_carts" />
 
-
   <item
       android:id="@+id/menu_bills"
       android:icon="@drawable/round_receipt_long_24"
       android:iconTint="@color/black"
       android:title="@string/txt_bills" />
+
+  <item
+      android:id="@+id/menu_message"
+      android:icon="@drawable/round_chat_24"
+      android:iconTint="@color/black"
+      android:title="@string/txt_message" />
+
+  <item
+      android:id="@+id/menu_profile"
+      android:icon="@drawable/round_info_24"
+      android:iconTint="@color/black"
+      android:title="@string/txt_profile" />
 
   <item
       android:id="@+id/menu_others"
@@ -52,12 +56,17 @@
           android:iconTint="@color/black"
           android:title="Support" />
 
-
       <item
           android:id="@+id/menu_about"
           android:icon="@drawable/round_info_24"
           android:iconTint="@color/black"
           android:title="About" />
+
+      <item
+          android:id="@+id/menu_logout"
+          android:icon="@drawable/round_logout_24"
+          android:iconTint="@color/black"
+          android:title="Log out" />
     </menu>
   </item>
 </menu>

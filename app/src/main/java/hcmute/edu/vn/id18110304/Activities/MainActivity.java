@@ -7,6 +7,9 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -18,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements IGenericActivity 
    DrawerLayout drawerLayout = null;
    ImageView imageViewMenu = null;
    NavigationView navigationView = null;
+   NavController navController = null;
 
    @Override
    protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,9 @@ public class MainActivity extends AppCompatActivity implements IGenericActivity 
       imageViewMenu = findViewById(R.id.image_view_menu);
       navigationView = findViewById(R.id.navigation_view);
       navigationView.setItemIconTintList(null);
+
+      navController = Navigation.findNavController(this, R.id.fragment_nav_host);
+      NavigationUI.setupWithNavController(navigationView, navController);
    }
 
    @Override

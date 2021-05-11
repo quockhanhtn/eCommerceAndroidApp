@@ -39,7 +39,7 @@
           android:id="@+id/text_input_username"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:hint="@string/txt_username_or_phone_number"
+          android:hint="@string/txt_email_or_phone_number"
           android:layout_marginTop="20dp"
           android:layout_marginBottom="5dp"
           style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
