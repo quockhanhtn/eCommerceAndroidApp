@@ -9,10 +9,21 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="colorPrimary">#536def</color>
+    <color name="colorPrimaryVariant">#0043bc</color>
     <color name="colorPrimaryDark">#536def</color>
     <color name="colorAccent">#f44336</color>
+
     <color name="colorTextPrimary">#212121</color>
     <color name="colorTextSecondary">#757575</color>
     <color name="colorDivider">#bdbdbd</color>
     <color name="colorWhite">#ffffff</color>
+
+    <color name="colorBlue">#007bff</color>
+    <color name="colorGray">#6c757d</color>
+    <color name="colorGreen">#28a745</color>
+    <color name="colorRed">#dc3545</color>
+    <color name="colorYellow">#ffc107</color>
+    <color name="colorDarkCyan">#17a2b8</color>
+    <color name="colorLight">#f8f9fa</color>
+    <color name="colorDark">#343a40</color>
 </resources>

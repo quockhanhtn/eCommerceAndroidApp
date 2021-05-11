@@ -15,4 +15,12 @@
   <string name="txt_otp_verification">OTP Verification</string>
   <string name="txt_we_will_send_you_an_one_time_password_on_this_mobile_number">We will send you an <b>One Time Password</b> on this mobile number</string>
   <string name="txt_enter_mobile_number">Enter mobile number</string>
+  <string name="txt_profile">Profile</string>
+  <string name="txt_notifications">Notifications</string>
+  <string name="txt_inbox">Inbox</string>
+  <string name="txt_carts">Carts</string>
+  <string name="txt_bills">Bills</string>
+  <string name="txt_others">Others</string>
+  <!-- TODO: Remove or change this placeholder text -->
+  <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

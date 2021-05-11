@@ -16,9 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.google.android.material.snackbar.Snackbar;
-
-import hcmute.edu.vn.id18110304.Helpers.AppHelper;
+import hcmute.edu.vn.id18110304.Utils.AppUtils;
 import hcmute.edu.vn.id18110304.R;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -53,7 +51,7 @@ public class SignUpActivity extends AppCompatActivity {
                   final Uri selectedImageUri = data.getData();
                   if (null != selectedImageUri) {
                      // Get the path from the Uri
-                     String path = AppHelper.getPathFromURI(getContentResolver(), selectedImageUri);
+                     String path = AppUtils.getPathFromURI(getContentResolver(), selectedImageUri);
                      Log.i(TAG, "Image Path : " + path);
                      // Set the image in ImageView
                      ivProfile.post(new Runnable() {
@@ -82,7 +80,7 @@ public class SignUpActivity extends AppCompatActivity {
                if (grantResults[i] == PackageManager.PERMISSION_DENIED) {
                   boolean showRationale = ActivityCompat.shouldShowRequestPermissionRationale(this, permission);
                   if (!showRationale) {
-                     AppHelper.showSettingsAlert(this, SignUpActivity.this);
+                     AppUtils.showSettingsAlert(this, SignUpActivity.this);
                   }
                }
             }
