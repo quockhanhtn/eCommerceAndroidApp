@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+  <color name="purple_200">#FFBB86FC</color>
+  <color name="purple_500">#FF6200EE</color>
+  <color name="purple_700">#FF3700B3</color>
+  <color name="teal_200">#FF03DAC5</color>
+  <color name="teal_700">#FF018786</color>
+  <color name="black">#FF000000</color>
+  <color name="white">#FFFFFFFF</color>
 
-    <color name="colorPrimary">#536def</color>
-    <color name="colorPrimaryVariant">#0043bc</color>
-    <color name="colorPrimaryDark">#536def</color>
-    <color name="colorAccent">#f44336</color>
+  <color name="colorPrimary">#536def</color>
+  <color name="colorPrimaryVariant">#0043bc</color>
+  <color name="colorPrimaryDark">#536def</color>
+  <color name="colorAccent">#f44336</color>
 
-    <color name="colorTextPrimary">#212121</color>
-    <color name="colorTextSecondary">#757575</color>
-    <color name="colorDivider">#bdbdbd</color>
-    <color name="colorWhite">#ffffff</color>
+  <color name="colorTextPrimary">#212121</color>
+  <color name="colorTextSecondary">#757575</color>
+  <color name="colorDivider">#bdbdbd</color>
+  <color name="colorWhite">#ffffff</color>
 
-    <color name="colorBlue">#007bff</color>
-    <color name="colorGray">#6c757d</color>
-    <color name="colorGreen">#28a745</color>
-    <color name="colorRed">#dc3545</color>
-    <color name="colorYellow">#ffc107</color>
-    <color name="colorDarkCyan">#17a2b8</color>
-    <color name="colorLight">#f8f9fa</color>
-    <color name="colorDark">#343a40</color>
+  <color name="colorBlue">#007bff</color>
+  <color name="colorGray">#6c757d</color>
+  <color name="colorGreen">#28a745</color>
+  <color name="colorRed">#dc3545</color>
+  <color name="colorYellow">#ffc107</color>
+  <color name="colorDarkCyan">#17a2b8</color>
+  <color name="colorLight">#f8f9fa</color>
+  <color name="colorDark">#343a40</color>
 </resources>

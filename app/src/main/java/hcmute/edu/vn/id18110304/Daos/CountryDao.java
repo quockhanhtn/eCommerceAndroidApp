@@ -8,7 +8,7 @@ import hcmute.edu.vn.id18110304.Interfaces.IGenericDao;
 import hcmute.edu.vn.id18110304.R;
 
 public class CountryDao implements IGenericDao {
-   
+
    private static CountryDao instance = null;
 
    private CountryDao() {

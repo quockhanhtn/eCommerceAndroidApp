@@ -43,19 +43,19 @@ public class AppUtils {
       alertDialog.setTitle("Alert");
       alertDialog.setMessage("App needs to access the Camera.");
       alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "DON'T ALLOW",
-              new DialogInterface.OnClickListener() {
-                 public void onClick(DialogInterface dialog, int which) {
-                    dialog.dismiss();
-                    //finish();
-                 }
-              });
+            new DialogInterface.OnClickListener() {
+               public void onClick(DialogInterface dialog, int which) {
+                  dialog.dismiss();
+                  //finish();
+               }
+            });
       alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "SETTINGS",
-              new DialogInterface.OnClickListener() {
-                 public void onClick(DialogInterface dialog, int which) {
-                    dialog.dismiss();
-                    AppUtils.openAppSettings(activity);
-                 }
-              });
+            new DialogInterface.OnClickListener() {
+               public void onClick(DialogInterface dialog, int which) {
+                  dialog.dismiss();
+                  AppUtils.openAppSettings(activity);
+               }
+            });
       alertDialog.show();
    }
 }

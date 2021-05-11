@@ -31,7 +31,7 @@
 
   <fragment
       android:id="@+id/menu_message"
-      android:name="hcmute.edu.vn.id18110304.MessageFragment"
+      android:name="hcmute.edu.vn.id18110304.Fragments.MessageFragment"
       android:label="fragment_message"
       tools:layout="@layout/fragment_message" />
 

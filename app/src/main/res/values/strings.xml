@@ -9,7 +9,7 @@
   <string name="txt_create_account">Create new account</string>
   <string name="txt_phone_number">Phone number</string>
   <string name="txt_re_password">Retype password</string>
-  <string name="txt_already_log_in">Already account ? Login here</string>
+  <string name="txt_already_log_in">Already account ? Login <b>here</b></string>
   <string name="txt_verify">Verify your account</string>
   <string name="txt_send_code">Send code</string>
   <string name="txt_otp_verification">OTP Verification</string>
@@ -22,6 +22,4 @@
   <string name="txt_carts">Carts</string>
   <string name="txt_bills">Bills</string>
   <string name="txt_others">Others</string>
-  <!-- TODO: Remove or change this placeholder text -->
-  <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

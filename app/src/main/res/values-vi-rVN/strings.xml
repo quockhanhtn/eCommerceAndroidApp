@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">eCommerceApp</string>
+  <string name="txt_email_or_phone_number">Email hoặc số điện thoại</string>
+  <string name="txt_password">Mật khẩu</string>
+  <string name="txt_log_in">Đăng nhập</string>
+  <string name="txt_sign_up">Đăng ký</string>
+  <string name="txt_hello">Xin chào</string>
+  <string name="txt_forgot_password">Quên mật khẩu ?</string>
+  <string name="txt_create_account">Tạo tài khoản mới</string>
+  <string name="txt_phone_number">Số điện thoại</string>
+  <string name="txt_re_password">Nhập lại mật khẩu</string>
+  <string name="txt_already_log_in">Đã có tài khoản ? Đăng nhập <b>tại đây</b></string>
+  <string name="txt_verify">Xác thực tài khoản</string>
+  <string name="txt_send_code">Gửi mã</string>
+  <string name="txt_otp_verification">Xác thực OTP</string>
+  <string name="txt_we_will_send_you_an_one_time_password_on_this_mobile_number">Bạn sẽ nhận được mã <b>OTP</b> trên điện thoại</string>
+  <string name="txt_enter_mobile_number">Nhập số điện thoại</string>
+  <string name="txt_home">Trang chủ</string>
+  <string name="txt_profile">Tài khoản</string>
+  <string name="txt_notifications">Thông báo</string>
+  <string name="txt_message">Tin nhắn</string>
+  <string name="txt_carts">Giỏ hàng</string>
+  <string name="txt_bills">Đơn hàng</string>
+  <string name="txt_others">Khác</string>
+</resources>

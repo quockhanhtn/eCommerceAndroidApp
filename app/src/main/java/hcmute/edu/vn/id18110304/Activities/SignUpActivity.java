@@ -16,8 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import hcmute.edu.vn.id18110304.Utils.AppUtils;
 import hcmute.edu.vn.id18110304.R;
+import hcmute.edu.vn.id18110304.Utils.AppUtils;
 
 public class SignUpActivity extends AppCompatActivity {
    private static final int SELECT_PICTURE = 100;
@@ -32,11 +32,11 @@ public class SignUpActivity extends AppCompatActivity {
       }
 
       if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
-              != PackageManager.PERMISSION_GRANTED) {
+            != PackageManager.PERMISSION_GRANTED) {
          //ask for permission
          ActivityCompat.requestPermissions(this,
-                 new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                 SELECT_PICTURE);
+               new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+               SELECT_PICTURE);
       }
    }
 
