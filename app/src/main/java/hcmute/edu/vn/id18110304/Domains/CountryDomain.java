@@ -1,57 +1,32 @@
 package hcmute.edu.vn.id18110304.Domains;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class CountryDomain {
-   String countryName;
-   String countryCode;
-   String threeDigitIsoCode;
-   String twoDigitIsoCode;
-   Integer flagId;
+   @JsonProperty("_id")
+   String id;
 
-   public CountryDomain(String countryName, String countryCode, String threeDigitIsoCode, String twoDigitIsoCode, Integer flagId) {
-      this.countryName = countryName;
-      this.countryCode = countryCode;
-      this.threeDigitIsoCode = threeDigitIsoCode;
-      this.twoDigitIsoCode = twoDigitIsoCode;
-      this.flagId = flagId;
-   }
+   @JsonProperty("name")
+   String name;
 
-   public String getCountryName() {
-      return countryName;
-   }
+   @JsonProperty("nativeName")
+   String nativeName;
 
-   public void setCountryName(String countryName) {
-      this.countryName = countryName;
-   }
+   @JsonProperty("alpha2Code")
+   String alpha2Code;
 
-   public String getCountryCode() {
-      return countryCode;
-   }
+   @JsonProperty("alpha3Code")
+   String alpha3Code;
 
-   public void setCountryCode(String countryCode) {
-      this.countryCode = countryCode;
-   }
+   @JsonProperty("callingCodes")
+   String callingCodes;
 
-   public String getThreeDigitIsoCode() {
-      return threeDigitIsoCode;
-   }
+   @JsonProperty("region")
+   String region;
 
-   public void setThreeDigitIsoCode(String threeDigitIsoCode) {
-      this.threeDigitIsoCode = threeDigitIsoCode;
-   }
+   @JsonProperty("subregion")
+   String subregion;
 
-   public String getTwoDigitIsoCode() {
-      return twoDigitIsoCode;
-   }
-
-   public void setTwoDigitIsoCode(String twoDigitIsoCode) {
-      this.twoDigitIsoCode = twoDigitIsoCode;
-   }
-
-   public Integer getFlagId() {
-      return flagId;
-   }
-
-   public void setFlagId(Integer flagId) {
-      this.flagId = flagId;
-   }
+   @JsonProperty("imageBase64")
+   String imageBase64;
 }
