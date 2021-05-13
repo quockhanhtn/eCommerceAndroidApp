@@ -17,8 +17,6 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,6 +38,8 @@ public class MainActivity extends AppCompatActivity implements IGenericActivity 
 
       initialViews();
       setViewListeners();
+
+
    }
 
    @Override
@@ -50,33 +50,19 @@ public class MainActivity extends AppCompatActivity implements IGenericActivity 
       navigationView.setItemIconTintList(null);
       navigationView.getMenu().findItem(R.id.menu_main).getIcon().setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN);
 
-      NavigationViewUtils.setIconColor(
-            navigationView,
-            Arrays.asList(
-                  R.id.menu_main,
-                  R.id.menu_notification,
-                  R.id.menu_carts,
-                  R.id.menu_bills,
-                  R.id.menu_message,
-                  R.id.menu_profile,
-                  R.id.menu_setting,
-                  R.id.menu_support,
-                  R.id.menu_about,
-                  R.id.menu_logout
-            ),
-            Arrays.asList(
-                  "#536def",
-                  "#6c757d",
-                  "#28a745",
-                  "#dc3545",
-                  "#ffc107",
-                  "#17a2b8",
-                  "#536def",
-                  "#6c757d",
-                  "#28a745",
-                  "#dc3545"
-            )
-      );
+      Map<Integer, String> navMenuColorMap = new HashMap() {{
+         put(R.id.menu_main, "#536def");
+         put(R.id.menu_notification, "#6c757d");
+         put(R.id.menu_carts, "#28a745");
+         put(R.id.menu_bills, "#dc3545");
+         put(R.id.menu_message, "#ffc107");
+         put(R.id.menu_profile, "#17a2b8");
+         put(R.id.menu_setting, "#536def");
+         put(R.id.menu_support, "#6c757d");
+         put(R.id.menu_about, "#28a745");
+         put(R.id.menu_logout, "#dc3545");
+      }};
+      NavigationViewUtils.setIconColor(navigationView, navMenuColorMap);
 
       navController = Navigation.findNavController(this, R.id.fragment_nav_host);
       NavigationUI.setupWithNavController(navigationView, navController);

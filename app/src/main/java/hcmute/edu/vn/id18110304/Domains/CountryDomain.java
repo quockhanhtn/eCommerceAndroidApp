@@ -1,11 +1,10 @@
 package hcmute.edu.vn.id18110304.Domains;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class CountryDomain {
-   @JsonProperty("_id")
-   String id;
-
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class CountryDomain extends GenericDomain {
    @JsonProperty("name")
    String name;
 
@@ -29,4 +28,12 @@ public class CountryDomain {
 
    @JsonProperty("imageBase64")
    String imageBase64;
+
+   @Override
+   public String toString() {
+      StringBuilder sb = new StringBuilder();
+      sb.append("userId: " + this.getId() + ", ");
+      sb.append("id: " + this.getId() + ", ");
+      return sb.toString();
+   }
 }
