@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -15,17 +17,25 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.android.material.navigation.NavigationView;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import hcmute.edu.vn.id18110304.Communications.Requests.CountryRequest;
 import hcmute.edu.vn.id18110304.Interfaces.IGenericActivity;
 import hcmute.edu.vn.id18110304.R;
 import hcmute.edu.vn.id18110304.Utils.NavigationViewUtils;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity implements IGenericActivity {
-
+   
    DrawerLayout drawerLayout = null;
    ImageView imageViewMenu = null;
    NavigationView navigationView = null;
@@ -39,7 +49,28 @@ public class MainActivity extends AppCompatActivity implements IGenericActivity 
       initialViews();
       setViewListeners();
 
+      OkHttpClient client = new OkHttpClient();
+      Request request = new Request.Builder()
+            .url("https://open-ecommerce-api.herokuapp.com/api/countries")
+            .build();
 
+      client.newCall(request).enqueue(new Callback() {
+         @Override
+         public void onFailure(Call call, IOException e) {
+            Log.e("Error", "Network Error");
+         }
+
+         @Override
+         public void onResponse(Call call, Response response) throws IOException {
+            String json = response.body().string();
+            CountryRequest responseDomain = null;
+            try {
+               responseDomain = new ObjectMapper().readValue(json, CountryRequest.class);
+            } catch (Exception e) {
+               Log.d("", e.getMessage());
+            }
+         }
+      });
    }
 
    @Override

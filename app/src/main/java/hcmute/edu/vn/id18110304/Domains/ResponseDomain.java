@@ -1,34 +1,43 @@
 package hcmute.edu.vn.id18110304.Domains;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.JsonNode;
 
-public class ResponseDomain {
-   boolean status;
-   String message;
-   String data;
+import java.util.List;
 
+public class ResponseDomain<T> {
    public static final String TAG = ResponseDomain.class.getSimpleName();
 
-   @JsonProperty
-   private String responseStatus;
+   @JsonProperty("success")
+   boolean success;
 
-   @JsonProperty
-   private String responseDetails;
+   @JsonProperty("status")
+   String message;
 
+   @JsonProperty("data")
+   List<T> data;
 
-   public String getResponseStatus() {
-      return responseStatus;
+   public boolean isSuccess() {
+      return success;
    }
 
-   public void setResponseStatus(String responseStatus) {
-      this.responseStatus = responseStatus;
+   public void setSuccess(boolean success) {
+      this.success = success;
    }
 
-   public String getResponseDetails() {
-      return responseDetails;
+   public String getMessage() {
+      return message;
    }
 
-   public void setResponseDetails(String responseDetails) {
-      this.responseDetails = responseDetails;
+   public void setMessage(String message) {
+      this.message = message;
+   }
+
+   public List<T> getData() {
+      return data;
+   }
+
+   public void setData(List<T> data) {
+      this.data = data;
    }
 }

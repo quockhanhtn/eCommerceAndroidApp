@@ -28,15 +28,16 @@
           android:textSize="30sp"
           android:layout_marginBottom="30dp" />
 
-      <de.hdodenhof.circleimageview.CircleImageView
+      <com.makeramen.roundedimageview.RoundedImageView
           android:id="@+id/imageview_profile"
+          app:riv_border_color="#001e51"
+          app:riv_border_width="2dp"
+          app:riv_corner_radius="64dp"
           android:layout_width="128dp"
           android:layout_height="128dp"
           android:layout_gravity="center"
           android:src="@drawable/ic_default_account"
-          app:civ_border_width="2dp"
-          android:layout_marginBottom="20dp"
-          app:civ_border_color="#001e51" />
+          android:layout_marginBottom="20dp" />
 
       <com.google.android.material.textfield.TextInputLayout
           android:id="@+id/text_input_username"
