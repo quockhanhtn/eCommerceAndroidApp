@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.SupportFragment">
+    android:background="@android:color/holo_purple"
+    tools:context=".Fragments.CartFragment">
 
   <TextView
       android:layout_width="match_parent"
@@ -11,6 +12,6 @@
       android:gravity="center"
       android:textSize="20sp"
       android:textStyle="bold"
-      android:text="Support Fragment" />
+      android:text="Carts Fragment" />
 
 </FrameLayout>

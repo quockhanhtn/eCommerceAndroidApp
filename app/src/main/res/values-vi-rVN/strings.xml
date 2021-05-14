@@ -17,10 +17,13 @@
   <string name="txt_we_will_send_you_an_one_time_password_on_this_mobile_number">Bạn sẽ nhận được mã <b>OTP</b> trên điện thoại</string>
   <string name="txt_enter_mobile_number">Nhập số điện thoại</string>
   <string name="txt_home">Trang chủ</string>
+  <string name="txt_home_desc">Trang chủ</string>
+  <string name="txt_saved">Đã lưu</string>
+  <string name="txt_saved_desc">Đã lưu</string>
+  <string name="txt_cart">Giỏ hàng</string>
+  <string name="txt_cart_desc">Xem giỏ hàng</string>
+  <string name="txt_bill">Đơn hàng</string>
+  <string name="txt_bill_desc">Xem đơn hàng</string>
   <string name="txt_profile">Tài khoản</string>
-  <string name="txt_notifications">Thông báo</string>
-  <string name="txt_message">Tin nhắn</string>
-  <string name="txt_carts">Giỏ hàng</string>
-  <string name="txt_bills">Đơn hàng</string>
-  <string name="txt_others">Khác</string>
+  <string name="txt_profile_desc">Thông tin tài khoản</string>
 </resources>

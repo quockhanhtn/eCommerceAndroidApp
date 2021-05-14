@@ -63,6 +63,9 @@ dependencies {
    // Picasso https://github.com/square/picasso
    implementation 'com.squareup.picasso:picasso:2.71828'
 
+   // https://github.com/Droppers/AnimatedBottomBar
+   implementation 'nl.joery.animatedbottombar:library:1.0.9'
+
 //    // and a dependency on vertx
 //    implementation 'io.vertx:vertx-core:3.5.3'
 //

@@ -1,5 +1,7 @@
 <resources>
   <string name="app_name">eCommerceApp</string>
+
+  <!--#region Log in/Sign up text definition-->
   <string name="txt_email_or_phone_number">Email or phone number</string>
   <string name="txt_password">Password</string>
   <string name="txt_log_in">Log in</string>
@@ -15,11 +17,19 @@
   <string name="txt_otp_verification">OTP Verification</string>
   <string name="txt_we_will_send_you_an_one_time_password_on_this_mobile_number">We will send you an <b>One Time Password</b> on this mobile number</string>
   <string name="txt_enter_mobile_number">Enter mobile number</string>
+  <!--endregion-->
+
+  <!--#region Bottom navigation text definition-->
   <string name="txt_home">Home</string>
+  <string name="txt_home_desc">Home screen</string>
+  <string name="txt_saved">Saved</string>
+  <string name="txt_saved_desc">Saved items</string>
+  <string name="txt_cart">Cart</string>
+  <string name="txt_cart_desc">View items in cart cart</string>
+  <string name="txt_bill">Bill</string>
+  <string name="txt_bill_desc">View recent bill</string>
   <string name="txt_profile">Profile</string>
-  <string name="txt_notifications">Notifications</string>
-  <string name="txt_message">Message</string>
-  <string name="txt_carts">Carts</string>
-  <string name="txt_bills">Bills</string>
-  <string name="txt_others">Others</string>
+  <string name="txt_profile_desc">View your profile</string>
+  <!--#endregion-->
+
 </resources>

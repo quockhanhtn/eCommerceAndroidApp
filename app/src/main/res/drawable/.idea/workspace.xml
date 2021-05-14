@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="97474c7d-3bc4-4a65-9517-488af3ca8816" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ic_search_black_24dp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/round_account_circle_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/round_favorite_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../menu/menu_bottom_navigation.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/hcmute/edu/vn/id18110304/Activities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/hcmute/edu/vn/id18110304/Activities/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/hcmute/edu/vn/id18110304/Fragments/AboutFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/hcmute/edu/vn/id18110304/Fragments/SavedFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/hcmute/edu/vn/id18110304/Fragments/BillsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/hcmute/edu/vn/id18110304/Fragments/BillFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/hcmute/edu/vn/id18110304/Fragments/CartsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/hcmute/edu/vn/id18110304/Fragments/CartFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/hcmute/edu/vn/id18110304/Fragments/MainFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/hcmute/edu/vn/id18110304/Fragments/MessageFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/hcmute/edu/vn/id18110304/Fragments/HomeFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/hcmute/edu/vn/id18110304/Fragments/NotificationsFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/hcmute/edu/vn/id18110304/Fragments/ProfileFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/hcmute/edu/vn/id18110304/Fragments/ProfileFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/hcmute/edu/vn/id18110304/Fragments/SettingFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/hcmute/edu/vn/id18110304/Fragments/SupportFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/selector_navigation_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/selector_navigation_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/fragment_about.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layout/fragment_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/fragment_bills.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layout/fragment_bill.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/fragment_carts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layout/fragment_cart.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/fragment_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/fragment_message.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/fragment_notifications.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/fragment_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layout/fragment_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/fragment_setting.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/fragment_support.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layout/fragment_saved.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/layout_navigation_header.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../menu/menu_navigation_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../navigation/navigation_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../navigation/navigation_fragment_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../values-vi-rVN/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../values-vi-rVN/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../values/strings.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
+  </component>
+  <component name="ProjectId" id="1sWQDb1Xb17k5JqduXw8RnB6n7h" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="97474c7d-3bc4-4a65-9517-488af3ca8816" name="Default Changelist" comment="" />
+      <created>1620985747203</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620985747203</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

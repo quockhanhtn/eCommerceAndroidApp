@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_home"
+    app:startDestination="@id/menu_home">
+
+  <!--Home Fragment-->
+  <fragment
+      android:id="@+id/menu_home"
+      android:name="hcmute.edu.vn.id18110304.Fragments.HomeFragment"
+      android:label="fragment_home"
+      tools:layout="@layout/fragment_home" />
+
+  <!--Saved Fragment-->
+  <fragment
+      android:id="@+id/menu_saved"
+      android:name="hcmute.edu.vn.id18110304.Fragments.SavedFragment"
+      android:label="fragment_saved"
+      tools:layout="@layout/fragment_saved" />
+
+  <!--Cart Fragment-->
+  <fragment
+      android:id="@+id/menu_cart"
+      android:name="hcmute.edu.vn.id18110304.Fragments.CartFragment"
+      android:label="fragment_carts"
+      tools:layout="@layout/fragment_cart" />
+
+  <!--Bill Fragment-->
+  <fragment
+      android:id="@+id/menu_bill"
+      android:name="hcmute.edu.vn.id18110304.Fragments.BillFragment"
+      android:label="fragment_bills"
+      tools:layout="@layout/fragment_bill" />
+
+  <!--Profile Fragment-->
+  <fragment
+      android:id="@+id/menu_profile"
+      android:name="hcmute.edu.vn.id18110304.Fragments.ProfileFragment"
+      android:label="fragment_profile"
+      tools:layout="@layout/fragment_profile" />
+
+</navigation>
