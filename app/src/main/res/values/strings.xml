@@ -30,6 +30,9 @@
   <string name="txt_bill_desc">View recent bill</string>
   <string name="txt_profile">Profile</string>
   <string name="txt_profile_desc">View your profile</string>
+  <string name="txt_ok">OK</string>
+  <string name="txt_no">NO</string>
+  <string name="txt_yes">YES</string>
   <!--#endregion-->
 
 </resources>

@@ -16,13 +16,14 @@ import java.io.IOException;
 import hcmute.edu.vn.id18110304.Communications.Requests.CountryRequest;
 import hcmute.edu.vn.id18110304.Interfaces.IGenericActivity;
 import hcmute.edu.vn.id18110304.R;
+import hcmute.edu.vn.id18110304.Utils.OkHttpUtils;
 import okhttp3.Call;
 import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity implements IGenericActivity {
+
+   public static final String TAG = MainActivity.class.getSimpleName();
 
    NavController navController = null;
    BottomNavigationView bottomNavigationView = null;
@@ -35,28 +36,26 @@ public class MainActivity extends AppCompatActivity implements IGenericActivity 
       initialViews();
       setViewListeners();
 
-      OkHttpClient client = new OkHttpClient();
-      Request request = new Request.Builder()
-            .url("https://open-ecommerce-api.herokuapp.com/api/countries")
-            .build();
+      OkHttpUtils.sendRequest(
+            "https://open-ecommerce-api.herokuapp.com/api/countries",
+            new Callback() {
+               @Override
+               public void onFailure(Call call, IOException e) {
+                  Log.e(TAG, "Network Error");
+               }
 
-      client.newCall(request).enqueue(new Callback() {
-         @Override
-         public void onFailure(Call call, IOException e) {
-            Log.e("Error", "Network Error");
-         }
-
-         @Override
-         public void onResponse(Call call, Response response) throws IOException {
-            String json = response.body().string();
-            CountryRequest responseDomain = null;
-            try {
-               responseDomain = new ObjectMapper().readValue(json, CountryRequest.class);
-            } catch (Exception e) {
-               Log.d("", e.getMessage());
+               @Override
+               public void onResponse(Call call, Response response) throws IOException {
+                  String json = response.body().string();
+                  CountryRequest responseDomain = null;
+                  try {
+                     responseDomain = new ObjectMapper().readValue(json, CountryRequest.class);
+                  } catch (Exception e) {
+                     Log.d(TAG, e.getMessage());
+                  }
+               }
             }
-         }
-      });
+      );
    }
 
    @Override

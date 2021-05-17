@@ -1,14 +1,20 @@
 package hcmute.edu.vn.id18110304.Fragments;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import hcmute.edu.vn.id18110304.R;
+import hcmute.edu.vn.id18110304.Utils.DialogUtils;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +22,12 @@ import hcmute.edu.vn.id18110304.R;
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment {
+
+   public static final String TAG = HomeFragment.class.getSimpleName();
+
+   View selfView;
+
+   Button btnShow, btnSuccess, btnWarning, btnError;
 
    // TODO: Rename parameter arguments, choose names that match
    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,6 +73,76 @@ public class HomeFragment extends Fragment {
    public View onCreateView(LayoutInflater inflater, ViewGroup container,
                             Bundle savedInstanceState) {
       // Inflate the layout for this fragment
-      return inflater.inflate(R.layout.fragment_home, container, false);
+      selfView = inflater.inflate(R.layout.fragment_home, container, false);
+      return selfView;
+   }
+
+   @Override
+   public void onActivityCreated(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
+      super.onActivityCreated(savedInstanceState);
+
+      btnShow = selfView.findViewById(R.id.button_show_bottom_sheet);
+      btnSuccess = selfView.findViewById(R.id.button_show_success);
+      btnWarning = selfView.findViewById(R.id.button_show_alert);
+      btnError = selfView.findViewById(R.id.button_show_error);
+
+      btnShow.setOnClickListener(v -> {
+         final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
+               getActivity(),
+               R.style.BottomSheetDialogTheme
+         );
+         View bottomSheetView = LayoutInflater.from(getActivity().getApplicationContext())
+               .inflate(
+                     R.layout.layout_bottom_sheet,
+                     (LinearLayout) getActivity().findViewById(R.id.bottom_sheet_container)
+               );
+         bottomSheetView.findViewById(R.id.bottom_sheet_main_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               Toast.makeText(getActivity(), "Share...", Toast.LENGTH_SHORT).show();
+               bottomSheetDialog.dismiss();
+            }
+         });
+         bottomSheetDialog.setContentView(bottomSheetView);
+         bottomSheetDialog.show();
+      });
+
+      btnSuccess.setOnClickListener(v -> showSuccess());
+      btnWarning.setOnClickListener(v -> showWarning());
+      btnError.setOnClickListener(v -> showError());
+   }
+
+   void showSuccess() {
+      DialogUtils.showSuccessDialog(
+            "Success dialog",
+            "Message",
+            getActivity(),
+            (View.OnClickListener) v -> {
+               Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
+            });
+   }
+
+   void showWarning() {
+      DialogUtils.showWarningDialog(
+            "Warning dialog",
+            "Message",
+            getActivity(),
+            (View.OnClickListener) v -> {
+               Toast.makeText(getContext(), "Yes", Toast.LENGTH_SHORT).show();
+            },
+            (View.OnClickListener) v -> {
+               Toast.makeText(getContext(), "No", Toast.LENGTH_SHORT).show();
+            });
+   }
+
+   void showError() {
+      DialogUtils.showErrorDialog(
+            "Error dialog",
+            "Message",
+            getActivity(),
+            (View.OnClickListener) v -> {
+               Toast.makeText(getContext(), "Error", Toast.LENGTH_SHORT).show();
+            });
+
    }
 }
