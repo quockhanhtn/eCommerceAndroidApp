@@ -1,22 +1,28 @@
 package hcmute.edu.vn.id18110304.Fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.util.Objects;
+import java.io.IOException;
+import java.util.List;
 
-import hcmute.edu.vn.id18110304.R;
-import hcmute.edu.vn.id18110304.Utils.DialogUtils;
+import hcmute.edu.vn.id18110304.Adapters.CategoryAdapter;
+import hcmute.edu.vn.id18110304.Communications.Requests.CategoryRequest;
+import hcmute.edu.vn.id18110304.Domains.CategoryDomain;
+import hcmute.edu.vn.id18110304.Utils.OkHttpUtils;
 import hcmute.edu.vn.id18110304.databinding.FragmentHomeBinding;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
 
 
 public class HomeFragment extends Fragment {
@@ -24,6 +30,8 @@ public class HomeFragment extends Fragment {
    public static final String TAG = HomeFragment.class.getSimpleName();
 
    private FragmentHomeBinding binding;
+
+   List<CategoryDomain> listCategories;
 
    // Required empty public constructor
    public HomeFragment() {
@@ -49,63 +57,37 @@ public class HomeFragment extends Fragment {
    public void onActivityCreated(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
       super.onActivityCreated(savedInstanceState);
 
-      binding.buttonShowBottomSheet.setOnClickListener(v -> {
-         final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
-               requireActivity(),
-               R.style.BottomSheetDialogTheme
-         );
-         View bottomSheetView = LayoutInflater.from(getContext())
-               .inflate(
-                     R.layout.layout_bottom_sheet,
-                     (LinearLayout) requireActivity().findViewById(R.id.bottom_sheet_container)
-               );
-         bottomSheetView.findViewById(R.id.bottom_sheet_main_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               Toast.makeText(getActivity(), "Share...", Toast.LENGTH_SHORT).show();
-               bottomSheetDialog.dismiss();
+      LinearLayoutManager linearLayoutManager = new LinearLayoutManager(
+            getContext(), LinearLayoutManager.HORIZONTAL, false
+      );
+      binding.recyclerviewCategory.setLayoutManager(linearLayoutManager);
+
+      OkHttpUtils.sendRequest(
+            "https://ecommerce-api.quockhanh.dev/api/categories",
+            new Callback() {
+               @Override
+               public void onFailure(Call call, IOException e) {
+                  Log.e(TAG, "Network Error");
+               }
+
+               @Override
+               public void onResponse(Call call, Response response) throws IOException {
+                  String json = response.body().string();
+                  CategoryRequest responseDomain = null;
+                  try {
+                     responseDomain = new ObjectMapper().readValue(json, CategoryRequest.class);
+                     listCategories = responseDomain.getData();
+
+                     requireActivity().runOnUiThread(() -> {
+                        binding.recyclerviewCategory.setHasFixedSize(true);
+                        binding.recyclerviewCategory.setAdapter(new CategoryAdapter(listCategories, getContext()));
+                     });
+
+                  } catch (Exception e) {
+                     Log.d(TAG, e.getMessage());
+                  }
+               }
             }
-         });
-         bottomSheetDialog.setContentView(bottomSheetView);
-         bottomSheetDialog.show();
-      });
-
-      binding.buttonShowSuccess.setOnClickListener(v -> showSuccess());
-      binding.buttonShowWarning.setOnClickListener(v -> showWarning());
-      binding.buttonShowError.setOnClickListener(v -> showError());
-   }
-
-   void showSuccess() {
-      DialogUtils.showSuccessDialog(
-            "Success dialog",
-            "Message",
-            getActivity(),
-            (View.OnClickListener) v -> {
-               Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
-            });
-   }
-
-   void showWarning() {
-      DialogUtils.showWarningDialog(
-            "Warning dialog",
-            "Message",
-            getActivity(),
-            (View.OnClickListener) v -> {
-               Toast.makeText(getContext(), "Yes", Toast.LENGTH_SHORT).show();
-            },
-            (View.OnClickListener) v -> {
-               Toast.makeText(getContext(), "No", Toast.LENGTH_SHORT).show();
-            });
-   }
-
-   void showError() {
-      DialogUtils.showErrorDialog(
-            "Error dialog",
-            "Message",
-            getActivity(),
-            (View.OnClickListener) v -> {
-               Toast.makeText(getContext(), "Error", Toast.LENGTH_SHORT).show();
-            });
-
+      );
    }
 }

@@ -6,70 +6,84 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.HomeFragment">
 
-  <androidx.constraintlayout.widget.ConstraintLayout
+  <androidx.core.widget.NestedScrollView
       android:layout_width="match_parent"
       android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/button_show_bottom_sheet"
-        android:layout_width="180dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:background="@drawable/bg_button_round"
-        android:text="Show sheet"
-        android:textColor="@color/colorWhite"
-        android:textSize="15sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <LinearLayout
-        android:orientation="horizontal"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:weightSum="3"
-        android:layout_marginTop="50dp"
-        app:layout_constraintTop_toBottomOf="@id/button_show_bottom_sheet">
+        android:layout_height="wrap_content">
 
-      <Button
-          android:id="@+id/button_show_success"
-          android:layout_width="0dp"
-          android:layout_height="40dp"
-          android:layout_weight="1"
-          android:gravity="center"
-          android:background="@drawable/bg_button_success"
-          android:text="Success"
-          android:textColor="@color/colorWhite"
-          android:textSize="15sp" />
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:id="@+id/layout_searchbar"
+          android:background="@color/colorPrimary"
+          android:layout_width="match_parent"
+          android:padding="10dp"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent">
 
-      <Button
-          android:id="@+id/button_show_warning"
-          android:layout_width="0dp"
-          android:layout_height="40dp"
-          android:layout_weight="1"
-          android:gravity="center"
-          android:background="@drawable/bg_button_warning"
-          android:text="Alert"
-          android:textColor="@color/colorWhite"
-          android:textSize="15sp" />
 
-      <Button
-          android:id="@+id/button_show_error"
-          android:layout_width="0dp"
-          android:layout_height="40dp"
-          android:layout_weight="1"
-          android:gravity="center"
-          android:background="@drawable/bg_button_error"
-          android:text="Error"
-          android:textColor="@color/colorWhite"
-          android:textSize="15sp" />
+        <EditText
+            android:id="@+id/edittext_search"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:drawableStart="@drawable/ic_magnifier"
+            android:drawableTint="@color/colorPrimary"
+            android:drawablePadding="10dp"
+            android:layout_marginRight="60dp"
+            android:textSize="15sp"
+            android:paddingStart="10dp"
+            android:textColor="#3A3A38"
+            android:hint="@string/txt_search_product_categories"
+            android:background="@drawable/bg_round_edittext"
+            tools:ignore="RtlSymmetry"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_carts"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
-    </LinearLayout>
+        <ImageButton
+            android:id="@+id/button_carts"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_cart"
+            android:scaleType="centerCrop"
+            android:tint="@color/colorWhite"
+            android:background="@android:color/transparent"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+      <TextView
+          android:id="@+id/textview_category"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="20dp"
+          android:layout_marginTop="20dp"
+          android:text="Categories"
+          android:textColor="@color/colorTextPrimary"
+          android:textAllCaps="true"
+          android:textStyle="bold"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/layout_searchbar" />
+
+      <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/recyclerview_category"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          app:layout_constraintTop_toBottomOf="@id/textview_category" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </androidx.core.widget.NestedScrollView>
 
 
 </FrameLayout>
