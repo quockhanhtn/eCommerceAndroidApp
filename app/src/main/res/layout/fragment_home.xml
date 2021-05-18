@@ -46,7 +46,7 @@
           android:textSize="15sp" />
 
       <Button
-          android:id="@+id/button_show_alert"
+          android:id="@+id/button_show_warning"
           android:layout_width="0dp"
           android:layout_height="40dp"
           android:layout_weight="1"

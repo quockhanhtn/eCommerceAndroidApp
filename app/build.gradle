@@ -26,16 +26,19 @@ android {
       sourceCompatibility JavaVersion.VERSION_1_8
       targetCompatibility JavaVersion.VERSION_1_8
    }
+
+   buildFeatures {
+      viewBinding = true
+   }
 }
 
 dependencies {
    //#region Default dependencies
-   implementation 'androidx.appcompat:appcompat:1.1.0'
-   implementation 'com.google.android.material:material:1.1.0'
-   implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-   testImplementation 'junit:junit:4.+'
-   androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-   androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+   implementation 'androidx.appcompat:appcompat:1.2.0'
+   implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+   testImplementation 'junit:junit:4.13.2'
+   androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+   androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
    //#endregion
 
    // Material design
@@ -82,4 +85,8 @@ dependencies {
    // Grid layout
    // https://developer.android.com/jetpack/androidx/releases/gridlayout
    implementation "androidx.gridlayout:gridlayout:1.0.0"
+
+   // Curved Bottom Navigation
+   // https://github.com/susonthapa/curved-bottom-navigation
+   implementation 'np.com.susanthapa:curved_bottom_navigation:0.6.5'
 }
