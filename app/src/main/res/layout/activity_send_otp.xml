@@ -55,7 +55,55 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
-        android:layout_marginEnd="60dp" />
+        android:layout_marginEnd="60dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="40dp"
+          android:gravity="center"
+          android:text="+84"
+          android:textColor="@color/colorTextPrimary"
+          android:textSize="16sp"
+          android:textStyle="bold" />
+
+      <EditText
+          android:id="@+id/editext_phone_number"
+          android:layout_width="wrap_content"
+          android:layout_height="40dp"
+          android:background="@null"
+          android:hint="123456789"
+          android:imeOptions="actionDone"
+          android:importantForAutofill="no"
+          android:inputType="number"
+          android:textColor="@color/colorTextPrimary"
+          android:textSize="16sp"
+          android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorDivider" />
+
+    <Button
+        android:id="@+id/button_get_otp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:background="@drawable/bg_button_round"
+        android:text="@string/txt_get_otp"
+        android:textAllCaps="true"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
   </LinearLayout>
 
 

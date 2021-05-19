@@ -84,13 +84,13 @@ public class MainActivity extends AppCompatActivity implements IGenericActivity 
                   R.id.menu_home
             ),
             new CbnMenuItem(
-                  R.drawable.ic_profile,
-                  R.drawable.avd_profile,
+                  R.drawable.ic_settings,
+                  R.drawable.avd_settings,
                   R.id.menu_bill
             ),
             new CbnMenuItem(
-                  R.drawable.ic_settings,
-                  R.drawable.avd_settings,
+                  R.drawable.ic_profile,
+                  R.drawable.avd_profile,
                   R.id.menu_profile
             )
       };

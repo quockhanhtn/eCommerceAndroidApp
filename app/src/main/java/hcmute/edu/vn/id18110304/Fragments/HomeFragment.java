@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import hcmute.edu.vn.id18110304.Adapters.CategoryAdapter;
@@ -31,7 +33,7 @@ public class HomeFragment extends Fragment {
 
    private FragmentHomeBinding binding;
 
-   List<CategoryDomain> listCategories;
+   List<CategoryDomain> listCategories = null;
 
    // Required empty public constructor
    public HomeFragment() {
@@ -85,6 +87,7 @@ public class HomeFragment extends Fragment {
 
                   } catch (Exception e) {
                      Log.d(TAG, e.getMessage());
+                     listCategories = new ArrayList<>();
                   }
                }
             }

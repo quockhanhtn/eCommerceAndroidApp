@@ -1,10 +1,12 @@
 package hcmute.edu.vn.id18110304.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.telephony.mbms.MbmsErrors;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,7 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
+import hcmute.edu.vn.id18110304.Activities.SendOtpActivity;
 import hcmute.edu.vn.id18110304.R;
 import hcmute.edu.vn.id18110304.Utils.DialogUtils;
 import hcmute.edu.vn.id18110304.databinding.FragmentHomeBinding;
@@ -104,13 +107,16 @@ public class SavedFragment extends Fragment {
    }
 
    void showError() {
-      DialogUtils.showErrorDialog(
-            "Error dialog",
-            "Message",
-            getActivity(),
-            (View.OnClickListener) v -> {
-               Toast.makeText(getContext(), "Error", Toast.LENGTH_SHORT).show();
-            });
+//      DialogUtils.showErrorDialog(
+//            "Error dialog",
+//            "Message",
+//            getActivity(),
+//            (View.OnClickListener) v -> {
+//               Toast.makeText(getContext(), "Error", Toast.LENGTH_SHORT).show();
+//            });
+
+      Intent intent = new Intent(getContext(), SendOtpActivity.class);
+      startActivity(intent);
 
    }
 }

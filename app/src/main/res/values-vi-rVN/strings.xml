@@ -11,7 +11,7 @@
   <string name="txt_phone_number">Số điện thoại</string>
   <string name="txt_re_password">Nhập lại mật khẩu</string>
   <string name="txt_already_log_in">Đã có tài khoản ? Đăng nhập <b>tại đây</b></string>
-  <string name="txt_verify">Xác thực tài khoản</string>
+  <string name="txt_verify_your_account">Xác thực tài khoản</string>
   <string name="txt_send_code">Gửi mã</string>
   <string name="txt_otp_verification">Xác thực OTP</string>
   <string name="txt_we_will_send_you_an_one_time_password_on_this_mobile_number">Bạn sẽ nhận được mã <b>OTP</b> trên điện thoại</string>
