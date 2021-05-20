@@ -1,6 +1,5 @@
 <resources>
   <string name="app_name">eCommerceApp</string>
-  <string name="safetynet_api_key">AIzaSyBOqmp_mVIOMwEH4xJlgC-yILYvwgU8pnU</string>
 
   <!--#region Log in/Sign up text definition-->
   <string name="txt_email_or_phone_number">Email or phone number</string>
