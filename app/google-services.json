@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "546335352200",
+    "project_id": "qk-ecommerce",
+    "storage_bucket": "qk-ecommerce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:546335352200:android:56b4a1b322df5a519c463d",
+        "android_client_info": {
+          "package_name": "hcmute.edu.vn.id18110304"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "546335352200-khv2ikb02d5vmq7pbtdcmhckf5g6cdj0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCl7MUGwZk8kwicP0BKnbloE_5J7zX8r-0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "546335352200-khv2ikb02d5vmq7pbtdcmhckf5g6cdj0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

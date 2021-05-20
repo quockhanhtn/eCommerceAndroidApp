@@ -19,28 +19,32 @@ public class DialogUtils {
 
    enum DialogType {SUCCESS, WARNING, ERROR}
 
-   public static void showSuccessDialog(String title, String message,
-                                        Activity activity,
-                                        Object btnOkOnClick) {
+   public static void showSuccessDialog(String title, String message, @NotNull Activity activity) {
+      showSuccessDialog(title, message, activity, v -> {
+      });
+   }
+
+   public static void showSuccessDialog(String title, String message, @NotNull Activity activity, View.OnClickListener btnOkOnClick) {
       showDialog(DialogType.SUCCESS, title, message, activity, btnOkOnClick, null, null);
    }
 
-   public static void showWarningDialog(String title, String message,
-                                        Activity activity,
-                                        Object btnYesOnClick,
-                                        Object btnNoOnClick) {
+   public static void showWarningDialog(String title, String message, @NotNull Activity activity,
+                                        Object btnYesOnClick, Object btnNoOnClick) {
       showDialog(DialogType.WARNING, title, message, activity, null, btnYesOnClick, btnNoOnClick);
    }
 
-   public static void showErrorDialog(String title, String message,
-                                      Activity activity,
-                                      Object btnOkOnClick) {
+   public static void showErrorDialog(String title, String message, @NotNull Activity activity) {
+      showErrorDialog(title, message, activity, v -> {
+      });
+   }
+
+   public static void showErrorDialog(String title, String message, @NotNull Activity activity, View.OnClickListener btnOkOnClick) {
       showDialog(DialogType.ERROR, title, message, activity, btnOkOnClick, null, null);
    }
 
 
    public static void showDialog(@NotNull DialogType type, String title, String message,
-                                 Activity activity,
+                                 @NotNull Activity activity,
                                  Object btnOkOnClick,
                                  Object btnYesOnClick,
                                  Object btnNoOnClick) {

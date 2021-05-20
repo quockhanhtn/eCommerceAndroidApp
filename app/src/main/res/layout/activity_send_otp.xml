@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:overScrollMode="never"
     android:scrollbars="none"
     tools:context=".Activities.SendOtpActivity">
@@ -51,6 +52,7 @@
         android:textColor="@color/colorTextSecondary"
         android:textSize="14sp" />
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,24 +61,36 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-      <TextView
+      <com.hbb20.CountryCodePicker
+          android:visibility="visible"
+          android:id="@+id/ccp_phone_number"
           android:layout_width="wrap_content"
           android:layout_height="40dp"
-          android:gravity="center"
-          android:text="+84"
           android:textColor="@color/colorTextPrimary"
-          android:textSize="16sp"
-          android:textStyle="bold" />
+          android:gravity="center"
+          app:ccp_textSize="16sp"
+          app:ccp_textGravity="CENTER"
+          app:ccp_showArrow="false"
+          app:ccp_autoDetectLanguage="true"
+          app:ccp_rememberLastSelection="true"
+          app:ccp_autoDetectCountry="true"
+          app:ccp_countryAutoDetectionPref="NETWORK_SIM_LOCALE"
+          app:ccp_countryPreference="VN"
+          app:ccp_hintExampleNumber="true"
+          app:ccp_hintExampleNumberType="FIXED_LINE"
+          app:ccp_useDummyEmojiForPreview="true"/>
+
 
       <EditText
-          android:id="@+id/editext_phone_number"
+          android:id="@+id/edittext_phone_number"
           android:layout_width="wrap_content"
           android:layout_height="40dp"
           android:background="@null"
           android:hint="123456789"
           android:imeOptions="actionDone"
           android:importantForAutofill="no"
-          android:inputType="number"
+          android:singleLine="true"
+          android:inputType="phone"
           android:textColor="@color/colorTextPrimary"
           android:textSize="16sp"
           android:textStyle="bold" />
@@ -91,17 +105,30 @@
         android:layout_marginTop="8dp"
         android:background="@color/colorDivider" />
 
-    <Button
-        android:id="@+id/button_get_otp"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:background="@drawable/bg_button_round"
-        android:text="@string/txt_get_otp"
-        android:textAllCaps="true"
-        android:textColor="@color/colorWhite"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:layout_height="wrap_content">
+
+      <Button
+          android:id="@+id/button_get_otp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_margin="30dp"
+          android:background="@drawable/bg_button_round"
+          android:text="@string/txt_get_otp"
+          android:textAllCaps="true"
+          android:textColor="@color/colorWhite"
+          android:textSize="16sp"
+          android:textStyle="bold" />
+
+      <ProgressBar
+          android:id="@+id/progressbar_get_otp"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:layout_gravity="center"
+          android:visibility="gone" />
+
+    </FrameLayout>
 
 
   </LinearLayout>

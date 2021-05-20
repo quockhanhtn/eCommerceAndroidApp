@@ -1,5 +1,6 @@
 <resources>
   <string name="app_name">eCommerceApp</string>
+  <string name="safetynet_api_key">AIzaSyBOqmp_mVIOMwEH4xJlgC-yILYvwgU8pnU</string>
 
   <!--#region Log in/Sign up text definition-->
   <string name="txt_email_or_phone_number">Email or phone number</string>
@@ -39,6 +40,9 @@
   <string name="txt_didn_t_receive_the_otp">Didn\'t receive the OTP ?</string>
   <string name="txt_resend_otp">Resend OTP</string>
   <string name="txt_verify">Verify</string>
+  <string name="txt_invalid_otp">Invalid OTP</string>
+  <string name="txt_please_enter_valid_otp_sent_to_your_phone">Please enter valid OTP sent your phone</string>
+  <string name="txt_categories">Categories</string>
   <!--#endregion-->
 
 </resources>

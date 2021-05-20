@@ -62,7 +62,7 @@
       <EditText
           android:id="@+id/edittext_otp_code_1"
           android:layout_width="40dp"
-          android:layout_height="45dp"
+          android:layout_height="wrap_content"
           android:gravity="center"
           android:imeOptions="actionNext"
           android:importantForAutofill="no"
@@ -76,7 +76,7 @@
       <EditText
           android:id="@+id/edittext_otp_code_2"
           android:layout_width="40dp"
-          android:layout_height="45dp"
+          android:layout_height="wrap_content"
           android:gravity="center"
           android:imeOptions="actionNext"
           android:importantForAutofill="no"
@@ -90,7 +90,7 @@
       <EditText
           android:id="@+id/edittext_otp_code_3"
           android:layout_width="40dp"
-          android:layout_height="45dp"
+          android:layout_height="wrap_content"
           android:gravity="center"
           android:imeOptions="actionNext"
           android:importantForAutofill="no"
@@ -104,7 +104,7 @@
       <EditText
           android:id="@+id/edittext_otp_code_4"
           android:layout_width="40dp"
-          android:layout_height="45dp"
+          android:layout_height="wrap_content"
           android:gravity="center"
           android:imeOptions="actionNext"
           android:importantForAutofill="no"
@@ -118,7 +118,7 @@
       <EditText
           android:id="@+id/edittext_otp_code_5"
           android:layout_width="40dp"
-          android:layout_height="45dp"
+          android:layout_height="wrap_content"
           android:gravity="center"
           android:imeOptions="actionNext"
           android:importantForAutofill="no"
@@ -132,7 +132,7 @@
       <EditText
           android:id="@+id/edittext_otp_code_6"
           android:layout_width="40dp"
-          android:layout_height="45dp"
+          android:layout_height="wrap_content"
           android:gravity="center"
           android:imeOptions="actionNext"
           android:importantForAutofill="no"
@@ -170,18 +170,29 @@
           android:textStyle="bold" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/button_verify_otp"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:background="@drawable/bg_button_round"
-        android:text="@string/txt_verify"
-        android:textAllCaps="true"
-        android:textColor="@color/colorWhite"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:layout_height="wrap_content">
 
+      <Button
+          android:id="@+id/button_verify_otp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_margin="30dp"
+          android:background="@drawable/bg_button_round"
+          android:text="@string/txt_verify"
+          android:textAllCaps="true"
+          android:textColor="@color/colorWhite"
+          android:textSize="16sp"
+          android:textStyle="bold" />
+
+      <ProgressBar
+          android:id="@+id/progressbar_verify_otp"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:layout_gravity="center"
+          android:visibility="gone" />
+    </FrameLayout>
   </LinearLayout>
 
 

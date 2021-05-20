@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="app_name">eCommerceApp</string>
+  <string name="safetynet_api_key">AIzaSyBOqmp_mVIOMwEH4xJlgC-yILYvwgU8pnU</string>
   <string name="txt_email_or_phone_number">Email hoặc số điện thoại</string>
   <string name="txt_password">Mật khẩu</string>
   <string name="txt_log_in">Đăng nhập</string>

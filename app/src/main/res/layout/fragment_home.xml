@@ -28,17 +28,17 @@
         <EditText
             android:id="@+id/edittext_search"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:drawableStart="@drawable/ic_magnifier"
             android:drawableTint="@color/colorPrimary"
             android:drawablePadding="10dp"
-            android:layout_marginRight="60dp"
+            android:layout_marginEnd="50dp"
             android:textSize="15sp"
             android:paddingStart="10dp"
             android:textColor="#3A3A38"
             android:hint="@string/txt_search_product_categories"
             android:background="@drawable/bg_round_edittext"
-            tools:ignore="RtlSymmetry"
+            tools:ignore="RtlSymmetry,UnusedAttribute"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/button_carts"
             app:layout_constraintTop_toTopOf="parent"
@@ -47,17 +47,18 @@
         <ImageButton
             android:id="@+id/button_carts"
             android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:padding="5dp"
             android:src="@drawable/ic_cart"
             android:scaleType="centerCrop"
-            android:tint="@color/colorWhite"
             android:background="@android:color/transparent"
             android:clickable="true"
             android:focusable="true"
+            android:contentDescription="@string/app_name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:tint="@color/colorWhite" />
 
       </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -67,7 +68,7 @@
           android:layout_height="wrap_content"
           android:layout_marginStart="20dp"
           android:layout_marginTop="20dp"
-          android:text="Categories"
+          android:text="@string/txt_categories"
           android:textColor="@color/colorTextPrimary"
           android:textAllCaps="true"
           android:textStyle="bold"
@@ -84,6 +85,4 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
   </androidx.core.widget.NestedScrollView>
-
-
 </FrameLayout>
