@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "546335352200-ko37luvorhihrtprc0s4cn8m9k1ssd01.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "hcmute.edu.vn.id18110304",
+            "certificate_hash": "1d3cd601ea511cd035132d0dd55e8694a2d3f5e6"
+          }
+        },
+        {
           "client_id": "546335352200-khv2ikb02d5vmq7pbtdcmhckf5g6cdj0.apps.googleusercontent.com",
           "client_type": 3
         }
