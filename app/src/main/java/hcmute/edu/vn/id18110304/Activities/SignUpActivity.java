@@ -8,23 +8,21 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import hcmute.edu.vn.id18110304.R;
+import hcmute.edu.vn.id18110304.Interfaces.IGenericActivity;
 import hcmute.edu.vn.id18110304.Utils.AppUtils;
+import hcmute.edu.vn.id18110304.databinding.ActivitySignUpBinding;
 
-public class SignUpActivity extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity implements IGenericActivity {
    private static final int SELECT_PICTURE = 100;
-   private static final String TAG = "SignUpActivity";
+   public static final String TAG = SignUpActivity.class.getSimpleName();
 
-   ImageView ivProfile = null;
-   TextView tvReturnLogin = null;
+   private ActivitySignUpBinding binding;
 
    private void handlePermission() {
       if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
@@ -54,10 +52,10 @@ public class SignUpActivity extends AppCompatActivity {
                      String path = AppUtils.getPathFromURI(getContentResolver(), selectedImageUri);
                      Log.i(TAG, "Image Path : " + path);
                      // Set the image in ImageView
-                     ivProfile.post(new Runnable() {
+                     binding.imageviewProfile.post(new Runnable() {
                         @Override
                         public void run() {
-                           ivProfile.setImageURI(selectedImageUri);
+                           binding.imageviewProfile.setImageURI(selectedImageUri);
                         }
                      });
                   }
@@ -68,7 +66,6 @@ public class SignUpActivity extends AppCompatActivity {
             }
          }
       }).start();
-
    }
 
    @Override
@@ -92,34 +89,28 @@ public class SignUpActivity extends AppCompatActivity {
    @Override
    protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
-      setContentView(R.layout.activity_sign_up);
+      binding = ActivitySignUpBinding.inflate(getLayoutInflater());
+      View view = binding.getRoot();
+      setContentView(view);
 
       handlePermission();
-      findViews();
-      setViewsListener();
+      initialVariables();
+      setViewListeners();
    }
 
-   void findViews() {
-      ivProfile = findViewById(R.id.imageview_profile);
-      tvReturnLogin = findViewById(R.id.textview_return_login);
+   @Override
+   public void initialVariables() {
    }
 
-   void setViewsListener() {
-      tvReturnLogin.setOnClickListener(new View.OnClickListener() {
-         @Override
-         public void onClick(View v) {
-            finish();
-         }
-      });
+   @Override
+   public void setViewListeners() {
+      binding.textviewReturnLogin.setOnClickListener(v -> finish());
 
-      ivProfile.setOnClickListener(new View.OnClickListener() {
-         @Override
-         public void onClick(View v) {
-            Intent intent = new Intent();
-            intent.setType("image/*");
-            intent.setAction(Intent.ACTION_GET_CONTENT);
-            startActivityForResult(Intent.createChooser(intent, "Select Picture"), SELECT_PICTURE);
-         }
+      binding.imageviewProfile.setOnClickListener(v -> {
+         Intent intent = new Intent();
+         intent.setType("image/*");
+         intent.setAction(Intent.ACTION_GET_CONTENT);
+         startActivityForResult(Intent.createChooser(intent, "Select Picture"), SELECT_PICTURE);
       });
    }
 }

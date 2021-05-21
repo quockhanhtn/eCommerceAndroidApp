@@ -13,11 +13,12 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
 import hcmute.edu.vn.id18110304.Cons;
+import hcmute.edu.vn.id18110304.Interfaces.IGenericActivity;
 import hcmute.edu.vn.id18110304.R;
 import hcmute.edu.vn.id18110304.Utils.DialogUtils;
 import hcmute.edu.vn.id18110304.databinding.ActivityVerifyOtpBinding;
 
-public class VerifyOtpActivity extends AppCompatActivity {
+public class VerifyOtpActivity extends AppCompatActivity implements IGenericActivity {
 
    public static final String TAG = VerifyOtpActivity.class.getSimpleName();
 
@@ -32,11 +33,27 @@ public class VerifyOtpActivity extends AppCompatActivity {
       View view = binding.getRoot();
       setContentView(view);
 
+      initialVariables();
+      setupOtpInputsFlows();
+      setViewListeners();
+   }
+
+   @Override
+   public void initialVariables() {
       binding.textviewInputPhone.setText(getIntent().getStringExtra(Cons.OTP_PHONE_NUMBER_KEY));
       verificationId = getIntent().getStringExtra(Cons.OTP_VERIFICATION_ID_KEY);
+      listEditedTextInputCodes = new EditText[]{
+            binding.edittextOtpCode1,
+            binding.edittextOtpCode2,
+            binding.edittextOtpCode3,
+            binding.edittextOtpCode4,
+            binding.edittextOtpCode5,
+            binding.edittextOtpCode6
+      };
+   }
 
-      setupOtpInputsFlows();
-
+   @Override
+   public void setViewListeners() {
       binding.buttonVerifyOtp.setOnClickListener(v -> {
          String code = getUserInputOtp();
 
@@ -72,15 +89,6 @@ public class VerifyOtpActivity extends AppCompatActivity {
    }
 
    private void setupOtpInputsFlows() {
-      listEditedTextInputCodes = new EditText[]{
-            binding.edittextOtpCode1,
-            binding.edittextOtpCode2,
-            binding.edittextOtpCode3,
-            binding.edittextOtpCode4,
-            binding.edittextOtpCode5,
-            binding.edittextOtpCode6
-      };
-
       for (int i = 0; i < listEditedTextInputCodes.length; i++) {
          EditText prev = listEditedTextInputCodes[Math.max((i - 1), 0)];
          EditText current = listEditedTextInputCodes[i];
@@ -103,6 +111,7 @@ public class VerifyOtpActivity extends AppCompatActivity {
             }
          });
       }
+      listEditedTextInputCodes[0].requestFocus();
    }
 
    private String getUserInputOtp() {

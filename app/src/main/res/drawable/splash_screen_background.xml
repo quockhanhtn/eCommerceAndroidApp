@@ -14,7 +14,7 @@
       android:width="700px"
       android:height="800.7166716px"
       android:gravity="center"
-      android:drawable="@drawable/ic_app_logo" />
+      android:drawable="@drawable/ic_app_logo_with_text" />
 
   <item
       android:width="500px"

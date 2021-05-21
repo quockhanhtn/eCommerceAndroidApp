@@ -26,4 +26,16 @@
   <string name="txt_bill_desc">Xem đơn hàng</string>
   <string name="txt_profile">Tài khoản</string>
   <string name="txt_profile_desc">Thông tin tài khoản</string>
+  <string name="txt_ok">OK</string>
+  <string name="txt_no">Không</string>
+  <string name="txt_yes">Có</string>
+  <string name="txt_search_product_categories">Tìm kiểm sản phẩm, chuyên mục</string>
+  <string name="txt_get_otp">Gửi mã OTP</string>
+  <string name="txt_enter_the_otp_sent_to_your_phone">Nhập mã OTP gửi đến điện thoại của bạn</string>
+  <string name="txt_didn_t_receive_the_otp">Không nhận được mã OTP ?</string>
+  <string name="txt_resend_otp">Gửi lại</string>
+  <string name="txt_verify">Xác thực</string>
+  <string name="txt_invalid_otp">Mã OTP không hợp lệ</string>
+  <string name="txt_please_enter_valid_otp_sent_to_your_phone">Nhập mã OTP gửi đến điện thoại của bạn</string>
+  <string name="txt_categories">Chuyên mục</string>
 </resources>

@@ -36,8 +36,7 @@ public class MainActivity extends AppCompatActivity implements IGenericActivity 
       View view = binding.getRoot();
       setContentView(view);
 
-
-      initialViews();
+      initialVariables();
       setViewListeners();
 
       OkHttpUtils.sendRequest(
@@ -63,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements IGenericActivity 
    }
 
    @Override
-   public void initialViews() {
+   public void initialVariables() {
       // region Bottom Nav
       navController = Navigation.findNavController(this, R.id.fragment_nav_host);
 
@@ -74,9 +73,9 @@ public class MainActivity extends AppCompatActivity implements IGenericActivity 
                   R.id.menu_saved // optional if you use Jetpack Navigation
             ),
             new CbnMenuItem(
-                  R.drawable.ic_cart,
-                  R.drawable.avd_cart,
-                  R.id.menu_cart
+                  R.drawable.ic_category,
+                  R.drawable.avd_category,
+                  R.id.menu_category
             ),
             new CbnMenuItem(
                   R.drawable.ic_home,

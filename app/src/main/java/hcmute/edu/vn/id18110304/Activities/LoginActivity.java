@@ -22,12 +22,12 @@ public class LoginActivity extends AppCompatActivity implements IGenericActivity
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_log_in);
 
-      initialViews();
+      initialVariables();
       setViewListeners();
    }
 
    @Override
-   public void initialViews() {
+   public void initialVariables() {
       btnSignUp = findViewById(R.id.button_sign_up);
       btnLogin = findViewById(R.id.button_log_in);
       tvForgotPassword = findViewById(R.id.textview_forgot_password);

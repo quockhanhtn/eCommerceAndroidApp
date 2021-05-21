@@ -21,9 +21,10 @@ import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 import hcmute.edu.vn.id18110304.Cons;
+import hcmute.edu.vn.id18110304.Interfaces.IGenericActivity;
 import hcmute.edu.vn.id18110304.databinding.ActivitySendOtpBinding;
 
-public class SendOtpActivity extends AppCompatActivity {
+public class SendOtpActivity extends AppCompatActivity implements IGenericActivity {
 
    public static final String TAG = SendOtpActivity.class.getSimpleName();
    ActivitySendOtpBinding binding;
@@ -38,12 +39,21 @@ public class SendOtpActivity extends AppCompatActivity {
       View view = binding.getRoot();
       setContentView(view);
 
+      initialVariables();
+      setViewListeners();
+   }
+
+   @Override
+   public void initialVariables() {
       firebaseAuth = FirebaseAuth.getInstance();
       firebaseAuth.setLanguageCode(Locale.getDefault().getLanguage());
 
       binding.ccpPhoneNumber.registerCarrierNumberEditText(binding.edittextPhoneNumber);
       binding.ccpPhoneNumber.isValidFullNumber();
+   }
 
+   @Override
+   public void setViewListeners() {
       binding.buttonGetOtp.setOnClickListener(v -> {
          if (binding.edittextPhoneNumber.getText().toString().trim().isEmpty()) {
             Toast.makeText(SendOtpActivity.this, "Enter Mobile", Toast.LENGTH_SHORT).show();
@@ -54,16 +64,16 @@ public class SendOtpActivity extends AppCompatActivity {
          binding.buttonGetOtp.setVisibility(View.INVISIBLE);
 
          phoneAuthOptions = PhoneAuthOptions.newBuilder(firebaseAuth)
-               .setPhoneNumber(binding.ccpPhoneNumber.getFullNumberWithPlus())       // Phone number to verify
-               .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
-               .setActivity(this)                 // Activity (for callback binding)
-               .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
+               .setPhoneNumber(binding.ccpPhoneNumber.getFullNumberWithPlus())   // Phone number to verify
+               .setTimeout(60L, TimeUnit.SECONDS)                         // Timeout and unit
+               .setActivity(this)                                                // Activity (for callback binding)
+               .setCallbacks(otpVerifyCallbacks)                                         // OnVerificationStateChangedCallbacks
                .build();
          PhoneAuthProvider.verifyPhoneNumber(phoneAuthOptions);
       });
    }
 
-   final PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks =
+   final PhoneAuthProvider.OnVerificationStateChangedCallbacks otpVerifyCallbacks =
          new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             @Override
             public void onVerificationCompleted(@NonNull @NotNull PhoneAuthCredential phoneAuthCredential) {

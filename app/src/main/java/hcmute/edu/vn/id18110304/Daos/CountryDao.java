@@ -1,6 +1,5 @@
 package hcmute.edu.vn.id18110304.Daos;
 
-import android.os.AsyncTask;
 import android.util.Log;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -10,15 +9,12 @@ import java.util.List;
 
 import hcmute.edu.vn.id18110304.Communications.Requests.CountryRequest;
 import hcmute.edu.vn.id18110304.Domains.CountryDomain;
-import hcmute.edu.vn.id18110304.Interfaces.IGenericDao;
 import hcmute.edu.vn.id18110304.Utils.OkHttpUtils;
 import okhttp3.Call;
 import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import okhttp3.Response;
 
-public class CountryDao implements IGenericDao {
+public class CountryDao {
    public static final String TAG = CountryDao.class.getSimpleName();
 
    String API_RESOURCE = "/countries";
@@ -35,7 +31,6 @@ public class CountryDao implements IGenericDao {
       return instance;
    }
 
-   @Override
    public List<CountryDomain> getAll() {
       OkHttpUtils.sendRequest(
             "https://open-ecommerce-api.herokuapp.com/api/countries",
@@ -60,18 +55,4 @@ public class CountryDao implements IGenericDao {
       return null;
    }
 
-   @Override
-   public List getById(Object id) {
-      return null;
-   }
-
-   @Override
-   public boolean update(Object object) {
-      return false;
-   }
-
-   @Override
-   public boolean delete(Object id) {
-      return false;
-   }
 }
