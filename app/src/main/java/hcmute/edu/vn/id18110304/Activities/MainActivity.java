@@ -12,10 +12,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 
-import hcmute.edu.vn.id18110304.Communications.Requests.CountryRequest;
+import hcmute.edu.vn.id18110304.Communications.Response.CategoryResponse;
+import hcmute.edu.vn.id18110304.Communications.Response.CountryResponse;
+import hcmute.edu.vn.id18110304.Communications.WebServices.CategoryService;
 import hcmute.edu.vn.id18110304.Interfaces.IGenericActivity;
 import hcmute.edu.vn.id18110304.R;
-import hcmute.edu.vn.id18110304.Utils.OkHttpUtils;
 import hcmute.edu.vn.id18110304.databinding.ActivityMainBinding;
 import np.com.susanthapa.curved_bottom_navigation.CbnMenuItem;
 import okhttp3.Call;
@@ -39,26 +40,40 @@ public class MainActivity extends AppCompatActivity implements IGenericActivity 
       initialVariables();
       setViewListeners();
 
-      OkHttpUtils.sendRequest(
-            "https://open-ecommerce-api.herokuapp.com/api/countries",
-            new Callback() {
-               @Override
-               public void onFailure(Call call, IOException e) {
-                  Log.e(TAG, "Network Error");
-               }
-
-               @Override
-               public void onResponse(Call call, Response response) throws IOException {
-                  String json = response.body().string();
-                  CountryRequest responseDomain = null;
-                  try {
-                     responseDomain = new ObjectMapper().readValue(json, CountryRequest.class);
-                  } catch (Exception e) {
-                     Log.d(TAG, e.getMessage());
-                  }
-               }
+      CategoryService.getInstance().getAll(new retrofit2.Callback<CategoryResponse>() {
+         @Override
+         public void onResponse(retrofit2.Call<CategoryResponse> call, retrofit2.Response<CategoryResponse> response) {
+            if (response.isSuccessful()) {
+               CategoryResponse responseDomain = response.body();
             }
-      );
+         }
+
+         @Override
+         public void onFailure(retrofit2.Call<CategoryResponse> call, Throwable t) {
+            Log.e(TAG, "Network Error");
+         }
+      });
+
+//      OkHttpUtils.sendRequest(
+//            "https://open-ecommerce-api.herokuapp.com/api/countries",
+//            new Callback() {
+//               @Override
+//               public void onFailure(Call call, IOException e) {
+//                  Log.e(TAG, "Network Error");
+//               }
+//
+//               @Override
+//               public void onResponse(Call call, Response response) throws IOException {
+//                  String json = response.body().string();
+//                  CountryResponse responseDomain = null;
+//                  try {
+//                     responseDomain = new ObjectMapper().readValue(json, CountryResponse.class);
+//                  } catch (Exception e) {
+//                     Log.d(TAG, e.getMessage());
+//                  }
+//               }
+//            }
+//      );
    }
 
    @Override
