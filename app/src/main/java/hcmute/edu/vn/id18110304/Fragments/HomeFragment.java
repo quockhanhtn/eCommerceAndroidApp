@@ -78,7 +78,7 @@ public class HomeFragment extends Fragment {
          }
 
          @Override
-         public void onFailure(retrofit2.Call<CategoryResponse> call, Throwable t) {
+         public void onFailure(Call<CategoryResponse> call, Throwable t) {
             Log.e(TAG, "Network Error");
          }
       });

@@ -6,7 +6,7 @@
   <string name="txt_log_in">Đăng nhập</string>
   <string name="txt_sign_up">Đăng ký</string>
   <string name="txt_hello">Xin chào</string>
-  <string name="txt_forgot_password">Quên mật khẩu ?</string>
+  <string name="txt_forgot_your_password">Quên mật khẩu ?</string>
   <string name="txt_create_account">Tạo tài khoản mới</string>
   <string name="txt_phone_number">Số điện thoại</string>
   <string name="txt_re_password">Nhập lại mật khẩu</string>

@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
+import hcmute.edu.vn.id18110304.Activities.LoginActivity;
 import hcmute.edu.vn.id18110304.Activities.SendOtpActivity;
 import hcmute.edu.vn.id18110304.R;
 import hcmute.edu.vn.id18110304.Utils.DialogUtils;
@@ -94,16 +95,19 @@ public class SavedFragment extends Fragment {
    }
 
    void showWarning() {
-      DialogUtils.showWarningDialog(
-            "Warning dialog",
-            "Message",
-            getActivity(),
-            (View.OnClickListener) v -> {
-               Toast.makeText(getContext(), "Yes", Toast.LENGTH_SHORT).show();
-            },
-            (View.OnClickListener) v -> {
-               Toast.makeText(getContext(), "No", Toast.LENGTH_SHORT).show();
-            });
+//      DialogUtils.showWarningDialog(
+//            "Warning dialog",
+//            "Message",
+//            getActivity(),
+//            (View.OnClickListener) v -> {
+//               Toast.makeText(getContext(), "Yes", Toast.LENGTH_SHORT).show();
+//            },
+//            (View.OnClickListener) v -> {
+//               Toast.makeText(getContext(), "No", Toast.LENGTH_SHORT).show();
+//            });
+
+      Intent intent = new Intent(getContext(), LoginActivity.class);
+      startActivity(intent);
    }
 
    void showError() {

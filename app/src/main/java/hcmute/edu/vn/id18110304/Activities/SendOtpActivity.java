@@ -60,6 +60,7 @@ public class SendOtpActivity extends AppCompatActivity implements IGenericActivi
             return;
          }
 
+         binding.edittextPhoneNumber.clearFocus();
          binding.progressbarGetOtp.setVisibility(View.VISIBLE);
          binding.buttonGetOtp.setVisibility(View.INVISIBLE);
 

@@ -98,9 +98,9 @@ public class MainActivity extends AppCompatActivity implements IGenericActivity 
                   R.id.menu_home
             ),
             new CbnMenuItem(
-                  R.drawable.ic_settings,
-                  R.drawable.avd_settings,
-                  R.id.menu_bill
+                  R.drawable.ic_cart,
+                  R.drawable.avd_cart,
+                  R.id.menu_cart
             ),
             new CbnMenuItem(
                   R.drawable.ic_profile,
