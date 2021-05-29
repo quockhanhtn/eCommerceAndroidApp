@@ -8,20 +8,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import java.io.IOException;
-
 import hcmute.edu.vn.id18110304.Communications.Response.CategoryResponse;
-import hcmute.edu.vn.id18110304.Communications.Response.CountryResponse;
 import hcmute.edu.vn.id18110304.Communications.WebServices.CategoryService;
 import hcmute.edu.vn.id18110304.Interfaces.IGenericActivity;
 import hcmute.edu.vn.id18110304.R;
 import hcmute.edu.vn.id18110304.databinding.ActivityMainBinding;
 import np.com.susanthapa.curved_bottom_navigation.CbnMenuItem;
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.Response;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity implements IGenericActivity {
 
@@ -40,40 +35,19 @@ public class MainActivity extends AppCompatActivity implements IGenericActivity 
       initialVariables();
       setViewListeners();
 
-      CategoryService.getInstance().getAll(new retrofit2.Callback<CategoryResponse>() {
+      CategoryService.getInstance().getAll(new Callback<CategoryResponse>() {
          @Override
-         public void onResponse(retrofit2.Call<CategoryResponse> call, retrofit2.Response<CategoryResponse> response) {
+         public void onResponse(Call<CategoryResponse> call, Response<CategoryResponse> response) {
             if (response.isSuccessful()) {
                CategoryResponse responseDomain = response.body();
             }
          }
 
          @Override
-         public void onFailure(retrofit2.Call<CategoryResponse> call, Throwable t) {
+         public void onFailure(Call<CategoryResponse> call, Throwable t) {
             Log.e(TAG, "Network Error");
          }
       });
-
-//      OkHttpUtils.sendRequest(
-//            "https://open-ecommerce-api.herokuapp.com/api/countries",
-//            new Callback() {
-//               @Override
-//               public void onFailure(Call call, IOException e) {
-//                  Log.e(TAG, "Network Error");
-//               }
-//
-//               @Override
-//               public void onResponse(Call call, Response response) throws IOException {
-//                  String json = response.body().string();
-//                  CountryResponse responseDomain = null;
-//                  try {
-//                     responseDomain = new ObjectMapper().readValue(json, CountryResponse.class);
-//                  } catch (Exception e) {
-//                     Log.d(TAG, e.getMessage());
-//                  }
-//               }
-//            }
-//      );
    }
 
    @Override
@@ -112,7 +86,6 @@ public class MainActivity extends AppCompatActivity implements IGenericActivity 
       binding.bottomNavigation.setMenuItems(navMenuItems, 2);
       binding.bottomNavigation.setupWithNavController(navController);
       // endregion
-
    }
 
    @Override

@@ -2,16 +2,14 @@ package hcmute.edu.vn.id18110304.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
-import android.telephony.mbms.MbmsErrors;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
@@ -19,14 +17,9 @@ import hcmute.edu.vn.id18110304.Activities.LoginActivity;
 import hcmute.edu.vn.id18110304.Activities.SendOtpActivity;
 import hcmute.edu.vn.id18110304.R;
 import hcmute.edu.vn.id18110304.Utils.DialogUtils;
-import hcmute.edu.vn.id18110304.databinding.FragmentHomeBinding;
 import hcmute.edu.vn.id18110304.databinding.FragmentSavedBinding;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SavedFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class SavedFragment extends Fragment {
 
    public static final String TAG = SavedFragment.class.getSimpleName();

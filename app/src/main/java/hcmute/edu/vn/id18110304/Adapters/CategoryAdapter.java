@@ -13,7 +13,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import hcmute.edu.vn.id18110304.Domains.CategoryDomain;
+import hcmute.edu.vn.id18110304.Communications.Domains.CategoryDomain;
 import hcmute.edu.vn.id18110304.R;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryItemViewHolder> {

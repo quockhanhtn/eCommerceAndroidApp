@@ -1,12 +1,12 @@
-package hcmute.edu.vn.id18110304.Domains;
+package hcmute.edu.vn.id18110304.Communications.Domains;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class GenericDomain {
+public class GenericDomain<IdType> {
    @JsonProperty("_id")
-   String id;
+   IdType id;
 
    @JsonProperty("createdAt")
    String createdAt;
@@ -14,11 +14,11 @@ public class GenericDomain {
    @JsonProperty("updatedAt")
    String updatedAt;
 
-   public String getId() {
+   public IdType getId() {
       return id;
    }
 
-   public void setId(String id) {
+   public void setId(IdType id) {
       this.id = id;
    }
 

@@ -44,8 +44,8 @@
   <string name="txt_categories">Categories</string>
   <string name="txt_welcome">Welcome,</string>
   <string name="txt_sign_in_to_continue">Sign in to continue !</string>
-  <string name="txt_google">Google</string>
-  <string name="txt_facebook">Facebook</string>
+  <string name="txt_google" translatable="false">Google</string>
+  <string name="txt_facebook" translatable="false">Facebook</string>
   <string name="txt_or_login_with">or login with</string>
   <string name="txt_i_m_a_new_user">I\'m a new user,</string>
   <!--#endregion-->

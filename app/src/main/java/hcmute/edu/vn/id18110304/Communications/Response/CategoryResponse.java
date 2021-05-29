@@ -1,7 +1,6 @@
 package hcmute.edu.vn.id18110304.Communications.Response;
 
-import hcmute.edu.vn.id18110304.Domains.CategoryDomain;
-import hcmute.edu.vn.id18110304.Domains.ResponseDomain;
+import hcmute.edu.vn.id18110304.Communications.Domains.CategoryDomain;
 
-public class CategoryResponse extends ResponseDomain<CategoryDomain> {
+public class CategoryResponse extends GenericResponse<CategoryDomain> {
 }

@@ -1,12 +1,11 @@
-package hcmute.edu.vn.id18110304.Domains;
+package hcmute.edu.vn.id18110304.Communications.Response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.JsonNode;
 
 import java.util.List;
 
-public class ResponseDomain<T> {
-   public static final String TAG = ResponseDomain.class.getSimpleName();
+public class GenericResponse<T> {
+   public static final String TAG = GenericResponse.class.getSimpleName();
 
    @JsonProperty("success")
    boolean success;
