@@ -59,104 +59,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Vip member"
+                android:text="@string/txt_username"
                 android:textColor="@color/colorTextSecondary"
                 android:textSize="15sp"
+                android:paddingBottom="15dp"
                 app:layout_constraintTop_toBottomOf="@id/textview_name_header_profile" />
-
-            <TextView
-                android:id="@+id/textPosts"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:gravity="center"
-                android:text="962"
-                android:textColor="@color/colorTextPrimary"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/textFollowers"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textview_desc_header_profile" />
-
-            <TextView
-                android:id="@+id/textFollowers"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:gravity="center"
-                android:text="1024"
-                android:textColor="@color/colorTextPrimary"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@id/textFollowing"
-                app:layout_constraintStart_toEndOf="@id/textPosts"
-                app:layout_constraintTop_toBottomOf="@id/textview_desc_header_profile" />
-
-            <TextView
-                android:id="@+id/textFollowing"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:gravity="center"
-                android:text="9623"
-                android:textColor="@color/colorTextPrimary"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/textFollowers"
-                app:layout_constraintTop_toBottomOf="@id/textview_desc_header_profile" />
-
-            <TextView
-                android:id="@+id/textPostsLabel"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="center"
-                android:text="POSTS"
-                android:textAllCaps="true"
-                android:textColor="@color/colorTextSecondary"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/textPosts"
-                app:layout_constraintStart_toStartOf="@id/textPosts"
-                app:layout_constraintTop_toBottomOf="@id/textPosts" />
-
-            <TextView
-                android:id="@+id/textFollowersLabel"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="center"
-                android:text="FOLLOWERS"
-                android:textAllCaps="true"
-                android:textColor="@color/colorTextSecondary"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/textFollowers"
-                app:layout_constraintStart_toStartOf="@id/textFollowers"
-                app:layout_constraintTop_toBottomOf="@id/textFollowers" />
-
-            <TextView
-                android:id="@+id/textFollowingLabel"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:gravity="center"
-                android:text="FOLLOWING"
-                android:textAllCaps="true"
-                android:textColor="@color/colorTextSecondary"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/textFollowing"
-                app:layout_constraintStart_toStartOf="@id/textFollowing"
-                app:layout_constraintTop_toBottomOf="@id/textFollowing" />
-
           </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
 
       </FrameLayout>
-
 
       <com.makeramen.roundedimageview.RoundedImageView
           android:id="@+id/imageview_header_profile"
@@ -171,240 +83,439 @@
           app:riv_border_width="1dp"
           app:riv_oval="true" />
 
-      <TextView
-          android:id="@+id/textTags"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginStart="20dp"
-          android:layout_marginTop="5dp"
-          android:text="TAGS"
-          android:textColor="@color/colorTextPrimary"
-          android:textAllCaps="true"
-          android:textStyle="bold"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/fragment_header_profile" />
-
       <LinearLayout
-          android:id="@+id/layoutTags"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:orientation="horizontal"
-          android:layout_marginStart="25dp"
-          android:layout_marginEnd="25dp"
-          android:layout_marginTop="5dp"
-          app:layout_constraintTop_toBottomOf="@id/textTags">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/bg_tag_corner"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:paddingStart="10dp"
-            android:paddingTop="5dp"
-            android:paddingEnd="10dp"
-            android:paddingBottom="5dp"
-            android:text="Stylish"
-            android:textColor="@color/colorPrimary"
-            android:textSize="15sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/bg_tag_corner"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:paddingStart="10dp"
-            android:paddingTop="5dp"
-            android:paddingEnd="10dp"
-            android:paddingBottom="5dp"
-            android:text="Model"
-            android:textColor="@color/colorPrimary"
-            android:textSize="15sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/bg_tag_corner"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:paddingStart="10dp"
-            android:paddingTop="5dp"
-            android:paddingEnd="10dp"
-            android:paddingBottom="5dp"
-            android:text="KOL"
-            android:textColor="@color/colorPrimary"
-            android:textSize="15sp" />
-      </LinearLayout>
-
-      <TextView
-          android:id="@+id/textCollection"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginStart="20dp"
-          android:layout_marginTop="20dp"
-          android:text="collection"
-          android:textColor="@color/colorTextPrimary"
-          android:textAllCaps="true"
-          android:textStyle="bold"
+          android:paddingHorizontal="20dp"
+          android:orientation="vertical"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/layoutTags" />
+          app:layout_constraintTop_toBottomOf="@+id/fragment_header_profile"
+          app:layout_constraintBottom_toBottomOf="parent">
 
-      <HorizontalScrollView
-          android:id="@+id/layoutCollection"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:overScrollMode="never"
-          android:scrollbars="none"
-          android:layout_marginTop="8dp"
-          app:layout_constraintTop_toBottomOf="@id/textCollection">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginVertical="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-          <!--region Item 1-->
           <LinearLayout
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_marginStart="15dp"
-              android:layout_marginEnd="15dp"
-              android:orientation="vertical">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="horizontal">
 
-            <com.makeramen.roundedimageview.RoundedImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/example_product_0"
-                app:riv_corner_radius="6dp" />
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_wallet"
+                android:background="@drawable/bg_gradient_background"
+                android:tint="@color/white"
+                android:contentDescription="@string/app_name"
+                tools:ignore="UseAppTint" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginTop="3dp"
-                android:text="Item 1"
-                android:textColor="@color/colorTextSecondary"
-                android:textSize="15sp" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginStart="15dp">
 
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Waiting for Payment"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/colorTextPrimary" />
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="3dp"
+                  android:text="125"
+                  android:textSize="13sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/colorTextSecondary" />
+
+            </LinearLayout>
           </LinearLayout>
-          <!--endregion-->
+        </androidx.cardview.widget.CardView>
 
-          <!--region Item 2-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginVertical="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp">
+
           <LinearLayout
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_marginStart="15dp"
-              android:layout_marginEnd="15dp"
-              android:orientation="vertical">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="horizontal">
 
-            <com.makeramen.roundedimageview.RoundedImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/example_product_1"
-                app:riv_corner_radius="6dp" />
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_wallet"
+                android:background="@drawable/bg_gradient_background"
+                android:tint="@color/white"
+                android:contentDescription="@string/app_name"
+                tools:ignore="UseAppTint" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginTop="3dp"
-                android:text="Item 2"
-                android:textColor="@color/colorTextSecondary"
-                android:textSize="15sp" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginStart="15dp">
 
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Waiting for Payment"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/colorTextPrimary" />
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="3dp"
+                  android:text="125"
+                  android:textSize="13sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/colorTextSecondary" />
+
+            </LinearLayout>
           </LinearLayout>
-          <!--endregion-->
+        </androidx.cardview.widget.CardView>
 
-          <!--region Item 3-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginVertical="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp">
+
           <LinearLayout
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_marginStart="15dp"
-              android:layout_marginEnd="15dp"
-              android:orientation="vertical">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="horizontal">
 
-            <com.makeramen.roundedimageview.RoundedImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/example_product_2"
-                app:riv_corner_radius="6dp" />
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_wallet"
+                android:background="@drawable/bg_gradient_background"
+                android:tint="@color/white"
+                android:contentDescription="@string/app_name"
+                tools:ignore="UseAppTint" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginTop="3dp"
-                android:text="Item 3"
-                android:textColor="@color/colorTextSecondary"
-                android:textSize="15sp" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginStart="15dp">
 
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Waiting for Payment"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/colorTextPrimary" />
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="3dp"
+                  android:text="125"
+                  android:textSize="13sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/colorTextSecondary" />
+
+            </LinearLayout>
           </LinearLayout>
-          <!--endregion-->
+        </androidx.cardview.widget.CardView>
 
-          <!--region Item 4-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginVertical="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp">
+
           <LinearLayout
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_marginStart="15dp"
-              android:layout_marginEnd="15dp"
-              android:orientation="vertical">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="horizontal">
 
-            <com.makeramen.roundedimageview.RoundedImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/example_product_3"
-                app:riv_corner_radius="6dp" />
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_wallet"
+                android:background="@drawable/bg_gradient_background"
+                android:tint="@color/white"
+                android:contentDescription="@string/app_name"
+                tools:ignore="UseAppTint" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginTop="3dp"
-                android:text="Item 4"
-                android:textColor="@color/colorTextSecondary"
-                android:textSize="15sp" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginStart="15dp">
 
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Waiting for Payment"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/colorTextPrimary" />
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="3dp"
+                  android:text="125"
+                  android:textSize="13sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/colorTextSecondary" />
+
+            </LinearLayout>
           </LinearLayout>
-          <!--endregion-->
+        </androidx.cardview.widget.CardView>
 
-          <!--region Item 5-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginVertical="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp">
+
           <LinearLayout
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_marginStart="15dp"
-              android:layout_marginEnd="15dp"
-              android:orientation="vertical">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="horizontal">
 
-            <com.makeramen.roundedimageview.RoundedImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/example_product_4"
-                app:riv_corner_radius="6dp" />
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_wallet"
+                android:background="@drawable/bg_gradient_background"
+                android:tint="@color/white"
+                android:contentDescription="@string/app_name"
+                tools:ignore="UseAppTint" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginTop="3dp"
-                android:text="Item 5"
-                android:textColor="@color/colorTextSecondary"
-                android:textSize="15sp" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginStart="15dp">
 
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Waiting for Payment"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/colorTextPrimary" />
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="3dp"
+                  android:text="125"
+                  android:textSize="13sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/colorTextSecondary" />
+
+            </LinearLayout>
           </LinearLayout>
-          <!--endregion-->
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginVertical="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp">
 
-        </LinearLayout>
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="horizontal">
 
-      </HorizontalScrollView>
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_wallet"
+                android:background="@drawable/bg_gradient_background"
+                android:tint="@color/white"
+                android:contentDescription="@string/app_name"
+                tools:ignore="UseAppTint" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginStart="15dp">
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Waiting for Payment"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/colorTextPrimary" />
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="3dp"
+                  android:text="125"
+                  android:textSize="13sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/colorTextSecondary" />
+
+            </LinearLayout>
+          </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginVertical="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp">
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_wallet"
+                android:background="@drawable/bg_gradient_background"
+                android:tint="@color/white"
+                android:contentDescription="@string/app_name"
+                tools:ignore="UseAppTint" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginStart="15dp">
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Waiting for Payment"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/colorTextPrimary" />
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="3dp"
+                  android:text="125"
+                  android:textSize="13sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/colorTextSecondary" />
+
+            </LinearLayout>
+          </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginVertical="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp">
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_wallet"
+                android:background="@drawable/bg_gradient_background"
+                android:tint="@color/white"
+                android:contentDescription="@string/app_name"
+                tools:ignore="UseAppTint" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginStart="15dp">
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Waiting for Payment"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/colorTextPrimary" />
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="3dp"
+                  android:text="125"
+                  android:textSize="13sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/colorTextSecondary" />
+
+            </LinearLayout>
+          </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+      </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -9,6 +9,12 @@ import com.google.android.material.navigation.NavigationView;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * NavigationViewUtils
+ *
+ * @author  Khanh Lam
+ * @version 1.0
+ */
 public class NavigationViewUtils {
 
    public static void setIconColor(NavigationView navigationView, List<Integer> listMenuId, List<String> listColor) {

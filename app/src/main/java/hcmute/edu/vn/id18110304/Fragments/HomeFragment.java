@@ -14,9 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import hcmute.edu.vn.id18110304.Adapters.CategoryAdapter;
+import hcmute.edu.vn.id18110304.Communications.Domains.CategoryDomain;
 import hcmute.edu.vn.id18110304.Communications.Response.CategoryResponse;
 import hcmute.edu.vn.id18110304.Communications.WebServices.CategoryService;
-import hcmute.edu.vn.id18110304.Communications.Domains.CategoryDomain;
 import hcmute.edu.vn.id18110304.databinding.FragmentHomeBinding;
 import retrofit2.Call;
 import retrofit2.Callback;

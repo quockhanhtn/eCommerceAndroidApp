@@ -1,0 +1,44 @@
+<!-- Source: https://www.iconfinder.com/icons/2987141/airplane_paper_paper_airplane_icon -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="128dp"
+    android:height="128dp"
+    android:viewportWidth="128"
+    android:viewportHeight="128">
+  <path
+      android:pathData="M64,80l53,-70l-62,29z"
+      android:fillColor="#FFFFFF" />
+  <path
+      android:pathData="M117,10l-98,20l36,9l9,41l3,-37l40,7z"
+      android:fillColor="#FFFFFF" />
+  <path
+      android:pathData="M55,39l62,-27l-50,31l-3,37z"
+      android:fillColor="#88E3FF" />
+  <path
+      android:pathData="M64,80l3,-37l40,7l10,-40l-98,20l36,9l3.5,11"
+      android:strokeLineJoin="round"
+      android:strokeWidth="6"
+      android:fillColor="#00000000"
+      android:strokeColor="#444B54"
+      android:strokeLineCap="round" />
+  <path
+      android:pathData="M39,57.5c-0.8,0.6 -1.6,1.2 -2.4,1.8"
+      android:strokeLineJoin="round"
+      android:strokeWidth="6"
+      android:fillColor="#00000000"
+      android:strokeColor="#444B54"
+      android:strokeLineCap="round" />
+  <path
+      android:pathData="M23.4,69.2C15.6,75.7 12.8,81 12.5,95c-0.7,33 67.6,10.3 76,8.5c15,-3.2 14.5,-18.1 -4.5,-14.6c-14,2.6 -15.8,26.1 13.8,26.1"
+      android:strokeLineJoin="round"
+      android:strokeWidth="6"
+      android:fillColor="#00000000"
+      android:strokeColor="#444B54"
+      android:strokeLineCap="round" />
+  <path
+      android:pathData="M106,114.4c1,-0.1 2,-0.3 3,-0.4"
+      android:strokeLineJoin="round"
+      android:strokeWidth="6"
+      android:fillColor="#00000000"
+      android:strokeColor="#444B54"
+      android:strokeLineCap="round" />
+</vector>

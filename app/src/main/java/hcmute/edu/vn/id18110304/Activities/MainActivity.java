@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import org.jetbrains.annotations.NotNull;
+
 import hcmute.edu.vn.id18110304.Communications.Response.CategoryResponse;
 import hcmute.edu.vn.id18110304.Communications.WebServices.CategoryService;
 import hcmute.edu.vn.id18110304.Interfaces.IGenericActivity;
@@ -37,14 +39,14 @@ public class MainActivity extends AppCompatActivity implements IGenericActivity 
 
       CategoryService.getInstance().getAll(new Callback<CategoryResponse>() {
          @Override
-         public void onResponse(Call<CategoryResponse> call, Response<CategoryResponse> response) {
+         public void onResponse(@NotNull Call<CategoryResponse> call, @NotNull Response<CategoryResponse> response) {
             if (response.isSuccessful()) {
                CategoryResponse responseDomain = response.body();
             }
          }
 
          @Override
-         public void onFailure(Call<CategoryResponse> call, Throwable t) {
+         public void onFailure(@NotNull Call<CategoryResponse> call, @NotNull Throwable t) {
             Log.e(TAG, "Network Error");
          }
       });

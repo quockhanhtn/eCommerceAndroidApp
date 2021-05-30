@@ -7,6 +7,9 @@ import java.util.List;
 
 /**
  * This class provide methods that help you to work with <b>String</b>
+ *
+ * @author  Khanh Lam
+ * @version 1.0
  */
 public class StringUtils {
    /**
@@ -23,7 +26,7 @@ public class StringUtils {
 
       str = str.replaceAll("[^0-9]", "");
 
-      if (str == null || str.isEmpty()) {
+      if (str.isEmpty()) {
          str = "0";
       }
       return str;
@@ -57,7 +60,7 @@ public class StringUtils {
     * <code>0</code> otherwise
     */
    public static Long toLong(String str) {
-      Long result;
+      long result;
       str = removeNonDigit(str);
 
       try {
@@ -77,7 +80,7 @@ public class StringUtils {
     * <code>0</code> otherwise
     */
    public static Integer toInt(String str) {
-      Integer result;
+      int result;
       str = removeNonDigit(str);
 
       try {
@@ -104,9 +107,7 @@ public class StringUtils {
 
       String[] array = str.split(regex);
       List<String> result = new ArrayList<String>();
-      for (int i = 0; i < array.length; i++) {
-         result.add(array[i]);
-      }
+      Collections.addAll(result, array);
       return result;
    }
 }

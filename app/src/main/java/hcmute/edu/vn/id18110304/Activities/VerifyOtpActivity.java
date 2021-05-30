@@ -40,8 +40,8 @@ public class VerifyOtpActivity extends AppCompatActivity implements IGenericActi
 
    @Override
    public void initialVariables() {
-      binding.textviewInputPhone.setText(getIntent().getStringExtra(Cons.OTP_PHONE_NUMBER_KEY));
-      verificationId = getIntent().getStringExtra(Cons.OTP_VERIFICATION_ID_KEY);
+      binding.textviewInputPhone.setText(getIntent().getStringExtra(Cons.KEY_OTP_PHONE_NUMBER));
+      verificationId = getIntent().getStringExtra(Cons.KEY_OTP_VERIFICATION_ID);
       listEditedTextInputCodes = new EditText[]{
             binding.edittextOtpCode1,
             binding.edittextOtpCode2,

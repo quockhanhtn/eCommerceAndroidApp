@@ -15,6 +15,12 @@ import org.jetbrains.annotations.NotNull;
 
 import hcmute.edu.vn.id18110304.R;
 
+/**
+ * DialogUtils
+ *
+ * @author  Khanh Lam
+ * @version 1.0
+ */
 public class DialogUtils {
 
    enum DialogType {SUCCESS, WARNING, ERROR}

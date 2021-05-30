@@ -11,7 +11,14 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.provider.Settings;
 
+/**
+ * AppUtils
+ *
+ * @author  Khanh Lam
+ * @version 1.0
+ */
 public class AppUtils {
+
    public static void openAppSettings(final Activity context) {
       if (context == null) {
          return;

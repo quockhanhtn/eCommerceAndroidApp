@@ -98,8 +98,8 @@ public class SendOtpActivity extends AppCompatActivity implements IGenericActivi
                binding.buttonGetOtp.setVisibility(View.VISIBLE);
 
                Intent intent = new Intent(getApplicationContext(), VerifyOtpActivity.class);
-               intent.putExtra(Cons.OTP_PHONE_NUMBER_KEY, binding.ccpPhoneNumber.getFormattedFullNumber());
-               intent.putExtra(Cons.OTP_VERIFICATION_ID_KEY, verificationId);
+               intent.putExtra(Cons.KEY_OTP_PHONE_NUMBER, binding.ccpPhoneNumber.getFormattedFullNumber());
+               intent.putExtra(Cons.KEY_OTP_VERIFICATION_ID, verificationId);
                startActivity(intent);
                finish();
             }

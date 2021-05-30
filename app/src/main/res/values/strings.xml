@@ -25,7 +25,7 @@
   <string name="txt_saved">Saved</string>
   <string name="txt_saved_desc">Saved items</string>
   <string name="txt_cart">Cart</string>
-  <string name="txt_cart_desc">View items in cart cart</string>
+  <string name="txt_cart_desc">View items in cart</string>
   <string name="txt_bill">Bill</string>
   <string name="txt_bill_desc">View recent bill</string>
   <string name="txt_profile">Profile</string>
@@ -48,6 +48,7 @@
   <string name="txt_facebook" translatable="false">Facebook</string>
   <string name="txt_or_login_with">or login with</string>
   <string name="txt_i_m_a_new_user">I\'m a new user,</string>
+  <string name="txt_username">\@username</string>
   <!--#endregion-->
 
 </resources>
