@@ -108,4 +108,12 @@ dependencies {
    // Country Code Picker
    // https://github.com/hbb20/CountryCodePickerProject
    implementation 'com.hbb20:ccp:2.4.7'
+
+   // FOLDING CELL
+   // https://github.com/Ramotion/folding-cell-android
+   implementation 'com.ramotion.foldingcell:folding-cell:1.2.3'
+
+   // Lottie
+   // https://github.com/airbnb/lottie-android
+   implementation 'com.airbnb.android:lottie:3.7.0'
 }

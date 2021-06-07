@@ -1,33 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginStart="5dp"
     android:layout_marginEnd="5dp"
+    android:layout_marginBottom="10dp"
     android:orientation="vertical"
     android:clickable="true"
     android:focusable="true">
 
   <com.makeramen.roundedimageview.RoundedImageView
-      android:id="@+id/imageview_category_item_image"
-      android:layout_width="100dp"
-      android:layout_height="100dp"
+      android:id="@+id/imageview_brand_item_image"
+      android:layout_width="70dp"
+      android:layout_height="70dp"
       android:scaleType="centerCrop"
       android:src="@drawable/example_product_0"
       app:riv_corner_radius="6dp" />
 
   <TextView
-      android:id="@+id/textview_category_item_name"
+      android:id="@+id/textview_brand_item_name"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginStart="6dp"
       android:layout_marginTop="3dp"
       android:gravity="center"
-      android:text="Item 1 sdc xvv bbxb sd ggdgggg"
+      android:text="@string/txt_brands"
       android:lines="2"
       android:ellipsize="end"
       android:textColor="@color/colorTextSecondary"
-      android:textSize="12sp" />
+      android:textSize="10sp"
+      tools:ignore="SmallSp" />
 
 </LinearLayout>

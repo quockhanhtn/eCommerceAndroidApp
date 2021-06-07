@@ -1,6 +1,5 @@
 package hcmute.edu.vn.id18110304.Communications.WebServices;
 
-import hcmute.edu.vn.id18110304.Communications.Response.CategoryResponse;
 import hcmute.edu.vn.id18110304.Cons;
 import retrofit2.Callback;
 import retrofit2.Retrofit;
@@ -19,6 +18,6 @@ public class GenericService<IWebServiceType, ResponseType> {
       service = retrofit.create(iWebServiceTypeClass);
    }
 
-   public void getAll(Callback<CategoryResponse> cb) {
+   public void getAll(Callback<ResponseType> cb) {
    }
 }

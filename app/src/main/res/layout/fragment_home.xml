@@ -62,25 +62,87 @@
 
       </androidx.constraintlayout.widget.ConstraintLayout>
 
-      <TextView
-          android:id="@+id/textview_category"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginStart="20dp"
-          android:layout_marginTop="20dp"
-          android:text="@string/txt_categories"
-          android:textColor="@color/colorTextPrimary"
-          android:textAllCaps="true"
-          android:textStyle="bold"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@id/layout_searchbar" />
-
-      <androidx.recyclerview.widget.RecyclerView
-          android:id="@+id/recyclerview_category"
+      <LinearLayout
           android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="8dp"
-          app:layout_constraintTop_toBottomOf="@id/textview_category" />
+          android:layout_height="fill_parent"
+          android:orientation="vertical"
+          android:paddingHorizontal="10dp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/layout_searchbar">
+
+        <!--region Categories-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp">
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginVertical="10dp"
+                android:text="@string/txt_categories"
+                android:textColor="@color/colorTextPrimary"
+                android:textAllCaps="true"
+                android:textStyle="bold" />
+
+            <View style="@style/ViewDivider" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp" />
+          </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+        <!--endregion-->
+
+        <!--region Brand-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp">
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginVertical="10dp"
+                android:text="@string/txt_brands"
+                android:textColor="@color/colorTextPrimary"
+                android:textAllCaps="true"
+                android:textStyle="bold" />
+
+            <View style="@style/ViewDivider" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_brand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp" />
+          </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+        <!--endregion-->
+
+      </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

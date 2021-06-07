@@ -49,6 +49,7 @@
   <string name="txt_or_login_with">or login with</string>
   <string name="txt_i_m_a_new_user">I\'m a new user,</string>
   <string name="txt_username">\@username</string>
+  <string name="txt_brands">Brands</string>
   <!--#endregion-->
 
 </resources>

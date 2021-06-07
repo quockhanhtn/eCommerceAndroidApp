@@ -11,27 +11,22 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.squareup.picasso.Picasso;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 import hcmute.edu.vn.id18110304.Communications.Domains.CategoryDomain;
 import hcmute.edu.vn.id18110304.R;
 
-public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryItemViewHolder> {
-   private List<CategoryDomain> categories;
-   private Context context;
+public class CategoryAdapter extends GenericAdapter<CategoryAdapter.CategoryItemViewHolder, CategoryDomain> {
 
-   public CategoryAdapter(List<CategoryDomain> categories, Context c) {
-      this.categories = categories;
-      this.context = c;
+
+   public CategoryAdapter(Context c, List<CategoryDomain> list) {
+      super(c, list);
    }
 
    @Override
-   public int getItemCount() {
-      return categories.size();
-   }
-
-   @Override
-   public CategoryItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+   public @NotNull CategoryItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
       View itemView = LayoutInflater.from(parent.getContext())
             .inflate(R.layout.item_category, parent, false);
       return new CategoryItemViewHolder(itemView);
@@ -39,7 +34,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
 
    @Override
    public void onBindViewHolder(CategoryAdapter.CategoryItemViewHolder holder, int position) {
-      CategoryDomain category = categories.get(position);
+      CategoryDomain category = getListItems().get(position);
       // should add android:usesCleartextTraffic="true" to application tag in AndroidManifest.xml
       Picasso.get().load(category.getImage()).into(holder.ivCategoryImage);
       holder.tvCategoryName.setText(category.getName());

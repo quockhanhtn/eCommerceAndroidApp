@@ -5,7 +5,7 @@
     tools:context=".Activities.LoginActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_gradient_background">
+    android:background="@drawable/bg_gradient">
 
   <androidx.cardview.widget.CardView
       android:layout_margin="20dp"
