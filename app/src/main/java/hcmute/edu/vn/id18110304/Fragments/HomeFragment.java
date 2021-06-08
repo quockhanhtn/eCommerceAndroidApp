@@ -75,6 +75,9 @@ public class HomeFragment extends Fragment {
    public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
       super.onViewCreated(view, savedInstanceState);
 
+      binding.lottieLoadingCategories.setVisibility(View.VISIBLE);
+      binding.lottieLoadingBrands.setVisibility(View.VISIBLE);
+
       CategoryService.getInstance().getAll(new Callback<CategoryResponse>() {
          @Override
          public void onResponse(@NotNull Call<CategoryResponse> call, @NotNull Response<CategoryResponse> response) {
@@ -82,7 +85,10 @@ public class HomeFragment extends Fragment {
                CategoryResponse responseDomain = response.body();
                listCategories = responseDomain != null ? responseDomain.getData() : new ArrayList<>();
 
-               requireActivity().runOnUiThread(() -> categoryAdapter.setListItems(listCategories));
+               requireActivity().runOnUiThread(() -> {
+                  categoryAdapter.setListItems(listCategories);
+                  binding.lottieLoadingCategories.setVisibility(View.GONE);
+               });
 
             } else {
                Log.d(TAG, String.valueOf(response.errorBody()));
@@ -102,8 +108,10 @@ public class HomeFragment extends Fragment {
                BrandResponse responseDomain = response.body();
                listBrands = responseDomain != null ? responseDomain.getData() : new ArrayList<>();
 
-               requireActivity().runOnUiThread(() -> brandAdapter.setListItems(listBrands));
-
+               requireActivity().runOnUiThread(() -> {
+                  brandAdapter.setListItems(listBrands);
+                  binding.lottieLoadingBrands.setVisibility(View.GONE);
+               });
             } else {
                Log.d(TAG, String.valueOf(response.errorBody()));
             }

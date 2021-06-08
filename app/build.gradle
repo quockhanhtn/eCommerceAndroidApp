@@ -23,6 +23,7 @@ android {
          proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
       }
    }
+
    compileOptions {
       sourceCompatibility JavaVersion.VERSION_1_8
       targetCompatibility JavaVersion.VERSION_1_8
@@ -81,7 +82,7 @@ dependencies {
 
    // Recycler View
    // https://developer.android.com/jetpack/androidx/releases/recyclerview
-   implementation "androidx.recyclerview:recyclerview:1.2.0"
+   implementation "androidx.recyclerview:recyclerview:1.2.1"
    // For control over item selection of both touch and mouse driven selection
    implementation "androidx.recyclerview:recyclerview-selection:1.1.0"
    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
@@ -101,6 +102,7 @@ dependencies {
    // Curved Bottom Navigation
    // https://github.com/susonthapa/curved-bottom-navigation
    implementation 'np.com.susanthapa:curved_bottom_navigation:0.6.5'
+   implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.31'
 
    // Firebase
    implementation platform('com.google.firebase:firebase-bom:28.0.1')

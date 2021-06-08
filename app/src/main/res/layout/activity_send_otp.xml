@@ -14,12 +14,13 @@
       android:gravity="center_horizontal"
       android:orientation="vertical">
 
-
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"
-        android:layout_width="190dp"
-        android:layout_height="190dp"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
         android:layout_marginTop="50dp"
+        android:layout_marginHorizontal="80dp"
+        android:scaleType="centerCrop"
         app:lottie_rawRes="@raw/paper_plane"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"/>
@@ -27,7 +28,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="20dp"
         android:text="@string/txt_otp_verification"
         android:textColor="@color/colorTextPrimary"
         android:textSize="20sp"
@@ -114,9 +115,11 @@
 
       <Button
           android:id="@+id/button_get_otp"
-          android:layout_width="match_parent"
+          android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_margin="30dp"
+          android:layout_gravity="center_horizontal"
+          android:paddingHorizontal="30dp"
+          android:layout_marginVertical="30dp"
           android:background="@drawable/bg_button_round"
           android:text="@string/txt_get_otp"
           android:textAllCaps="true"
