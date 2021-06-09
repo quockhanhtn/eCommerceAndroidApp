@@ -19,6 +19,12 @@ import java.util.List;
 import hcmute.edu.vn.id18110304.Communications.Domains.BrandDomain;
 import hcmute.edu.vn.id18110304.R;
 
+/**
+ * BrandAdapter
+ *
+ * @author Khanh Lam
+ * @version 1.0
+ */
 public class BrandAdapter extends GenericAdapter<BrandAdapter.BrandItemViewHolder, BrandDomain> {
 
    public BrandAdapter(Context c, List<BrandDomain> list) {

@@ -2,7 +2,6 @@ package hcmute.edu.vn.id18110304.Activities;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,7 +10,6 @@ import androidx.fragment.app.FragmentManager;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.logging.Logger;
 
 import hcmute.edu.vn.id18110304.Fragments.CartFragment;
 import hcmute.edu.vn.id18110304.Fragments.CategoryFragment;
@@ -23,6 +21,12 @@ import hcmute.edu.vn.id18110304.R;
 import hcmute.edu.vn.id18110304.databinding.ActivityMainBinding;
 import np.com.susanthapa.curved_bottom_navigation.CbnMenuItem;
 
+/**
+ * MainActivity
+ *
+ * @author Khanh Lam
+ * @version 1.0
+ */
 public class MainActivity extends AppCompatActivity implements IGenericActivity {
 
    public static final String TAG = MainActivity.class.getSimpleName();
@@ -55,8 +59,6 @@ public class MainActivity extends AppCompatActivity implements IGenericActivity 
 
       initialVariables();
       setViewListeners();
-
-      Log.e(TAG, "onCreate: ss");
    }
 
    @Override

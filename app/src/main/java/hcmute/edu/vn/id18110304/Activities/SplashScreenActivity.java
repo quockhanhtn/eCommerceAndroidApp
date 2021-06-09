@@ -5,7 +5,16 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * SplashScreenActivity
+ *
+ * @author Khanh Lam
+ * @version 1.0
+ */
 public class SplashScreenActivity extends AppCompatActivity {
+
+   public static final String TAG = SplashScreenActivity.class.getSimpleName();
+
    @Override
    protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);

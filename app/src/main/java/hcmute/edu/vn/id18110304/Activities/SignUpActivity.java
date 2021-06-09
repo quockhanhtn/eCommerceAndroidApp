@@ -18,6 +18,12 @@ import hcmute.edu.vn.id18110304.Interfaces.IGenericActivity;
 import hcmute.edu.vn.id18110304.Utils.AppUtils;
 import hcmute.edu.vn.id18110304.databinding.ActivitySignUpBinding;
 
+/**
+ * SignUpActivity
+ *
+ * @author Khanh Lam
+ * @version 1.0
+ */
 public class SignUpActivity extends AppCompatActivity implements IGenericActivity {
    private static final int SELECT_PICTURE = 100;
    public static final String TAG = SignUpActivity.class.getSimpleName();

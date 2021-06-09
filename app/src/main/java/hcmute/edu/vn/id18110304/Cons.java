@@ -1,5 +1,11 @@
 package hcmute.edu.vn.id18110304;
 
+/**
+ * Cons
+ *
+ * @author  Khanh Lam
+ * @version 1.0
+ */
 public class Cons {
    public static final String WEBSERVICE_BASE_URL = "https://open-ecommerce-api.herokuapp.com/api/";
 

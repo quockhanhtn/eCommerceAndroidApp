@@ -24,6 +24,12 @@ import hcmute.edu.vn.id18110304.Cons;
 import hcmute.edu.vn.id18110304.Interfaces.IGenericActivity;
 import hcmute.edu.vn.id18110304.databinding.ActivitySendOtpBinding;
 
+/**
+ * SendOtpActivity
+ *
+ * @author Khanh Lam
+ * @version 1.0
+ */
 public class SendOtpActivity extends AppCompatActivity implements IGenericActivity {
 
    public static final String TAG = SendOtpActivity.class.getSimpleName();

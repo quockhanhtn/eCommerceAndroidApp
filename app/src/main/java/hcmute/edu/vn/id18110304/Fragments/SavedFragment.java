@@ -19,7 +19,12 @@ import hcmute.edu.vn.id18110304.R;
 import hcmute.edu.vn.id18110304.Utils.DialogUtils;
 import hcmute.edu.vn.id18110304.databinding.FragmentSavedBinding;
 
-
+/**
+ * SavedFragment
+ *
+ * @author Khanh Lam
+ * @version 1.0
+ */
 public class SavedFragment extends Fragment {
 
    public static final String TAG = SavedFragment.class.getSimpleName();
@@ -114,6 +119,5 @@ public class SavedFragment extends Fragment {
 
       Intent intent = new Intent(getContext(), SendOtpActivity.class);
       startActivity(intent);
-
    }
 }

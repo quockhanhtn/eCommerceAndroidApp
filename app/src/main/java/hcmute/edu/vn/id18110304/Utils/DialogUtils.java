@@ -103,7 +103,6 @@ public class DialogUtils {
             return;
       }
 
-
       final AlertDialog alertDialog = builder.create();
 
       btnOk.setOnClickListener(v -> {

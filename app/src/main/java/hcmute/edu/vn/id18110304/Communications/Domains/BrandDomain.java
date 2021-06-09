@@ -3,10 +3,6 @@ package hcmute.edu.vn.id18110304.Communications.Domains;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
- * @author Khanh Lam
- * @since 6/7/2021
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BrandDomain extends GenericDomain<String> {
    @JsonProperty("brandId")

@@ -12,8 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * GenericAdapter
+ *
  * @author Khanh Lam
- * @since 6/7/2021
+ * @version 1.0
  */
 public abstract class GenericAdapter<ViewHolderType extends RecyclerView.ViewHolder, DataItemType>
       extends RecyclerView.Adapter<ViewHolderType> {

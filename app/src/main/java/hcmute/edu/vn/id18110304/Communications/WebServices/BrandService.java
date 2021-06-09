@@ -5,7 +5,6 @@ import hcmute.edu.vn.id18110304.Communications.Response.BrandResponse;
 import retrofit2.Call;
 import retrofit2.Callback;
 
-
 public class BrandService extends GenericService<IBrandService, BrandResponse> {
    private static BrandService instance = null;
 

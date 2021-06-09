@@ -9,7 +9,12 @@ import androidx.fragment.app.Fragment;
 
 import hcmute.edu.vn.id18110304.R;
 
-
+/**
+ * ProfileFragment
+ *
+ * @author  Khanh Lam
+ * @version 1.0
+ */
 public class ProfileFragment extends Fragment {
 
    public static final String TAG = ProfileFragment.class.getName();

@@ -4,8 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
-public class GenericResponse<T> {
-   public static final String TAG = GenericResponse.class.getSimpleName();
+public abstract class GenericResponse<T> {
 
    @JsonProperty("success")
    boolean success;

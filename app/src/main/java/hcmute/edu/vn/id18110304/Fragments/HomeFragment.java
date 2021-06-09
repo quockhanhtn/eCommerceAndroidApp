@@ -29,7 +29,12 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
+/**
+ * HomeFragment
+ *
+ * @author  Khanh Lam
+ * @version 1.0
+ */
 public class HomeFragment extends Fragment {
 
    public static final String TAG = HomeFragment.class.getSimpleName();

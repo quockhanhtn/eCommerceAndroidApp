@@ -7,6 +7,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import hcmute.edu.vn.id18110304.Interfaces.IGenericActivity;
 import hcmute.edu.vn.id18110304.R;
 
+/**
+ * LoginActivity
+ *
+ * @author Khanh Lam
+ * @version 1.0
+ */
 public class LoginActivity extends AppCompatActivity implements IGenericActivity {
 
    @Override
@@ -21,6 +27,5 @@ public class LoginActivity extends AppCompatActivity implements IGenericActivity
 
    @Override
    public void setViewListeners() {
-
    }
 }

@@ -18,6 +18,12 @@ import hcmute.edu.vn.id18110304.R;
 import hcmute.edu.vn.id18110304.Utils.DialogUtils;
 import hcmute.edu.vn.id18110304.databinding.ActivityVerifyOtpBinding;
 
+/**
+ * VerifyOtpActivity
+ *
+ * @author Khanh Lam
+ * @version 1.0
+ */
 public class VerifyOtpActivity extends AppCompatActivity implements IGenericActivity {
 
    public static final String TAG = VerifyOtpActivity.class.getSimpleName();

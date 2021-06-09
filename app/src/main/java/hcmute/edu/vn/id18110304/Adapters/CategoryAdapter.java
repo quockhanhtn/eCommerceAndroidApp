@@ -18,8 +18,14 @@ import java.util.List;
 import hcmute.edu.vn.id18110304.Communications.Domains.CategoryDomain;
 import hcmute.edu.vn.id18110304.R;
 
-public class CategoryAdapter extends GenericAdapter<CategoryAdapter.CategoryItemViewHolder, CategoryDomain> {
-
+/**
+ * CategoryAdapter
+ *
+ * @author Khanh Lam
+ * @version 1.0
+ */
+public class CategoryAdapter
+      extends GenericAdapter<CategoryAdapter.CategoryItemViewHolder, CategoryDomain> {
 
    public CategoryAdapter(Context c, List<CategoryDomain> list) {
       super(c, list);
