@@ -3,6 +3,8 @@ package hcmute.edu.vn.id18110304.Communications.Domains;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.List;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CategoryDomain extends GenericDomain<Integer> {
    @JsonProperty("name")
@@ -16,6 +18,9 @@ public class CategoryDomain extends GenericDomain<Integer> {
 
    @JsonProperty("image")
    String image;
+
+   @JsonProperty("children")
+   List<CategoryDomain> children;
 
    public String getName() {
       return name;

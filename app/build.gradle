@@ -118,4 +118,8 @@ dependencies {
    // Lottie
    // https://github.com/airbnb/lottie-android
    implementation 'com.airbnb.android:lottie:3.7.0'
+
+   // Material Search Bar
+   // https://github.com/mancj/MaterialSearchBar
+   implementation 'com.github.mancj:MaterialSearchBar:0.8.5'
 }

@@ -6,69 +6,66 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.HomeFragment">
 
-  <androidx.core.widget.NestedScrollView
+  <androidx.coordinatorlayout.widget.CoordinatorLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-      <androidx.constraintlayout.widget.ConstraintLayout
-          android:id="@+id/layout_searchbar"
-          android:background="@color/colorPrimary"
+      <androidx.appcompat.widget.Toolbar
           android:layout_width="match_parent"
-          android:padding="10dp"
           android:layout_height="wrap_content"
-          android:orientation="vertical"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="parent">
+          android:minHeight="?attr/actionBarSize"
+          app:theme="@style/ThemeOverlay.AppCompat.Light"
+          app:layout_scrollFlags="scroll|enterAlways|snap">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:layout_marginHorizontal="90dp"
+            android:src="@drawable/ic_quockhanh"
+            app:layout_collapseMode="parallax" />
 
-        <EditText
-            android:id="@+id/edittext_search"
-            android:layout_width="fill_parent"
-            android:layout_height="40dp"
-            android:drawableStart="@drawable/ic_magnifier"
-            android:drawableTint="@color/colorPrimary"
-            android:drawablePadding="10dp"
-            android:layout_marginEnd="50dp"
-            android:textSize="15sp"
-            android:paddingStart="10dp"
-            android:textColor="#3A3A38"
-            android:hint="@string/txt_search_product_categories"
-            android:background="@drawable/bg_round_edittext"
-            tools:ignore="RtlSymmetry,UnusedAttribute"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/button_carts"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+      </androidx.appcompat.widget.Toolbar>
 
-        <ImageButton
-            android:id="@+id/button_carts"
-            android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:padding="5dp"
-            android:src="@drawable/ic_cart"
-            android:scaleType="centerCrop"
-            android:background="@android:color/transparent"
-            android:clickable="true"
-            android:focusable="true"
-            android:contentDescription="@string/app_name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:tint="@color/colorWhite" />
+      <LinearLayout
+          android:layout_width="fill_parent"
+          android:layout_height="?attr/actionBarSize"
+          android:orientation="horizontal">
 
-      </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.mancj.materialsearchbar.MaterialSearchBar
+            android:id="@+id/searchBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            style="@style/MaterialSearchBarLight"
+            android:background="@drawable/bg_edittext_round"
+            app:mt_speechMode="false"
+            app:mt_hint="@string/txt_search_product_categories"
+            app:mt_maxSuggestionsCount="10"
+            app:mt_placeholder="@string/txt_search_product_categories"
+            app:mt_placeholderColor="@color/colorTextSecondary"
+            app:mt_roundedSearchBarEnabled="true"
+            app:mt_navIconEnabled="true"/>
+      </LinearLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorLight"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
       <LinearLayout
           android:layout_width="match_parent"
-          android:layout_height="fill_parent"
+          android:layout_height="wrap_content"
           android:orientation="vertical"
-          android:paddingHorizontal="10dp"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@id/layout_searchbar">
+          android:paddingHorizontal="10dp">
 
         <!--region Categories-->
         <androidx.cardview.widget.CardView
@@ -112,7 +109,7 @@
                 android:layout_marginVertical="10dp"
                 app:lottie_rawRes="@raw/dotted_loader"
                 app:lottie_autoPlay="true"
-                app:lottie_loop="true"/>
+                app:lottie_loop="true" />
           </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -159,7 +156,54 @@
                 android:layout_marginVertical="10dp"
                 app:lottie_rawRes="@raw/dotted_loader"
                 app:lottie_autoPlay="true"
-                app:lottie_loop="true"/>
+                app:lottie_loop="true" />
+          </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+        <!--endregion-->
+
+        <!--region Product-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp">
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginVertical="10dp"
+                android:text="@string/txt_products"
+                android:textColor="@color/colorTextPrimary"
+                android:textAllCaps="true"
+                android:textStyle="bold" />
+
+            <View style="@style/ViewDivider" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_product"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottie_loading_products"
+                android:layout_width="175dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="centerCrop"
+                android:layout_marginVertical="10dp"
+                app:lottie_rawRes="@raw/dotted_loader"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true" />
           </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -167,7 +211,7 @@
 
       </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+  </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-  </androidx.core.widget.NestedScrollView>
 </FrameLayout>

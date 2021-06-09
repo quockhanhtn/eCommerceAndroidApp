@@ -102,7 +102,7 @@ public class HomeFragment extends Fragment {
 
          @Override
          public void onFailure(@NotNull Call<CategoryResponse> call, @NotNull Throwable t) {
-            Log.e(TAG, "Network Error");
+            Log.e(TAG, "Call api error, message: " + t.getMessage());
          }
       });
 
@@ -124,7 +124,7 @@ public class HomeFragment extends Fragment {
 
          @Override
          public void onFailure(@NotNull Call<BrandResponse> call, @NotNull Throwable t) {
-            Log.e(TAG, "Network Error");
+            Log.e(TAG, "Call api error, message: " + t.getMessage());
          }
       });
    }
