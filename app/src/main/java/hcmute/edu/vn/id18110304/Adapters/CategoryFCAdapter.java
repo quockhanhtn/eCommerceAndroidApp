@@ -1,5 +1,6 @@
 package hcmute.edu.vn.id18110304.Adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import hcmute.edu.vn.id18110304.Communications.Domains.CategoryDomain;
+import hcmute.edu.vn.id18110304.R;
 import hcmute.edu.vn.id18110304.Utils.LayoutManagerUtils;
 import hcmute.edu.vn.id18110304.databinding.ItemCategoryFoldingcellBinding;
 
@@ -38,7 +40,7 @@ public class CategoryFCAdapter extends GenericAdapter<CategoryFCAdapter.Category
    public class CategoryItemFCViewHolder
          extends GenericViewHolder<ItemCategoryFoldingcellBinding, CategoryDomain> {
 
-      private CategorySubAdapter adapter;
+      private final CategorySubAdapter adapter;
 
       public CategoryItemFCViewHolder(ItemCategoryFoldingcellBinding binding) {
          super(binding);
@@ -49,6 +51,7 @@ public class CategoryFCAdapter extends GenericAdapter<CategoryFCAdapter.Category
          bd.rvSubcategory.setAdapter(adapter);
       }
 
+      @SuppressLint("SetTextI18n")
       @Override
       public void updateView(CategoryDomain category) {
          bd.foldingCell.setOnClickListener(v -> bd.foldingCell.toggle(false));
@@ -57,20 +60,19 @@ public class CategoryFCAdapter extends GenericAdapter<CategoryFCAdapter.Category
          bd.tvCategoryNameHide.setText(category.getName());
 
          if (category.getChildren() != null) {
-            bd.tvCategoryDesc.setText(String.valueOf(category.getChildren().size()));
+            bd.tvCategoryDesc.setText(category.getChildren().size() + " " + getResourceString(R.string.txt_sub_categories));
             bd.tvCategoryDescHide.setText(String.valueOf(category.getChildren().size()));
 
             adapter.setListItems(category.getChildren());
-         }
 
-         if (category.getChildren().size() > 0) {
-            bd.lottieLoadingSub.setVisibility(View.GONE);
-         }
+            if (category.getChildren().size() > 0) {
+               bd.lottieLoadingSub.setVisibility(View.GONE);
+            }
 
-         if (category.getChildren().size() < 2) {
-            bd.rvSubcategory.setMinimumHeight(160);
+            if (category.getChildren().size() < 2) {
+               bd.rvSubcategory.setMinimumHeight(160);
+            }
          }
-
 
          bd.ivCategoryImage.setVisibility(View.GONE);
          bd.lottieLoading.setVisibility(View.VISIBLE);

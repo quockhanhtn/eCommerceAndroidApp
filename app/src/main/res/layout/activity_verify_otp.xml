@@ -26,7 +26,7 @@
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_marginTop="80dp"
-        app:lottie_rawRes="@raw/otp_mobile_notification"
+        app:lottie_rawRes="@raw/lottie_otp_mobile"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"/>
 

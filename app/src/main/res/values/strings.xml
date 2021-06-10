@@ -30,10 +30,12 @@
   <string name="txt_bill_desc">View recent bill</string>
   <string name="txt_profile">Profile</string>
   <string name="txt_profile_desc">View your profile</string>
+  <!--#endregion-->
+
   <string name="txt_ok">OK</string>
   <string name="txt_no">NO</string>
   <string name="txt_yes">YES</string>
-  <string name="txt_search_product_categories">Search product, categories</string>
+
   <string name="txt_get_otp">Get OTP</string>
   <string name="txt_enter_the_otp_sent_to_your_phone">Enter the OTP sent to your phone</string>
   <string name="txt_didn_t_receive_the_otp">Didn\'t receive the OTP ?</string>
@@ -41,16 +43,19 @@
   <string name="txt_verify">Verify</string>
   <string name="txt_invalid_otp">Invalid OTP</string>
   <string name="txt_please_enter_valid_otp_sent_to_your_phone">Please enter valid OTP sent your phone</string>
-  <string name="txt_categories">Categories</string>
+
   <string name="txt_welcome">Welcome,</string>
   <string name="txt_sign_in_to_continue">Sign in to continue !</string>
   <string name="txt_google" translatable="false">Google</string>
   <string name="txt_facebook" translatable="false">Facebook</string>
   <string name="txt_or_login_with">or login with</string>
   <string name="txt_i_m_a_new_user">I\'m a new user,</string>
-  <string name="txt_username">\@username</string>
+  <string name="txt_username" translatable="false">\@username</string>
+
+  <string name="txt_search_product_categories">Search product, categories</string>
+  <string name="txt_categories">Categories</string>
+  <string name="txt_sub_categories">Sub categories</string>
   <string name="txt_brands">Brands</string>
   <string name="txt_products">Products</string>
-  <!--#endregion-->
 
 </resources>

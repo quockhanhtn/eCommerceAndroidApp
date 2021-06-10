@@ -20,4 +20,11 @@ public abstract class GenericViewHolder<BindingObjectType extends ViewBinding, D
    }
 
    public abstract void updateView(DataType dataType);
+
+   public String getResourceString(int id) {
+      if (bd == null || bd.getRoot().getResources() == null) {
+         return "";
+      }
+      return bd.getRoot().getResources().getString(id);
+   }
 }

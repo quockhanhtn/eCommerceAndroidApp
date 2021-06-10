@@ -24,7 +24,7 @@
       android:layout_height="100dp"
       android:layout_gravity="center_horizontal"
       android:scaleType="centerCrop"
-      app:lottie_rawRes="@raw/loading"
+      app:lottie_rawRes="@raw/lottie_loading"
       app:lottie_autoPlay="true"
       app:lottie_loop="true" />
 
@@ -35,7 +35,7 @@
       android:layout_gravity="center_horizontal"
       android:scaleType="centerCrop"
       android:visibility="gone"
-      app:lottie_rawRes="@raw/no_data"
+      app:lottie_rawRes="@raw/lottie_no_data"
       app:lottie_autoPlay="true"
       app:lottie_loop="true" />
 

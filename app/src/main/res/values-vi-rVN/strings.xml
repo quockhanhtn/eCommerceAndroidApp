@@ -42,4 +42,7 @@
   <string name="txt_i_m_a_new_user">Chưa có tài khoản,</string>
   <string name="txt_sign_in_to_continue">Đăng nhập để tiếp tục</string>
   <string name="txt_welcome">Xin chào,</string>
+  <string name="txt_sub_categories">Chuyên mục con</string>
+  <string name="txt_brands">Thương hiệu</string>
+  <string name="txt_products">Sản phẩm</string>
 </resources>
