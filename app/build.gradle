@@ -76,10 +76,6 @@ dependencies {
    implementation "androidx.navigation:navigation-fragment:$nav_version"
    implementation "androidx.navigation:navigation-ui:$nav_version"
 
-   // Coordinator Layout
-   // https://developer.android.com/jetpack/androidx/releases/coordinatorlayout
-   implementation "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
-
    // Recycler View
    // https://developer.android.com/jetpack/androidx/releases/recyclerview
    implementation "androidx.recyclerview:recyclerview:1.2.1"

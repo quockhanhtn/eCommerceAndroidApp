@@ -3,10 +3,7 @@ package hcmute.edu.vn.id18110304.Adapters;
 import android.content.Context;
 import android.view.ViewGroup;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +14,7 @@ import java.util.List;
  * @author Khanh Lam
  * @version 1.0
  */
-public abstract class GenericAdapter<ViewHolderType extends RecyclerView.ViewHolder, DataItemType>
+public abstract class GenericAdapter<ViewHolderType extends GenericViewHolder, DataItemType>
       extends RecyclerView.Adapter<ViewHolderType> {
 
    List<DataItemType> listItems;
@@ -45,9 +42,15 @@ public abstract class GenericAdapter<ViewHolderType extends RecyclerView.ViewHol
       this.context = context;
    }
 
-   public abstract @NotNull ViewHolderType onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType);
+   public abstract ViewHolderType onCreateViewHolder(ViewGroup parent, int viewType);
 
-   public abstract void onBindViewHolder(@NonNull @NotNull ViewHolderType holder, int position);
+   @Override
+   public void onBindViewHolder(ViewHolderType holder, int position) {
+      DataItemType item = listItems.get(position);
+      if (item != null) {
+         holder.updateView(item);
+      }
+   }
 
    @Override
    public int getItemCount() {

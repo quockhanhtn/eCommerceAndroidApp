@@ -10,7 +10,7 @@
     android:focusable="true">
 
   <com.makeramen.roundedimageview.RoundedImageView
-      android:id="@+id/item_category_fd_imageview"
+      android:id="@+id/iv_category_image"
       android:layout_width="100dp"
       android:layout_height="100dp"
       android:scaleType="centerCrop"
@@ -19,7 +19,7 @@
       app:riv_corner_radius="6dp" />
 
   <com.airbnb.lottie.LottieAnimationView
-      android:id="@+id/item_category_loading"
+      android:id="@+id/lottie_loading"
       android:layout_width="100dp"
       android:layout_height="100dp"
       android:layout_gravity="center_horizontal"
@@ -29,7 +29,7 @@
       app:lottie_loop="true" />
 
   <com.airbnb.lottie.LottieAnimationView
-      android:id="@+id/item_category_error"
+      android:id="@+id/lottie_error"
       android:layout_width="100dp"
       android:layout_height="100dp"
       android:layout_gravity="center_horizontal"
@@ -40,7 +40,7 @@
       app:lottie_loop="true" />
 
   <TextView
-      android:id="@+id/item_category_fd_textview_name"
+      android:id="@+id/tv_category_name"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginStart="6dp"

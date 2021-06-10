@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.ramotion.foldingcell.FoldingCell xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/item_category_fd_folding_cell"
+    android:id="@+id/folding_cell"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:clipChildren="false"
     android:clipToPadding="false">
 
   <FrameLayout
-      android:id="@+id/item_category_fd_cell_content_view"
+      android:id="@+id/cell_content_view"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:visibility="gone">
@@ -34,7 +34,7 @@
             android:orientation="horizontal">
 
           <TextView
-              android:id="@+id/item_category_fd_textview_name_hide"
+              android:id="@+id/tv_category_name_hide"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_marginStart="20dp"
@@ -45,7 +45,7 @@
               android:textStyle="bold" />
 
           <TextView
-              android:id="@+id/item_category_fd_textview_desc_hide"
+              android:id="@+id/tv_category_desc_hide"
               android:layout_width="fill_parent"
               android:layout_height="wrap_content"
               android:layout_gravity="center_vertical|end"
@@ -61,7 +61,7 @@
         <View style="@style/ViewDivider" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/item_category_fd_recyclerview_subcategory"
+            android:id="@+id/rv_subcategory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="8dp"
@@ -69,7 +69,7 @@
             android:layout_marginBottom="16dp"/>
 
         <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/item_category_fd_lottie_loading"
+            android:id="@+id/lottie_loading_sub"
             android:layout_width="175dp"
             android:layout_height="180dp"
             android:layout_gravity="center_horizontal"
@@ -103,7 +103,7 @@
           android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/item_category_fd_imageview"
+            android:id="@+id/iv_category_image"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:src="@drawable/ic_wallet"
@@ -112,7 +112,7 @@
             android:contentDescription="@string/app_name" />
 
         <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/item_category_fd_loading"
+            android:id="@+id/lottie_loading"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:scaleType="centerCrop"
@@ -121,11 +121,10 @@
             app:lottie_loop="true" />
 
         <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/item_category_fd_error"
+            android:id="@+id/lottie_error"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:scaleType="centerCrop"
-            android:visibility="gone"
             app:lottie_rawRes="@raw/no_data"
             app:lottie_autoPlay="true"
             app:lottie_loop="true" />
@@ -138,7 +137,7 @@
             android:layout_marginStart="15dp">
 
           <TextView
-              android:id="@+id/item_category_fd_textview_name"
+              android:id="@+id/tv_category_name"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:text="..."
@@ -147,7 +146,7 @@
               android:textColor="@color/colorTextPrimary" />
 
           <TextView
-              android:id="@+id/item_category_fd_textview_desc"
+              android:id="@+id/tv_category_desc"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:layout_marginTop="3dp"
