@@ -92,7 +92,7 @@
         android:layout_height="25dp"
         android:layout_marginStart="10dp"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/round_favorite_24"
+        android:src="@drawable/ic_saved"
         app:tint="@color/colorAccent" />
 
     <TextView
@@ -120,7 +120,7 @@
         android:layout_height="25dp"
         android:layout_marginStart="10dp"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/round_shopping_cart_24"
+        android:src="@drawable/ic_cart"
         app:tint="@color/colorDarkCyan" />
 
     <TextView

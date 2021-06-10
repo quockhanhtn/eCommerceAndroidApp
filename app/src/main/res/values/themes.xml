@@ -18,7 +18,7 @@
   </style>
 
   <style name="SplashScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
-    <item name="android:windowBackground">@drawable/splash_screen_background</item>
+    <item name="android:windowBackground">@drawable/ll_splash_screen_background</item>
   </style>
 
   <style name="FullScreen" parent="Theme.AppCompat.Light.NoActionBar">

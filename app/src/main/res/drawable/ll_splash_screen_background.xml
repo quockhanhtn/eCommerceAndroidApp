@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<layer-list xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
   <item
       android:left="0dp"
       android:right="0dp"
@@ -8,19 +9,22 @@
       android:height="2220px"
       android:width="1080px"
       android:gravity="fill_horizontal|fill_vertical"
-      android:drawable="@android:color/white" />
+      android:drawable="@android:color/white"
+      tools:ignore="UnusedAttribute" />
 
   <item
       android:width="700px"
       android:height="800.7166716px"
       android:gravity="center"
-      android:drawable="@drawable/ic_app_logo_with_text" />
+      android:drawable="@drawable/ic_app_logo_with_text"
+      tools:ignore="UnusedAttribute" />
 
   <item
       android:width="500px"
       android:height="104.1120784px"
       android:bottom="200px"
       android:gravity="bottom|center"
-      android:drawable="@drawable/ic_from_quockhanh" />
+      android:drawable="@drawable/ic_from_quockhanh"
+      tools:ignore="UnusedAttribute" />
 
 </layer-list>

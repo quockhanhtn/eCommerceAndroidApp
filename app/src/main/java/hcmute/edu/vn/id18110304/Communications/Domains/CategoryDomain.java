@@ -53,4 +53,12 @@ public class CategoryDomain extends GenericDomain<Integer> {
    public void setImage(String image) {
       this.image = image;
    }
+
+   public List<CategoryDomain> getChildren() {
+      return children;
+   }
+
+   public void setChildren(List<CategoryDomain> children) {
+      this.children = children;
+   }
 }

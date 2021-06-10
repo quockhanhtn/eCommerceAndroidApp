@@ -10,15 +10,37 @@
     android:focusable="true">
 
   <com.makeramen.roundedimageview.RoundedImageView
-      android:id="@+id/imageview_category_item_image"
+      android:id="@+id/item_category_fd_imageview"
       android:layout_width="100dp"
       android:layout_height="100dp"
       android:scaleType="centerCrop"
       android:src="@drawable/example_product_0"
+      android:visibility="gone"
       app:riv_corner_radius="6dp" />
 
+  <com.airbnb.lottie.LottieAnimationView
+      android:id="@+id/item_category_loading"
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      android:layout_gravity="center_horizontal"
+      android:scaleType="centerCrop"
+      app:lottie_rawRes="@raw/loading"
+      app:lottie_autoPlay="true"
+      app:lottie_loop="true" />
+
+  <com.airbnb.lottie.LottieAnimationView
+      android:id="@+id/item_category_error"
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      android:layout_gravity="center_horizontal"
+      android:scaleType="centerCrop"
+      android:visibility="gone"
+      app:lottie_rawRes="@raw/no_data"
+      app:lottie_autoPlay="true"
+      app:lottie_loop="true" />
+
   <TextView
-      android:id="@+id/textview_category_item_name"
+      android:id="@+id/item_category_fd_textview_name"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginStart="6dp"
