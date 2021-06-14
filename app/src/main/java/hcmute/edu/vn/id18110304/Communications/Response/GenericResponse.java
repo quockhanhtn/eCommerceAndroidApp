@@ -4,6 +4,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
+/**
+ * GenericResponse
+ *
+ * @author  Khanh Lam
+ * @version 1.0
+ */
 public abstract class GenericResponse<T> {
 
    @JsonProperty("success")

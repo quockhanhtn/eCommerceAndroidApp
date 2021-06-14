@@ -5,7 +5,12 @@ import hcmute.edu.vn.id18110304.Communications.Response.CategoryResponse;
 import retrofit2.Call;
 import retrofit2.Callback;
 
-
+/**
+ * CategoryService
+ *
+ * @author  Khanh Lam
+ * @version 1.0
+ */
 public class CategoryService extends GenericService<ICategoryService, CategoryResponse> {
    private static CategoryService instance = null;
 

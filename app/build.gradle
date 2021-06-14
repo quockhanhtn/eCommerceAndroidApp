@@ -118,4 +118,8 @@ dependencies {
    // Material Search Bar
    // https://github.com/mancj/MaterialSearchBar
    implementation 'com.github.mancj:MaterialSearchBar:0.8.5'
+
+   // Markwon
+   // https://github.com/noties/Markwon
+   implementation 'io.noties.markwon:core:4.6.2'
 }

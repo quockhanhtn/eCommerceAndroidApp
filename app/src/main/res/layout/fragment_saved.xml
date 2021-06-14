@@ -10,6 +10,16 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/tvTestMarkDown"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:scrollbars="vertical"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/button_show_bottom_sheet"
         android:layout_width="180dp"

@@ -11,6 +11,8 @@ import androidx.fragment.app.FragmentManager;
 import java.util.Arrays;
 import java.util.List;
 
+import hcmute.edu.vn.id18110304.Communications.Response.ProductResponse;
+import hcmute.edu.vn.id18110304.Communications.WebServices.ProductService;
 import hcmute.edu.vn.id18110304.Fragments.CartFragment;
 import hcmute.edu.vn.id18110304.Fragments.CategoryFragment;
 import hcmute.edu.vn.id18110304.Fragments.HomeFragment;
@@ -20,6 +22,9 @@ import hcmute.edu.vn.id18110304.Interfaces.IGenericActivity;
 import hcmute.edu.vn.id18110304.R;
 import hcmute.edu.vn.id18110304.databinding.ActivityMainBinding;
 import np.com.susanthapa.curved_bottom_navigation.CbnMenuItem;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * MainActivity

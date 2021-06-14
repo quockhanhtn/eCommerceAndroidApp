@@ -5,6 +5,12 @@ import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
+/**
+ * GenericService
+ *
+ * @author  Khanh Lam
+ * @version 1.0
+ */
 public class GenericService<IWebServiceType, ResponseType> {
    Retrofit retrofit = null;
    IWebServiceType service;

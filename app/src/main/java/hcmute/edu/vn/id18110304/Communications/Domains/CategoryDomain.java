@@ -5,6 +5,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
+/**
+ * CategoryDomain
+ *
+ * @author  Khanh Lam
+ * @version 1.0
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CategoryDomain extends GenericDomain<Integer> {
    @JsonProperty("name")

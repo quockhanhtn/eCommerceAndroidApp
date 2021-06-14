@@ -11,7 +11,7 @@
         <option value="PROVIDE_PRIVATE_FIELD" />
       </list>
     </option>
-    <option name="fieldType" value="GSON_EXPOSE" />
+    <option name="fieldType" value="JACKSON" />
     <option name="naming">
       <list />
     </option>

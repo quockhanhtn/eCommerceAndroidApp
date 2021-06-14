@@ -57,5 +57,9 @@
   <string name="txt_sub_categories">Sub categories</string>
   <string name="txt_brands">Brands</string>
   <string name="txt_products">Products</string>
+  <string name="txt_add_to_favorite">Add to favorite</string>
+  <string name="txt_add_to_carts">Add to carts</string>
+  <string name="txt_buy_now">Buy now</string>
+  <string name="view_product">View product</string>
 
 </resources>
