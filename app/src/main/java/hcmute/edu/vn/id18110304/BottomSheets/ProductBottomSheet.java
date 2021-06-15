@@ -2,15 +2,14 @@ package hcmute.edu.vn.id18110304.BottomSheets;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.squareup.picasso.Picasso;
 
+import hcmute.edu.vn.id18110304.Communications.Domains.ProductDomain;
 import hcmute.edu.vn.id18110304.R;
+import hcmute.edu.vn.id18110304.Utils.TextViewUtils;
 import hcmute.edu.vn.id18110304.databinding.BottomSheetProductBinding;
-import hcmute.edu.vn.id18110304.databinding.FragmentHomeBinding;
 
 /**
  * ProductBottomSheet
@@ -20,7 +19,7 @@ import hcmute.edu.vn.id18110304.databinding.FragmentHomeBinding;
  */
 public class ProductBottomSheet {
 
-   public static void show(Context context) {
+   public static void show(Context context, ProductDomain product) {
       final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
             context,
             R.style.BottomSheetDialogTheme
@@ -29,6 +28,15 @@ public class ProductBottomSheet {
       BottomSheetProductBinding binding = BottomSheetProductBinding.inflate(
             LayoutInflater.from(context)
       );
+
+      binding.tvProductName.setText(product.getName());
+      binding.tvProductPrice.setText(product.getPriceFormat());
+      TextViewUtils.setHtml(binding.tvProductMarketPrice, product.getMarketPriceFormat());
+      TextViewUtils.setHtml(binding.tvProductCategory, product.getCategoryName());
+      TextViewUtils.setHtml(binding.tvProductBrand, product.getBrandName());
+
+      Picasso.get().load(product.getThumbnail()).into(binding.ivProductThumbnail);
+
 
       bottomSheetDialog.setContentView(binding.getRoot());
       bottomSheetDialog.show();

@@ -6,8 +6,7 @@
     android:layout_marginStart="5dp"
     android:layout_marginEnd="5dp"
     android:orientation="vertical"
-    android:clickable="true"
-    android:focusable="true">
+    style="@style/ViewClickable">
 
   <com.makeramen.roundedimageview.RoundedImageView
       android:id="@+id/iv_category_image"

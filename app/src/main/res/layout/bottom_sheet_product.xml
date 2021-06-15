@@ -29,17 +29,17 @@
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/iv_product_thumbnail"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_margin="10dp"
-        android:scaleType="centerCrop"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="10dp"
+        android:scaleType="centerInside"
         android:src="@drawable/example_product_0"
         app:riv_corner_radius="10dp" />
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginEnd="10dp"
+        android:layout_marginHorizontal="10dp"
         android:layout_gravity="center_vertical"
         android:orientation="vertical">
 
@@ -52,23 +52,36 @@
           android:ellipsize="end"
           android:textColor="@color/colorTextPrimary"
           android:textSize="17sp"
-          android:textStyle="bold" />
+          android:textStyle="bold"
+          app:layout_constraintEnd_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
 
       <TextView
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:text="Free delivery"
-          android:textColor="@color/colorTextSecondary"
-          android:textSize="15sp" />
-
-      <TextView
+          android:id="@+id/tv_product_price"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:text="250.000 đ"
           android:textColor="@color/colorAccent"
-          android:textSize="16sp"
-          android:textStyle="bold" />
-    </LinearLayout>
+          android:textSize="18sp"
+          android:textStyle="bold"
+          app:layout_constraintEnd_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintBottom_toTopOf="@+id/tv_product_market_price" />
+
+      <TextView
+          android:id="@+id/tv_product_market_price"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="250.000 đ"
+          android:textColor="@color/colorTextSecondary"
+          android:textSize="14sp"
+          android:textStyle="normal"
+          android:layout_marginBottom="5dp"
+          app:layout_constraintEnd_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
   </LinearLayout>
 
@@ -87,7 +100,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Product description"
+        android:text="@string/txt_product_info"
         android:textAllCaps="true"
         android:background="@color/colorWhite"
         android:gravity="center"
@@ -98,12 +111,85 @@
 
   </androidx.constraintlayout.widget.ConstraintLayout>
 
-  <TextView
+  <TableLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_marginVertical="10dp"
-      android:layout_marginHorizontal="20dp"
-      android:maxHeight="200dp" />
+      android:layout_marginVertical="15dp"
+      android:layout_marginHorizontal="15dp"
+      android:background="@color/colorPrimary">
+
+    <TableRow>
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="@string/txt_category"
+          android:textStyle="bold"
+          android:textColor="@color/colorTextSecondary"
+          android:background="#ffffff"
+          android:padding="5dp"
+          android:layout_marginVertical="1dp"
+          android:layout_marginHorizontal="1dp" />
+
+      <TextView
+          android:id="@+id/tv_product_category"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="2"
+          android:gravity="center"
+          android:background="#ffffff"
+          android:padding="5dp"
+
+          android:textStyle="normal"
+          android:textColor="@color/colorTextPrimary"
+
+          android:selectAllOnFocus="false"
+          android:linksClickable="false"
+          android:autoLink="all"
+          style="@style/ViewClickable"
+
+          android:layout_marginVertical="1dp"
+          android:layout_marginEnd="1dp" />
+    </TableRow>
+
+    <TableRow>
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="@string/txt_brand"
+          android:textStyle="bold"
+          android:textColor="@color/colorTextSecondary"
+          android:background="#ffffff"
+          android:padding="5dp"
+          android:paddingHorizontal="5dp"
+          android:layout_marginBottom="1dp"
+          android:layout_marginHorizontal="1dp" />
+
+      <TextView
+          android:id="@+id/tv_product_brand"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="2"
+          android:gravity="center"
+          android:background="#ffffff"
+          android:padding="5dp"
+
+          android:textStyle="normal"
+          android:textColor="@color/colorTextPrimary"
+
+          android:selectAllOnFocus="false"
+          android:linksClickable="false"
+          android:autoLink="all"
+          style="@style/ViewClickable"
+
+          android:layout_marginEnd="1dp"
+          android:layout_marginBottom="1dp" />
+    </TableRow>
+
+  </TableLayout>
 
   <View style="@style/ViewDivider" />
 

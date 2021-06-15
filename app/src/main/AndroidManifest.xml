@@ -13,7 +13,7 @@
       android:supportsRtl="true"
       android:theme="@style/Theme.ECommerceApp"
       android:usesCleartextTraffic="true">
-
+    <activity android:name=".Activities.ViewProductActivity"></activity>
     <!-- Splash Screen Activity -->
     <activity
         android:name=".Activities.SplashScreenActivity"

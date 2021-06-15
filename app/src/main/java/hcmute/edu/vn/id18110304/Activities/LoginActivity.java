@@ -27,6 +27,9 @@ public class LoginActivity extends AppCompatActivity implements IGenericActivity
       binding = ActivityLogInBinding.inflate(getLayoutInflater());
       View view = binding.getRoot();
       setContentView(view);
+
+      initialVariables();
+      setViewListeners();
    }
 
    @Override

@@ -3,7 +3,9 @@ package hcmute.edu.vn.id18110304.Communications.Domains;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * ProductDomain
@@ -46,6 +48,32 @@ public class ProductDomain extends GenericDomain<String> {
 
    @JsonProperty("brand")
    private BrandDomain brand;
+
+   public String getCategoryName() {
+      if (category != null) {
+         return "<u>" + getCategory().getName() + "</u>";
+      }
+      return "<u>" + "Un category" + "</u>";
+   }
+
+   public String getBrandName() {
+      if (brand != null) {
+         return "<u>" + getBrand().getName() + "</u>";
+      }
+      return "<u>" + "No brand" + "</u>";
+   }
+
+   public String getDiscountPercent() {
+      return "-" + String.valueOf(100 - (price * 100) / marketPrice) + "%";
+   }
+
+   public String getPriceFormat() {
+      return NumberFormat.getNumberInstance(Locale.GERMAN).format(price) + "₫";
+   }
+
+   public String getMarketPriceFormat() {
+      return "<del>" + NumberFormat.getNumberInstance(Locale.GERMAN).format(marketPrice) + "₫</del>";
+   }
 
    public int getProductId() {
       return productId;

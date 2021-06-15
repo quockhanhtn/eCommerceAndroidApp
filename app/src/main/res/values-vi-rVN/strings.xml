@@ -45,4 +45,11 @@
   <string name="txt_sub_categories">Chuyên mục con</string>
   <string name="txt_brands">Thương hiệu</string>
   <string name="txt_products">Sản phẩm</string>
+  <string name="txt_add_to_favorite">Thêm vào mục Yêu thích</string>
+  <string name="txt_add_to_carts">Thêm vào giỏ hàng</string>
+  <string name="txt_buy_now">Mua nhanh</string>
+  <string name="view_product">Xem sản phẩm</string>
+  <string name="txt_category">Chuyên mục</string>
+  <string name="txt_brand">Thương hiệu</string>
+  <string name="txt_product_info">Thông tin sản phẩm</string>
 </resources>

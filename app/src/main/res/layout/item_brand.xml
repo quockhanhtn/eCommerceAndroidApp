@@ -2,14 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:padding="1dp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginStart="5dp"
-    android:layout_marginEnd="5dp"
-    android:layout_marginBottom="10dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginHorizontal="2.5dp"
     android:orientation="vertical"
-    android:clickable="true"
-    android:focusable="true">
+    android:background="@drawable/bg_border_item_brand"
+    style="@style/ViewClickable">
 
   <com.makeramen.roundedimageview.RoundedImageView
       android:id="@+id/iv_brand_image"
@@ -44,8 +44,6 @@
       android:id="@+id/tv_brand_name"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_marginStart="6dp"
-      android:layout_marginTop="3dp"
       android:gravity="center"
       android:text="@string/txt_brands"
       android:lines="2"
