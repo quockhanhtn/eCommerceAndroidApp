@@ -3,16 +3,17 @@ package hcmute.edu.vn.id18110304.Communications.Domains;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * CategoryDomain
  *
- * @author  Khanh Lam
+ * @author Khanh Lam
  * @version 1.0
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CategoryDomain extends GenericDomain<Integer> {
+public class CategoryDomain extends GenericDomain<Integer> implements Serializable {
    @JsonProperty("name")
    String name;
 

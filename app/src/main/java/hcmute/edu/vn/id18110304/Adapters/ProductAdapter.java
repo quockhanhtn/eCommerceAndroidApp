@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
@@ -13,6 +14,7 @@ import java.util.List;
 
 import hcmute.edu.vn.id18110304.BottomSheets.ProductBottomSheet;
 import hcmute.edu.vn.id18110304.Communications.Domains.ProductDomain;
+import hcmute.edu.vn.id18110304.R;
 import hcmute.edu.vn.id18110304.databinding.ItemProductBinding;
 
 /**

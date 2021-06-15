@@ -3,6 +3,7 @@ package hcmute.edu.vn.id18110304.Communications.Domains;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.io.Serializable;
 import java.text.NumberFormat;
 import java.util.List;
 import java.util.Locale;
@@ -14,7 +15,7 @@ import java.util.Locale;
  * @version 1.0
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ProductDomain extends GenericDomain<String> {
+public class ProductDomain extends GenericDomain<String> implements Serializable {
 
    @JsonProperty("productId")
    private int productId;

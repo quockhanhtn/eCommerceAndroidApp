@@ -22,7 +22,7 @@ public abstract class GenericAdapter<ViewHolderType extends GenericViewHolder, D
 
    public GenericAdapter(Context c, List<DataItemType> list) {
       this.context = c;
-      this.listItems = list != null ? list : new ArrayList<>();
+      setListItems(list != null ? list : new ArrayList<>());
    }
 
    public List<DataItemType> getListItems() {

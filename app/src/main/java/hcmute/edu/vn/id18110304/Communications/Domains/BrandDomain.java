@@ -3,6 +3,8 @@ package hcmute.edu.vn.id18110304.Communications.Domains;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.io.Serializable;
+
 /**
  * BrandDomain
  *
@@ -10,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * @version 1.0
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class BrandDomain extends GenericDomain<String> {
+public class BrandDomain extends GenericDomain<String> implements Serializable {
    @JsonProperty("brandId")
    Integer brandId;
 

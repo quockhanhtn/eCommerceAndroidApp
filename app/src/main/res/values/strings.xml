@@ -64,5 +64,7 @@
   <string name="txt_category">Category</string>
   <string name="txt_brand">Brand</string>
   <string name="txt_product_info">Product info</string>
+  <string name="txt_product_options">product options</string>
+  <string name="txt_view_more">View more</string>
 
 </resources>

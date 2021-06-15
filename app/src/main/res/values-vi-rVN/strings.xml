@@ -52,4 +52,6 @@
   <string name="txt_category">Chuyên mục</string>
   <string name="txt_brand">Thương hiệu</string>
   <string name="txt_product_info">Thông tin sản phẩm</string>
+  <string name="txt_product_options">Tùy chọn</string>
+  <string name="txt_view_more">Xem thêm</string>
 </resources>
