@@ -62,13 +62,13 @@ public class CartFragment extends Fragment {
       return binding.getRoot();
    }
 
-   public void addToCart(ProductDomain product, String productType, int quantity) {
+   public int addToCart(ProductDomain product, String productType, int quantity) {
 
       for (int i = 0; i < listCarts.size(); i++) {
          if (listCarts.get(i).getProduct().getProductId() == product.getProductId()
                && listCarts.get(i).getProductType().equals(productType)) {
             listCarts.get(i).setQuantity(listCarts.get(i).getQuantity() + 1);
-            return;
+            return listCarts.size();
          }
       }
 
@@ -85,6 +85,7 @@ public class CartFragment extends Fragment {
       newCart.setQuantity(quantity);
 
       listCarts.add(newCart);
+      return listCarts.size();
    }
 
    public void updateView() {
