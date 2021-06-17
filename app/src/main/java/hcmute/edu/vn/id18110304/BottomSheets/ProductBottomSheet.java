@@ -1,6 +1,6 @@
 package hcmute.edu.vn.id18110304.BottomSheets;
 
-import android.app.ActionBar;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +24,15 @@ import hcmute.edu.vn.id18110304.databinding.BottomSheetProductBinding;
  */
 public class ProductBottomSheet {
 
-   public static void show(Context context, ProductDomain product) {
+   public interface IProductBottomSheetListener {
+      void addToFavorite(ProductDomain product, String productType, int quantity);
+
+      void addToCart(ProductDomain product, String productType, int quantity);
+
+      void buyNow(ProductDomain product, String productType, int quantity);
+   }
+
+   public static void show(Context context, ProductDomain product, IProductBottomSheetListener listener) {
       final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
             context,
             R.style.BottomSheetDialogTheme
@@ -41,8 +49,10 @@ public class ProductBottomSheet {
       TextViewUtils.setHtml(binding.tvProductMarketPrice, product.getMarketPriceFormat());
       TextViewUtils.setHtml(binding.tvProductCategory, product.getCategoryName());
       TextViewUtils.setHtml(binding.tvProductBrand, product.getBrandName());
+      binding.tvProductDiscountPercent.setText(product.getDiscountPercent());
 
-      if (product.getProductTypes() != null && product.getProductTypes().size() > 0) {
+      boolean hasProductType = product.getProductTypes() != null && product.getProductTypes().size() > 0;
+      if (hasProductType) {
          binding.layoutProductOption.setVisibility(View.VISIBLE);
 
          LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
@@ -58,11 +68,26 @@ public class ProductBottomSheet {
             radioButton.setText(product.getProductTypes().get(i));
             radioButton.setId(i + 100);
             radioButton.setLayoutParams(layoutParams);
+            radioButton.setChecked(i == 0);
             binding.radioGroup.addView(radioButton);
          }
       } else {
          binding.layoutProductOption.setVisibility(View.GONE);
       }
+
+      binding.layoutBtnAddToCarts.setOnClickListener(v -> {
+         if (hasProductType) {
+            @SuppressLint("ResourceType") int typeIndex = binding.radioGroup.getCheckedRadioButtonId() - 100;
+            listener.addToCart(
+                  product,
+                  product.getProductTypes().get(typeIndex),
+                  1
+            );
+         } else {
+            listener.addToCart(product, null, 1);
+         }
+         bottomSheetDialog.dismiss();
+      });
 
       bottomSheetDialog.setContentView(binding.getRoot());
       bottomSheetDialog.show();

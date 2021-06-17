@@ -4,9 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
-import java.text.NumberFormat;
 import java.util.List;
-import java.util.Locale;
+
+import hcmute.edu.vn.id18110304.Utils.FormatUtils;
 
 /**
  * ProductDomain
@@ -30,10 +30,10 @@ public class ProductDomain extends GenericDomain<String> implements Serializable
    private String description;
 
    @JsonProperty("marketPrice")
-   private int marketPrice;
+   private long marketPrice;
 
    @JsonProperty("price")
-   private int price;
+   private long price;
 
    @JsonProperty("productTypes")
    private List<String> productTypes;
@@ -69,11 +69,11 @@ public class ProductDomain extends GenericDomain<String> implements Serializable
    }
 
    public String getPriceFormat() {
-      return NumberFormat.getNumberInstance(Locale.GERMAN).format(price) + "₫";
+      return FormatUtils.formatPrice(price);
    }
 
    public String getMarketPriceFormat() {
-      return "<del>" + NumberFormat.getNumberInstance(Locale.GERMAN).format(marketPrice) + "₫</del>";
+      return FormatUtils.formatPriceWithTag(marketPrice, "del");
    }
 
    public int getProductId() {
@@ -108,19 +108,19 @@ public class ProductDomain extends GenericDomain<String> implements Serializable
       this.description = description;
    }
 
-   public int getMarketPrice() {
+   public long getMarketPrice() {
       return marketPrice;
    }
 
-   public void setMarketPrice(int marketPrice) {
+   public void setMarketPrice(long marketPrice) {
       this.marketPrice = marketPrice;
    }
 
-   public int getPrice() {
+   public long getPrice() {
       return price;
    }
 
-   public void setPrice(int price) {
+   public void setPrice(long price) {
       this.price = price;
    }
 

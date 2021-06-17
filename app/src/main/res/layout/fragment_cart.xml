@@ -37,6 +37,15 @@
           android:layout_height="?attr/actionBarSize"
           android:orientation="horizontal">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/txt_cart"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="@color/colorWhite" />
       </LinearLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -46,7 +55,133 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_loading"
+            android:layout_marginTop="75dp"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:visibility="gone"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            app:lottie_rawRes="@raw/lottie_loading"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true" />
+
+        <LinearLayout
+            android:id="@+id/layout_empty_cart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+          <com.airbnb.lottie.LottieAnimationView
+              android:layout_marginTop="75dp"
+              android:layout_width="250dp"
+              android:layout_height="250dp"
+              android:layout_gravity="center"
+              android:scaleType="centerCrop"
+              app:lottie_rawRes="@raw/lottie_empty_box"
+              app:lottie_autoPlay="true"
+              app:lottie_loop="true" />
+
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:textAlignment="center"
+              android:text="@string/txt_your_cart_is_empty"
+              android:textSize="18sp"
+              android:textColor="@color/colorTextSecondary"
+              android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="10dp"
+            android:id="@+id/recyclerview_cart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="80dp" />
+
+      </LinearLayout>
+
+
     </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_check_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_gravity="bottom">
+
+      <View
+          android:id="@+id/view_divider"
+          style="@style/ViewDivider"
+          android:layout_marginTop="-5dp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <LinearLayout
+          android:id="@+id/layout_price"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_total"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="16sp"
+            android:layout_marginStart="10dp" />
+
+        <TextView
+            android:id="@+id/tv_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="200.250.000 đ"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorTextPrimary" />
+      </LinearLayout>
+
+      <TextView
+          android:id="@+id/tv_total_origin"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="200.250.000 đ"
+          android:textSize="14sp"
+          android:textStyle="normal"
+          android:layout_marginTop="0dp"
+          android:textColor="@color/colorTextSecondary"
+          app:layout_constraintEnd_toEndOf="@id/layout_price"
+          app:layout_constraintTop_toBottomOf="@id/layout_price"
+          app:layout_constraintBottom_toBottomOf="parent" />
+
+      <Button
+          android:id="@+id/btn_check_out"
+          android:layout_width="wrap_content"
+          android:layout_height="40dp"
+          android:background="@drawable/bg_button_round"
+          android:text="@string/txt_check_out"
+          android:textColor="@color/colorWhite"
+          android:textSize="15sp"
+          android:layout_marginVertical="5dp"
+          android:layout_marginEnd="10dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
   </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

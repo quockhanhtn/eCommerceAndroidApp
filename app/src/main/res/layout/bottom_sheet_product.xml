@@ -61,7 +61,7 @@
           android:id="@+id/tv_product_price"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:text="250.000 đ"
+          android:text="200.250.000 đ"
           android:textColor="@color/colorAccent"
           android:textSize="18sp"
           android:textStyle="bold"
@@ -73,7 +73,7 @@
           android:id="@+id/tv_product_market_price"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:text="250.000 đ"
+          android:text="000.250.000 đ"
           android:textColor="@color/colorTextSecondary"
           android:textSize="14sp"
           android:textStyle="normal"
@@ -81,6 +81,40 @@
           app:layout_constraintEnd_toStartOf="parent"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintBottom_toBottomOf="parent" />
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="50dp"
+          android:layout_height="0dp"
+          android:layout_marginBottom="5dp"
+          app:cardMaxElevation="0dp"
+          app:cardCornerRadius="10dp"
+          app:cardElevation="10dp"
+          app:cardPreventCornerOverlap="false"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="@+id/tv_product_price"
+          app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_gradient_red">
+
+          <TextView
+              android:id="@+id/tv_product_discount_percent"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:textColor="@color/colorWhite"
+              android:textAlignment="center"
+              android:text="-12%"
+              android:textSize="14sp"
+              android:textStyle="bold"/>
+
+        </LinearLayout>
+
+
+      </androidx.cardview.widget.CardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
   </LinearLayout>

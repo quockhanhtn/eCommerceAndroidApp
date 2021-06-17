@@ -11,8 +11,7 @@ import androidx.fragment.app.FragmentManager;
 import java.util.Arrays;
 import java.util.List;
 
-import hcmute.edu.vn.id18110304.Communications.Response.ProductResponse;
-import hcmute.edu.vn.id18110304.Communications.WebServices.ProductService;
+import hcmute.edu.vn.id18110304.Communications.Domains.ProductDomain;
 import hcmute.edu.vn.id18110304.Fragments.CartFragment;
 import hcmute.edu.vn.id18110304.Fragments.CategoryFragment;
 import hcmute.edu.vn.id18110304.Fragments.HomeFragment;
@@ -22,9 +21,6 @@ import hcmute.edu.vn.id18110304.Interfaces.IGenericActivity;
 import hcmute.edu.vn.id18110304.R;
 import hcmute.edu.vn.id18110304.databinding.ActivityMainBinding;
 import np.com.susanthapa.curved_bottom_navigation.CbnMenuItem;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 /**
  * MainActivity
@@ -32,7 +28,8 @@ import retrofit2.Response;
  * @author Khanh Lam
  * @version 1.0
  */
-public class MainActivity extends AppCompatActivity implements IGenericActivity {
+public class MainActivity extends AppCompatActivity
+      implements IGenericActivity, HomeFragment.IAddCartListener {
 
    public static final String TAG = MainActivity.class.getSimpleName();
    private ActivityMainBinding binding;
@@ -99,11 +96,20 @@ public class MainActivity extends AppCompatActivity implements IGenericActivity 
          int previous = selectedFragmentIndex;
          selectedFragmentIndex = integer;
 
+         if (listFragments.get(selectedFragmentIndex) instanceof CartFragment) {
+            ((CartFragment) listFragments.get(selectedFragmentIndex)).updateView();
+         }
+
          fm.beginTransaction().hide(listFragments.get(previous))
                .show(listFragments.get(selectedFragmentIndex))
                .commit();
 
          return null;
       });
+   }
+
+   @Override
+   public void addToCart(ProductDomain product, String productType, int quantity) {
+      ((CartFragment) listFragments.get(3)).addToCart(product, productType, quantity);
    }
 }

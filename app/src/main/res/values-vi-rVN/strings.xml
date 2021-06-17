@@ -54,4 +54,8 @@
   <string name="txt_product_info">Thông tin sản phẩm</string>
   <string name="txt_product_options">Tùy chọn</string>
   <string name="txt_view_more">Xem thêm</string>
+  <string name="txt_delete">Xóa</string>
+  <string name="txt_total">Tổng</string>
+  <string name="txt_check_out">Thanh toán</string>
+  <string name="txt_your_cart_is_empty">Giỏ hàng trống</string>
 </resources>

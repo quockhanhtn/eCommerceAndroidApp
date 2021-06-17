@@ -1,5 +1,6 @@
 package hcmute.edu.vn.id18110304.Fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -36,10 +37,16 @@ import retrofit2.Response;
 /**
  * HomeFragment
  *
- * @author  Khanh Lam
+ * @author Khanh Lam
  * @version 1.0
  */
 public class HomeFragment extends Fragment {
+
+   public interface IAddCartListener {
+      void addToCart(ProductDomain product, String productType, int quantity);
+   }
+
+   private IAddCartListener iAddCartListener;
 
    public static final String TAG = HomeFragment.class.getSimpleName();
    private FragmentHomeBinding binding;
@@ -62,6 +69,12 @@ public class HomeFragment extends Fragment {
    }
 
    @Override
+   public void onAttach(@NonNull @NotNull Context context) {
+      super.onAttach(context);
+      iAddCartListener = (IAddCartListener) getActivity();
+   }
+
+   @Override
    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                             Bundle savedInstanceState) {
       binding = FragmentHomeBinding.inflate(inflater, container, false);
@@ -81,8 +94,8 @@ public class HomeFragment extends Fragment {
       //endregion
 
       //region Product
-      productAdapter = new ProductAdapter(getContext(), listProducts);
-      binding.recyclerviewProduct.setLayoutManager(LayoutManagerUtils.getVertical(getContext(),2));
+      productAdapter = new ProductAdapter(getContext(), listProducts, productAdapterListener);
+      binding.recyclerviewProduct.setLayoutManager(LayoutManagerUtils.getVertical(getContext(), 2));
       binding.recyclerviewProduct.setHasFixedSize(false);
       binding.recyclerviewProduct.setAdapter(productAdapter);
       //endregion
@@ -97,6 +110,12 @@ public class HomeFragment extends Fragment {
       binding.lottieLoadingCategories.setVisibility(View.VISIBLE);
       binding.lottieLoadingBrands.setVisibility(View.VISIBLE);
 
+      loadCategory();
+      loadBrand();
+      loadProduct();
+   }
+
+   void loadCategory() {
       CategoryService.getInstance().getAll(new Callback<CategoryResponse>() {
          @Override
          public void onResponse(@NotNull Call<CategoryResponse> call, @NotNull Response<CategoryResponse> response) {
@@ -119,7 +138,9 @@ public class HomeFragment extends Fragment {
             Log.e(TAG, "Call api error, message: " + t.getMessage());
          }
       });
+   }
 
+   void loadBrand() {
       BrandService.getInstance().getAll(new Callback<BrandResponse>() {
          @Override
          public void onResponse(@NotNull Call<BrandResponse> call, @NotNull Response<BrandResponse> response) {
@@ -141,7 +162,9 @@ public class HomeFragment extends Fragment {
             Log.e(TAG, "Call api error, message: " + t.getMessage());
          }
       });
+   }
 
+   void loadProduct() {
       ProductService.getInstance().getAll(new Callback<ProductResponse>() {
          @Override
          public void onResponse(Call<ProductResponse> call, Response<ProductResponse> response) {
@@ -164,4 +187,21 @@ public class HomeFragment extends Fragment {
          }
       });
    }
+
+   ProductAdapter.IProductAdapterListener productAdapterListener = new ProductAdapter.IProductAdapterListener() {
+      @Override
+      public void addToFavorite(ProductDomain product, String productType, int quantity) {
+
+      }
+
+      @Override
+      public void addToCart(ProductDomain product, String productType, int quantity) {
+         iAddCartListener.addToCart(product, productType, quantity);
+      }
+
+      @Override
+      public void buyNow(ProductDomain product, String productType, int quantity) {
+         iAddCartListener.addToCart(product, productType, quantity);
+      }
+   };
 }

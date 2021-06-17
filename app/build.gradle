@@ -122,4 +122,8 @@ dependencies {
    // Markwon
    // https://github.com/noties/Markwon
    implementation 'io.noties.markwon:core:4.6.2'
+
+   // Swipe Reveal Layout
+   // https://github.com/chthai64/SwipeRevealLayout
+   implementation 'com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.1'
 }

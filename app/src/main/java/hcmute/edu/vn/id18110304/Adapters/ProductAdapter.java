@@ -5,7 +5,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
@@ -14,7 +13,6 @@ import java.util.List;
 
 import hcmute.edu.vn.id18110304.BottomSheets.ProductBottomSheet;
 import hcmute.edu.vn.id18110304.Communications.Domains.ProductDomain;
-import hcmute.edu.vn.id18110304.R;
 import hcmute.edu.vn.id18110304.databinding.ItemProductBinding;
 
 /**
@@ -25,27 +23,40 @@ import hcmute.edu.vn.id18110304.databinding.ItemProductBinding;
  */
 public class ProductAdapter extends GenericAdapter<ProductAdapter.ProductItemViewHolder, ProductDomain> {
 
-   public static final String TAG = ProductAdapter.class.getSimpleName();
+   public interface IProductAdapterListener {
+      void addToFavorite(ProductDomain product, String productType, int quantity);
 
-   public ProductAdapter(Context c, List<ProductDomain> list) {
+      void addToCart(ProductDomain product, String productType, int quantity);
+
+      void buyNow(ProductDomain product, String productType, int quantity);
+   }
+
+   public static final String TAG = ProductAdapter.class.getSimpleName();
+   private IProductAdapterListener iProductAdapterListener;
+
+   public ProductAdapter(Context c, List<ProductDomain> list, IProductAdapterListener listener) {
       super(c, list);
+      iProductAdapterListener = listener;
    }
 
    @Override
    public ProductAdapter.ProductItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
       ItemProductBinding binding = ItemProductBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
-      return new ProductItemViewHolder(binding);
+      return new ProductItemViewHolder(binding, iProductAdapterListener);
    }
 
    public static class ProductItemViewHolder extends GenericViewHolder<ItemProductBinding, ProductDomain> {
 
-      public ProductItemViewHolder(ItemProductBinding binding) {
+      private IProductAdapterListener adapterListener;
+
+      public ProductItemViewHolder(ItemProductBinding binding, IProductAdapterListener listener) {
          super(binding);
+         adapterListener = listener;
       }
 
       @Override
       public void updateView(ProductDomain product) {
-         bd.layoutItemProduct.setOnClickListener(v -> ProductBottomSheet.show(v.getContext(), product));
+         bd.layoutItemProduct.setOnClickListener(v -> showProductBottomSheet(v, product));
 
          bd.tvProductName.setText(product.getName());
          bd.tvProductPrice.setText(product.getPriceFormat());
@@ -70,6 +81,25 @@ public class ProductAdapter extends GenericAdapter<ProductAdapter.ProductItemVie
                bd.lottieError.setVisibility(View.VISIBLE);
 
                Log.e(TAG, "Picasso load image failed: " + e.getMessage());
+            }
+         });
+      }
+
+      void showProductBottomSheet(View v, ProductDomain product) {
+         ProductBottomSheet.show(v.getContext(), product, new ProductBottomSheet.IProductBottomSheetListener() {
+            @Override
+            public void addToFavorite(ProductDomain product, String productType, int quantity) {
+               adapterListener.addToFavorite(product, productType, quantity);
+            }
+
+            @Override
+            public void addToCart(ProductDomain product, String productType, int quantity) {
+               adapterListener.addToCart(product, productType, quantity);
+            }
+
+            @Override
+            public void buyNow(ProductDomain product, String productType, int quantity) {
+               adapterListener.addToCart(product, productType, quantity);
             }
          });
       }
