@@ -14,6 +14,15 @@ public class CartEntity {
    private int quantity;
    boolean isSelected;
 
+   public CartEntity() {
+   }
+
+   public CartEntity(ProductDomain product, String productType, int quantity) {
+      this.product = product;
+      this.productType = productType;
+      this.quantity = quantity;
+   }
+
    public int getOrder() {
       return order;
    }
@@ -48,6 +57,10 @@ public class CartEntity {
 
    public int getQuantity() {
       return quantity;
+   }
+
+   public void addQuantity(int amount) {
+      this.quantity += amount;
    }
 
    public void setQuantity(int quantity) {

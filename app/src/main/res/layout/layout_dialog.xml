@@ -47,6 +47,7 @@
         android:layout_marginBottom="40dp"
         android:textColor="@color/colorTextPrimary"
         android:textSize="16sp"
+        android:justificationMode="inter_word"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textview_dialog_title" />
 

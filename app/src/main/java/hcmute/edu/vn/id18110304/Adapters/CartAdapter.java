@@ -1,6 +1,8 @@
 package hcmute.edu.vn.id18110304.Adapters;
 
 import android.content.Context;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,8 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import hcmute.edu.vn.id18110304.Communications.Domains.CartEntity;
+import hcmute.edu.vn.id18110304.Communications.Domains.ProductDomain;
+import hcmute.edu.vn.id18110304.Utils.StringUtils;
 import hcmute.edu.vn.id18110304.Utils.TextViewUtils;
 import hcmute.edu.vn.id18110304.databinding.ItemCartBinding;
 
@@ -21,41 +25,85 @@ import hcmute.edu.vn.id18110304.databinding.ItemCartBinding;
  */
 public class CartAdapter extends GenericAdapter<CartAdapter.CartItemViewHolder, CartEntity> {
 
+   public interface ICartAdapterListener {
+      void changeQuantity(ProductDomain product, String productType, int quantity);
+
+      void increaseQuantity(ProductDomain product, String productType);
+
+      void decreaseQuantity(ProductDomain product, String productType);
+
+      void removeItem(ProductDomain product, String productType);
+   }
+
+   ICartAdapterListener iCartAdapterListener;
+
    public static final String TAG = CartAdapter.class.getSimpleName();
 
-   public CartAdapter(Context c, List<CartEntity> list) {
+   public CartAdapter(Context c, List<CartEntity> list, ICartAdapterListener listener) {
       super(c, list);
+      iCartAdapterListener = listener;
    }
 
    @Override
    public CartItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
       ItemCartBinding binding = ItemCartBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
-      return new CartItemViewHolder(binding);
+      return new CartItemViewHolder(binding, iCartAdapterListener);
    }
 
    public static class CartItemViewHolder extends GenericViewHolder<ItemCartBinding, CartEntity> {
 
-      public CartItemViewHolder(ItemCartBinding binding) {
+      ICartAdapterListener adapterListener;
+
+      public CartItemViewHolder(ItemCartBinding binding, ICartAdapterListener listener) {
          super(binding);
+         adapterListener = listener;
       }
 
       @Override
       public void updateView(CartEntity cart) {
-         Picasso.get().load(cart.getProduct().getThumbnail()).into(bd.ivProductThumbnail);
+         ProductDomain product = cart.getProduct();
+         String productType = cart.getProductType();
 
-         bd.tvProductName.setText(cart.getProduct().getName());
-         bd.tvProductPrice.setText(cart.getProduct().getPriceFormat());
-         TextViewUtils.setHtml(bd.tvProductMarketPrice, cart.getProduct().getMarketPriceFormat());
-         bd.tvProductDiscountPercent.setText(cart.getProduct().getDiscountPercent());
+         Picasso.get().load(product.getThumbnail()).into(bd.ivProductThumbnail);
 
-         if (cart.getProductType() == null || cart.getProductType().isEmpty()) {
+         bd.tvProductName.setText(product.getName());
+         bd.tvProductPrice.setText(product.getPriceFormat());
+         TextViewUtils.setHtml(bd.tvProductMarketPrice, product.getMarketPriceFormat());
+         bd.tvProductDiscountPercent.setText(product.getDiscountPercent());
+
+         if (productType == null || productType.isEmpty()) {
             bd.tvProductType.setVisibility(View.GONE);
          } else {
             bd.tvProductType.setVisibility(View.VISIBLE);
-            bd.tvProductType.setText(cart.getProductType());
+            bd.tvProductType.setText(productType);
          }
 
          bd.etQuantity.setText(String.valueOf(cart.getQuantity()));
+
+         setListener(product, productType);
+      }
+
+      void setListener(ProductDomain product, String productType) {
+         bd.btnAdd.setOnClickListener(v -> adapterListener.increaseQuantity(product, productType));
+         bd.btnSubtract.setOnClickListener(v -> adapterListener.decreaseQuantity(product, productType));
+         bd.layoutDelete.setOnClickListener(v -> adapterListener.removeItem(product, productType));
+
+         bd.etQuantity.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+         });
       }
    }
 }

@@ -59,4 +59,11 @@
     <item name="android:background">@drawable/selectable_radio_btn_bg_color_checked_state</item>
     <item name="android:textSize">14dp</item>
   </style>
+
+  <style name="ProductThumbnailImageView">
+    <item name="android:background">@drawable/bg_border_product_image</item>
+    <item name="android:scaleType">centerInside</item>
+    <item name="android:padding">1dp</item>
+    <item name="android:src">@drawable/example_product_0</item>
+  </style>
 </resources>

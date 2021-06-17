@@ -58,4 +58,6 @@
   <string name="txt_total">Tổng</string>
   <string name="txt_check_out">Thanh toán</string>
   <string name="txt_your_cart_is_empty">Giỏ hàng trống</string>
+  <string name="txt_payment_successful">Thanh toán thành công</string>
+  <string name="txt_payment_successful_desc">Bạn sẽ sớm nhận được hàng trong thời gian sớm nhất, vui lòng nghe máy khi có cuộc gọi từ shipper</string>
 </resources>

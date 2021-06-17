@@ -13,6 +13,8 @@ import java.util.List;
 import hcmute.edu.vn.id18110304.Adapters.CartAdapter;
 import hcmute.edu.vn.id18110304.Communications.Domains.CartEntity;
 import hcmute.edu.vn.id18110304.Communications.Domains.ProductDomain;
+import hcmute.edu.vn.id18110304.R;
+import hcmute.edu.vn.id18110304.Utils.DialogUtils;
 import hcmute.edu.vn.id18110304.Utils.FormatUtils;
 import hcmute.edu.vn.id18110304.Utils.LayoutManagerUtils;
 import hcmute.edu.vn.id18110304.Utils.TextViewUtils;
@@ -24,7 +26,8 @@ import hcmute.edu.vn.id18110304.databinding.FragmentCartBinding;
  * @author Khanh Lam
  * @version 1.0
  */
-public class CartFragment extends Fragment {
+public class CartFragment extends Fragment
+      implements CartAdapter.ICartAdapterListener {
 
    public static final String TAG = CartFragment.class.getSimpleName();
    private FragmentCartBinding binding;
@@ -36,55 +39,48 @@ public class CartFragment extends Fragment {
       // Required empty public constructor
    }
 
-   public static CartFragment newInstance(String param1, String param2) {
-      CartFragment fragment = new CartFragment();
-      Bundle args = new Bundle();
-
-      fragment.setArguments(args);
-      return fragment;
-   }
-
    @Override
-   public void onCreate(Bundle savedInstanceState) {
-      super.onCreate(savedInstanceState);
-   }
-
-   @Override
-   public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                            Bundle savedInstanceState) {
+   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
       binding = FragmentCartBinding.inflate(inflater, container, false);
 
-      cartAdapter = new CartAdapter(getContext(), listCarts);
+      cartAdapter = new CartAdapter(getContext(), listCarts, this);
       binding.recyclerviewCart.setLayoutManager(LayoutManagerUtils.getVertical(getContext(), 1));
       binding.recyclerviewCart.setHasFixedSize(false);
       binding.recyclerviewCart.setAdapter(cartAdapter);
 
+      binding.btnCheckOut.setOnClickListener(v -> {
+         listCarts.clear();
+         updateView();
+         DialogUtils.showSuccessDialog(
+               getString(R.string.txt_payment_successful),
+               getString(R.string.txt_payment_successful_desc),
+               getActivity()
+         );
+      });
+
       return binding.getRoot();
    }
 
-   public int addToCart(ProductDomain product, String productType, int quantity) {
-
+   CartEntity findCartItem(ProductDomain product, String productType) {
       for (int i = 0; i < listCarts.size(); i++) {
          if (listCarts.get(i).getProduct().getProductId() == product.getProductId()
                && listCarts.get(i).getProductType().equals(productType)) {
-            listCarts.get(i).setQuantity(listCarts.get(i).getQuantity() + 1);
-            return listCarts.size();
+            return listCarts.get(i);
          }
       }
+      return null;
+   }
 
-      CartEntity newCart = new CartEntity();
+   public int addToCart(ProductDomain product, String productType, int quantity) {
+      CartEntity cart = findCartItem(product, productType);
 
-      if (product != null) {
-         newCart.setProduct(product);
+      if (cart != null) {
+         cart.addQuantity(quantity);
+      } else {
+         cart = new CartEntity(product, productType, quantity);
+         listCarts.add(cart);
       }
 
-      if (productType != null && !productType.isEmpty()) {
-         newCart.setProductType(productType);
-      }
-
-      newCart.setQuantity(quantity);
-
-      listCarts.add(newCart);
       return listCarts.size();
    }
 
@@ -113,5 +109,32 @@ public class CartFragment extends Fragment {
 
       binding.tvTotal.setText(FormatUtils.formatPrice(total));
       TextViewUtils.setHtml(binding.tvTotalOrigin, FormatUtils.formatPriceWithTag(totalOrigin, "del"));
+   }
+
+   @Override
+   public void changeQuantity(ProductDomain product, String productType, int quantity) {
+      CartEntity cart = findCartItem(product, productType);
+      if (cart != null) {
+         cart.setQuantity(quantity);
+      }
+      updateView();
+   }
+
+   @Override
+   public void increaseQuantity(ProductDomain product, String productType) {
+      addToCart(product, productType, 1);
+      updateView();
+   }
+
+   @Override
+   public void decreaseQuantity(ProductDomain product, String productType) {
+      addToCart(product, productType, -1);
+      updateView();
+   }
+
+   @Override
+   public void removeItem(ProductDomain product, String productType) {
+      listCarts.remove(findCartItem(product, productType));
+      updateView();
    }
 }

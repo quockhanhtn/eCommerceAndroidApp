@@ -32,9 +32,7 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginStart="10dp"
-        android:scaleType="centerInside"
-        android:src="@drawable/example_product_0"
-        android:background="@drawable/bg_border_item_brand"
+        style="@style/ProductThumbnailImageView"
         app:riv_corner_radius="10dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout

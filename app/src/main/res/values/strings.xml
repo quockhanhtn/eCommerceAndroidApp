@@ -70,5 +70,7 @@
   <string name="txt_total">Total</string>
   <string name="txt_check_out">Check out</string>
   <string name="txt_your_cart_is_empty">Your cart is empty</string>
+  <string name="txt_payment_successful">Payment successfull</string>
+  <string name="txt_payment_successful_desc" >you will receive parcel as soon as possible. Please keep contact !</string>
 
 </resources>
