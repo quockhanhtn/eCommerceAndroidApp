@@ -1,12 +1,14 @@
 package hcmute.edu.vn.id18110304.Activities;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
 import java.util.List;
@@ -20,7 +22,7 @@ import hcmute.edu.vn.id18110304.Fragments.SavedFragment;
 import hcmute.edu.vn.id18110304.Interfaces.IGenericActivity;
 import hcmute.edu.vn.id18110304.R;
 import hcmute.edu.vn.id18110304.databinding.ActivityMainBinding;
-import np.com.susanthapa.curved_bottom_navigation.CbnMenuItem;
+import nl.joery.animatedbottombar.AnimatedBottomBar;
 
 /**
  * MainActivity
@@ -66,15 +68,7 @@ public class MainActivity extends AppCompatActivity
    @Override
    public void initialVariables() {
       // region Bottom Nav
-      CbnMenuItem[] navMenuItems = new CbnMenuItem[]{
-            ///the icon, the AVD that will be shown in FAB, optional if you use Jetpack Navigation
-            new CbnMenuItem(R.drawable.ic_saved, R.drawable.avd_saved, R.id.menu_saved),
-            new CbnMenuItem(R.drawable.ic_category, R.drawable.avd_category, R.id.menu_category),
-            new CbnMenuItem(R.drawable.ic_home, R.drawable.avd_home, R.id.menu_home),
-            new CbnMenuItem(R.drawable.ic_cart, R.drawable.avd_cart, R.id.menu_cart),
-            new CbnMenuItem(R.drawable.ic_profile, R.drawable.avd_profile, R.id.menu_profile)
-      };
-      binding.bottomNavigation.setMenuItems(navMenuItems, selectedFragmentIndex);
+
 
       for (int i = 0; i < listFragments.size(); i++) {
          Fragment f = listFragments.get(i);
@@ -89,27 +83,39 @@ public class MainActivity extends AppCompatActivity
       // endregion
    }
 
-   @SuppressLint("NonConstantResourceId")
    @Override
    public void setViewListeners() {
-      binding.bottomNavigation.setOnMenuItemClickListener((item, integer) -> {
-         int previous = selectedFragmentIndex;
-         selectedFragmentIndex = integer;
+      binding.bottomNavigation.setOnTabSelectListener(new AnimatedBottomBar.OnTabSelectListener() {
+         @Override
+         public void onTabSelected(int i, AnimatedBottomBar.@Nullable Tab tab, int i1, AnimatedBottomBar.@NotNull Tab tab1) {
+            int previous = selectedFragmentIndex;
+            selectedFragmentIndex = i1;
 
-         if (listFragments.get(selectedFragmentIndex) instanceof CartFragment) {
-            ((CartFragment) listFragments.get(selectedFragmentIndex)).updateView();
+            if (listFragments.get(selectedFragmentIndex) instanceof CartFragment) {
+               ((CartFragment) listFragments.get(selectedFragmentIndex)).updateView();
+            }
+
+            fm.beginTransaction().hide(listFragments.get(previous))
+                  .show(listFragments.get(selectedFragmentIndex))
+                  .commit();
          }
 
-         fm.beginTransaction().hide(listFragments.get(previous))
-               .show(listFragments.get(selectedFragmentIndex))
-               .commit();
+         @Override
+         public void onTabReselected(int i, AnimatedBottomBar.@NotNull Tab tab) {
 
-         return null;
+         }
       });
    }
 
    @Override
    public void addToCart(ProductDomain product, String productType, int quantity) {
-      ((CartFragment) listFragments.get(3)).addToCart(product, productType, quantity);
+      int noCartItem = ((CartFragment) listFragments.get(3)).addToCart(product, productType, quantity);
+      if (noCartItem == 0) {
+         binding.bottomNavigation.clearBadgeAtTabIndex(3);
+      } else {
+         binding.bottomNavigation.setBadgeAtTabIndex(3,
+               new AnimatedBottomBar.Badge(String.valueOf(noCartItem), null, null, null)
+         );
+      }
    }
 }

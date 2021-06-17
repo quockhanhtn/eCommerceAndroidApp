@@ -34,6 +34,7 @@
         android:layout_marginStart="10dp"
         android:scaleType="centerInside"
         android:src="@drawable/example_product_0"
+        android:background="@drawable/bg_border_item_brand"
         app:riv_corner_radius="10dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
