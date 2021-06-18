@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * GenericDomain
  *
- * @author  Khanh Lam
+ * @author Khanh Lam
  * @version 1.0
  */
 @JsonIgnoreProperties(ignoreUnknown = true)

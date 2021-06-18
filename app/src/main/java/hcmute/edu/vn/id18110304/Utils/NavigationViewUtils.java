@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * NavigationViewUtils
  *
- * @author  Khanh Lam
+ * @author Khanh Lam
  * @version 1.0
  */
 public class NavigationViewUtils {

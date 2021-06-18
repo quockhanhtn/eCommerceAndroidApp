@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -28,6 +27,7 @@ import hcmute.edu.vn.id18110304.Communications.Response.ProductResponse;
 import hcmute.edu.vn.id18110304.Communications.WebServices.BrandService;
 import hcmute.edu.vn.id18110304.Communications.WebServices.CategoryService;
 import hcmute.edu.vn.id18110304.Communications.WebServices.ProductService;
+import hcmute.edu.vn.id18110304.Interfaces.INavigationListener;
 import hcmute.edu.vn.id18110304.Utils.LayoutManagerUtils;
 import hcmute.edu.vn.id18110304.databinding.FragmentHomeBinding;
 import retrofit2.Call;
@@ -40,32 +40,39 @@ import retrofit2.Response;
  * @author Khanh Lam
  * @version 1.0
  */
-public class HomeFragment extends Fragment {
-
-   public interface IAddCartListener {
-      void addToCart(ProductDomain product, String productType, int quantity);
-   }
-
-   private IAddCartListener iAddCartListener;
+public class HomeFragment extends GenericFragment {
 
    public static final String TAG = HomeFragment.class.getSimpleName();
-   private FragmentHomeBinding binding;
-
    List<CategoryDomain> listCategories = null;
    CategoryAdapter categoryAdapter = null;
-
    List<BrandDomain> listBrands = null;
    BrandAdapter brandAdapter = null;
-
    List<ProductDomain> listProducts = null;
    ProductAdapter productAdapter = null;
+   private IAddCartListener iAddCartListener;
+   ProductAdapter.IProductAdapterListener productAdapterListener = new ProductAdapter.IProductAdapterListener() {
+      @Override
+      public void addToFavorite(ProductDomain product, String productType, int quantity) {
 
-   // Required empty public constructor
+      }
+
+      @Override
+      public void addToCart(ProductDomain product, String productType, int quantity) {
+         iAddCartListener.addToCart(product, productType, quantity);
+      }
+
+      @Override
+      public void buyNow(ProductDomain product, String productType, int quantity) {
+         iAddCartListener.addToCart(product, productType, quantity);
+      }
+   };
+   private FragmentHomeBinding binding;
+
    public HomeFragment() {
    }
 
-   public static HomeFragment newInstance() {
-      return new HomeFragment();
+   public HomeFragment(INavigationListener navigationListener) {
+      super(navigationListener);
    }
 
    @Override
@@ -188,20 +195,7 @@ public class HomeFragment extends Fragment {
       });
    }
 
-   ProductAdapter.IProductAdapterListener productAdapterListener = new ProductAdapter.IProductAdapterListener() {
-      @Override
-      public void addToFavorite(ProductDomain product, String productType, int quantity) {
-
-      }
-
-      @Override
-      public void addToCart(ProductDomain product, String productType, int quantity) {
-         iAddCartListener.addToCart(product, productType, quantity);
-      }
-
-      @Override
-      public void buyNow(ProductDomain product, String productType, int quantity) {
-         iAddCartListener.addToCart(product, productType, quantity);
-      }
-   };
+   public interface IAddCartListener {
+      void addToCart(ProductDomain product, String productType, int quantity);
+   }
 }

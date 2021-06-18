@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * This class provide methods that help you to work with <b>String</b>
  *
- * @author  Khanh Lam
+ * @author Khanh Lam
  * @version 1.0
  */
 public class StringUtils {

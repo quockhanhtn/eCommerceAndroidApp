@@ -3,7 +3,7 @@ package hcmute.edu.vn.id18110304;
 /**
  * Cons
  *
- * @author  Khanh Lam
+ * @author Khanh Lam
  * @version 1.0
  */
 public class Cons {

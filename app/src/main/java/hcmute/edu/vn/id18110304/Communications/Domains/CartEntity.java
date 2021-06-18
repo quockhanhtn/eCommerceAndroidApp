@@ -7,12 +7,12 @@ package hcmute.edu.vn.id18110304.Communications.Domains;
  * @version 1.0
  */
 public class CartEntity {
+   boolean isSelected;
    private int order;
    private String productUuid;
    private ProductDomain product;
    private String productType;
    private int quantity;
-   boolean isSelected;
 
    public CartEntity() {
    }
@@ -59,12 +59,12 @@ public class CartEntity {
       return quantity;
    }
 
-   public void addQuantity(int amount) {
-      this.quantity += amount;
-   }
-
    public void setQuantity(int quantity) {
       this.quantity = quantity;
+   }
+
+   public void addQuantity(int amount) {
+      this.quantity += amount;
    }
 
    public boolean isSelected() {

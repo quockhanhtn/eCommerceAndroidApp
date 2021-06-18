@@ -8,7 +8,7 @@ import retrofit2.Callback;
 /**
  * BrandService
  *
- * @author  Khanh Lam
+ * @author Khanh Lam
  * @version 1.0
  */
 public class BrandService extends GenericService<IBrandService, BrandResponse> {

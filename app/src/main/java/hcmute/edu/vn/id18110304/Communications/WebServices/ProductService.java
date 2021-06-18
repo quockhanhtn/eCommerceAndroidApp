@@ -8,7 +8,7 @@ import retrofit2.Callback;
 /**
  * ProductService
  *
- * @author  Khanh Lam
+ * @author Khanh Lam
  * @version 1.0
  */
 public class ProductService extends GenericService<IProductService, ProductResponse> {

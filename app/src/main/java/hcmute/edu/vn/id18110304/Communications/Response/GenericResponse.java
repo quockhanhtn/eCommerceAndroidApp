@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * GenericResponse
  *
- * @author  Khanh Lam
+ * @author Khanh Lam
  * @version 1.0
  */
 public abstract class GenericResponse<T> {

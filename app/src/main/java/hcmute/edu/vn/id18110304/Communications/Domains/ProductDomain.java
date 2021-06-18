@@ -65,7 +65,7 @@ public class ProductDomain extends GenericDomain<String> implements Serializable
    }
 
    public String getDiscountPercent() {
-      return "-" + String.valueOf(100 - (price * 100) / marketPrice) + "%";
+      return "-" + (100 - (price * 100) / marketPrice) + "%";
    }
 
    public String getPriceFormat() {

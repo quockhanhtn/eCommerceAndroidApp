@@ -8,18 +8,17 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import hcmute.edu.vn.id18110304.Adapters.CategoryAdapter;
 import hcmute.edu.vn.id18110304.Adapters.CategoryFCAdapter;
 import hcmute.edu.vn.id18110304.Communications.Domains.CategoryDomain;
 import hcmute.edu.vn.id18110304.Communications.Response.CategoryResponse;
 import hcmute.edu.vn.id18110304.Communications.WebServices.CategoryService;
+import hcmute.edu.vn.id18110304.Interfaces.INavigationListener;
 import hcmute.edu.vn.id18110304.Utils.LayoutManagerUtils;
 import hcmute.edu.vn.id18110304.databinding.FragmentCategoryBinding;
 import retrofit2.Call;
@@ -32,22 +31,20 @@ import retrofit2.Response;
  * @author Khanh Lam
  * @version 1.0
  */
-public class CategoryFragment extends Fragment {
+public class CategoryFragment extends GenericFragment {
 
    public static final String TAG = CategoryFragment.class.getSimpleName();
-   private FragmentCategoryBinding binding;
-
    List<CategoryDomain> listCategories = null;
    CategoryFCAdapter categoryFCAdapter = null;
+   private FragmentCategoryBinding binding;
 
    public CategoryFragment() {
       // Required empty public constructor
    }
 
-   public static CategoryFragment newInstance() {
-      return new CategoryFragment();
+   public CategoryFragment(INavigationListener navigationListener) {
+      super(navigationListener);
    }
-
 
    @Override
    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

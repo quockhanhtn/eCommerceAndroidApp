@@ -11,7 +11,7 @@ import hcmute.edu.vn.id18110304.databinding.ActivityViewProductBinding;
 /**
  * ViewProductActivity
  *
- * @author  Khanh Lam
+ * @author Khanh Lam
  * @version 1.0
  */
 public class ViewProductActivity extends AppCompatActivity implements IGenericActivity {

@@ -7,7 +7,7 @@ import retrofit2.http.GET;
 /**
  * IProductService
  *
- * @author  Khanh Lam
+ * @author Khanh Lam
  * @version 1.0
  */
 public interface IProductService {

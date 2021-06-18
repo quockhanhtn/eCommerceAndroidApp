@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
  * BrandDomain
  *
- * @author  Khanh Lam
+ * @author Khanh Lam
  * @version 1.0
  */
 @JsonIgnoreProperties(ignoreUnknown = true)

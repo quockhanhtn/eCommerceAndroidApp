@@ -7,11 +7,11 @@ import android.widget.TextView;
 /**
  * TextViewUtils
  *
- * @author  Khanh Lam
+ * @author Khanh Lam
  * @version 1.0
  */
 public class TextViewUtils {
-   public static void setHtml(TextView tv, String htmlContent){
+   public static void setHtml(TextView tv, String htmlContent) {
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
          tv.setText(Html.fromHtml(htmlContent, Html.FROM_HTML_MODE_COMPACT));
       } else {

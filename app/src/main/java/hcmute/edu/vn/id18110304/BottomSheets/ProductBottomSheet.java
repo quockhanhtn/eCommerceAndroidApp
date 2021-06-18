@@ -24,14 +24,6 @@ import hcmute.edu.vn.id18110304.databinding.BottomSheetProductBinding;
  */
 public class ProductBottomSheet {
 
-   public interface IProductBottomSheetListener {
-      void addToFavorite(ProductDomain product, String productType, int quantity);
-
-      void addToCart(ProductDomain product, String productType, int quantity);
-
-      void buyNow(ProductDomain product, String productType, int quantity);
-   }
-
    public static void show(Context context, ProductDomain product, IProductBottomSheetListener listener) {
       final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
             context,
@@ -91,5 +83,13 @@ public class ProductBottomSheet {
 
       bottomSheetDialog.setContentView(binding.getRoot());
       bottomSheetDialog.show();
+   }
+
+   public interface IProductBottomSheetListener {
+      void addToFavorite(ProductDomain product, String productType, int quantity);
+
+      void addToCart(ProductDomain product, String productType, int quantity);
+
+      void buyNow(ProductDomain product, String productType, int quantity);
    }
 }

@@ -13,7 +13,6 @@ import java.util.List;
 
 import hcmute.edu.vn.id18110304.Communications.Domains.CartEntity;
 import hcmute.edu.vn.id18110304.Communications.Domains.ProductDomain;
-import hcmute.edu.vn.id18110304.Utils.StringUtils;
 import hcmute.edu.vn.id18110304.Utils.TextViewUtils;
 import hcmute.edu.vn.id18110304.databinding.ItemCartBinding;
 
@@ -25,19 +24,8 @@ import hcmute.edu.vn.id18110304.databinding.ItemCartBinding;
  */
 public class CartAdapter extends GenericAdapter<CartAdapter.CartItemViewHolder, CartEntity> {
 
-   public interface ICartAdapterListener {
-      void changeQuantity(ProductDomain product, String productType, int quantity);
-
-      void increaseQuantity(ProductDomain product, String productType);
-
-      void decreaseQuantity(ProductDomain product, String productType);
-
-      void removeItem(ProductDomain product, String productType);
-   }
-
-   ICartAdapterListener iCartAdapterListener;
-
    public static final String TAG = CartAdapter.class.getSimpleName();
+   ICartAdapterListener iCartAdapterListener;
 
    public CartAdapter(Context c, List<CartEntity> list, ICartAdapterListener listener) {
       super(c, list);
@@ -50,13 +38,37 @@ public class CartAdapter extends GenericAdapter<CartAdapter.CartItemViewHolder, 
       return new CartItemViewHolder(binding, iCartAdapterListener);
    }
 
-   public static class CartItemViewHolder extends GenericViewHolder<ItemCartBinding, CartEntity> {
+   public interface ICartAdapterListener {
+      void changeQuantity(ProductDomain product, String productType, int quantity);
+
+      void increaseQuantity(ProductDomain product, String productType);
+
+      void decreaseQuantity(ProductDomain product, String productType);
+   }
+
+   public class CartItemViewHolder extends GenericViewHolder<ItemCartBinding, CartEntity> {
 
       ICartAdapterListener adapterListener;
 
       public CartItemViewHolder(ItemCartBinding binding, ICartAdapterListener listener) {
          super(binding);
          adapterListener = listener;
+      }
+
+      public View getSwipeLayout() {
+         return bd.layoutSwipe;
+      }
+
+      public View getMainLayout() {
+         return bd.layoutMain;
+      }
+
+      public void hiddenMainLayout() {
+         bd.layoutMain.setVisibility(View.GONE);
+      }
+
+      public void showMainLayout() {
+         bd.layoutMain.setVisibility(View.VISIBLE);
       }
 
       @Override
@@ -86,7 +98,6 @@ public class CartAdapter extends GenericAdapter<CartAdapter.CartItemViewHolder, 
       void setListener(ProductDomain product, String productType) {
          bd.btnAdd.setOnClickListener(v -> adapterListener.increaseQuantity(product, productType));
          bd.btnSubtract.setOnClickListener(v -> adapterListener.decreaseQuantity(product, productType));
-         bd.layoutDelete.setOnClickListener(v -> adapterListener.removeItem(product, productType));
 
          bd.etQuantity.addTextChangedListener(new TextWatcher() {
             @Override

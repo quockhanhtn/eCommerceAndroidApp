@@ -20,6 +20,7 @@ import hcmute.edu.vn.id18110304.Fragments.HomeFragment;
 import hcmute.edu.vn.id18110304.Fragments.ProfileFragment;
 import hcmute.edu.vn.id18110304.Fragments.SavedFragment;
 import hcmute.edu.vn.id18110304.Interfaces.IGenericActivity;
+import hcmute.edu.vn.id18110304.Interfaces.INavigationListener;
 import hcmute.edu.vn.id18110304.R;
 import hcmute.edu.vn.id18110304.databinding.ActivityMainBinding;
 import nl.joery.animatedbottombar.AnimatedBottomBar;
@@ -31,17 +32,15 @@ import nl.joery.animatedbottombar.AnimatedBottomBar;
  * @version 1.0
  */
 public class MainActivity extends AppCompatActivity
-      implements IGenericActivity, HomeFragment.IAddCartListener {
+      implements IGenericActivity, INavigationListener, HomeFragment.IAddCartListener {
 
    public static final String TAG = MainActivity.class.getSimpleName();
-   private ActivityMainBinding binding;
-
    final List<Fragment> listFragments = Arrays.asList(
-         new SavedFragment(),
-         new CategoryFragment(),
-         new HomeFragment(),
-         new CartFragment(),
-         new ProfileFragment()
+         new SavedFragment(this),
+         new CategoryFragment(this),
+         new HomeFragment(this),
+         new CartFragment(this),
+         new ProfileFragment(this)
    );
    final List<String> listFragmentTitles = Arrays.asList(
          String.valueOf(R.string.txt_saved),
@@ -50,9 +49,9 @@ public class MainActivity extends AppCompatActivity
          String.valueOf(R.string.txt_cart),
          String.valueOf(R.string.txt_profile)
    );
-   Integer selectedFragmentIndex = 2;
-
    final FragmentManager fm = getSupportFragmentManager();
+   Integer selectedFragmentIndex = 2;
+   private ActivityMainBinding binding;
 
    @Override
    protected void onCreate(Bundle savedInstanceState) {
@@ -67,9 +66,7 @@ public class MainActivity extends AppCompatActivity
 
    @Override
    public void initialVariables() {
-      // region Bottom Nav
-
-
+      // region Init fragment
       for (int i = 0; i < listFragments.size(); i++) {
          Fragment f = listFragments.get(i);
          String title = listFragmentTitles.get(i);
@@ -117,5 +114,21 @@ public class MainActivity extends AppCompatActivity
                new AnimatedBottomBar.Badge(String.valueOf(noCartItem), null, null, null)
          );
       }
+   }
+
+   @Override
+   public void setBadge(int tabIndex, int number) {
+      if (number > 0) {
+         binding.bottomNavigation.setBadgeAtTabIndex(tabIndex,
+               new AnimatedBottomBar.Badge(String.valueOf(number), null, null, null)
+         );
+      } else {
+         binding.bottomNavigation.clearBadgeAtTabIndex(tabIndex);
+      }
+   }
+
+   @Override
+   public void switchTo(int tabIndex) {
+      binding.bottomNavigation.selectTabAt(tabIndex, true);
    }
 }

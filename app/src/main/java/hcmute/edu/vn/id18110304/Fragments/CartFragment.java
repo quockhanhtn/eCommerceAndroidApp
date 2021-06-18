@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.ItemTouchHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,10 +13,13 @@ import java.util.List;
 import hcmute.edu.vn.id18110304.Adapters.CartAdapter;
 import hcmute.edu.vn.id18110304.Communications.Domains.CartEntity;
 import hcmute.edu.vn.id18110304.Communications.Domains.ProductDomain;
+import hcmute.edu.vn.id18110304.CustomViews.RVItemTouchHelper;
+import hcmute.edu.vn.id18110304.Interfaces.INavigationListener;
 import hcmute.edu.vn.id18110304.R;
 import hcmute.edu.vn.id18110304.Utils.DialogUtils;
 import hcmute.edu.vn.id18110304.Utils.FormatUtils;
 import hcmute.edu.vn.id18110304.Utils.LayoutManagerUtils;
+import hcmute.edu.vn.id18110304.Utils.SnackbarUtils;
 import hcmute.edu.vn.id18110304.Utils.TextViewUtils;
 import hcmute.edu.vn.id18110304.databinding.FragmentCartBinding;
 
@@ -26,17 +29,19 @@ import hcmute.edu.vn.id18110304.databinding.FragmentCartBinding;
  * @author Khanh Lam
  * @version 1.0
  */
-public class CartFragment extends Fragment
+public class CartFragment extends GenericFragment
       implements CartAdapter.ICartAdapterListener {
 
    public static final String TAG = CartFragment.class.getSimpleName();
-   private FragmentCartBinding binding;
-
-   private List<CartEntity> listCarts = new ArrayList<>();
    CartAdapter cartAdapter = null;
+   private FragmentCartBinding binding;
+   private final List<CartEntity> listCarts = new ArrayList<>();
 
    public CartFragment() {
-      // Required empty public constructor
+   }
+
+   public CartFragment(INavigationListener navigationListener) {
+      super(navigationListener);
    }
 
    @Override
@@ -47,6 +52,27 @@ public class CartFragment extends Fragment
       binding.recyclerviewCart.setLayoutManager(LayoutManagerUtils.getVertical(getContext(), 1));
       binding.recyclerviewCart.setHasFixedSize(false);
       binding.recyclerviewCart.setAdapter(cartAdapter);
+      //binding.recyclerviewCart.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
+
+      ItemTouchHelper.SimpleCallback simpleCallback = new RVItemTouchHelper(0, ItemTouchHelper.LEFT, holder -> {
+         if (holder instanceof CartAdapter.CartItemViewHolder) {
+            int pos = holder.getAbsoluteAdapterPosition();
+            CartEntity cartDelete = listCarts.get(pos);
+
+            cartAdapter.removeItemAt(pos);
+            updateView();
+
+            String snackbarMess = getString(R.string.txt_remove_item) + " \"" + cartDelete.getProduct().getName() + "\"";
+            SnackbarUtils.showLong(binding.getRoot(), snackbarMess, getString(R.string.txt_undo), v ->
+            {
+               cartAdapter.undoRemove(cartDelete, pos);
+               binding.recyclerviewCart.scrollToPosition(pos);
+               updateView();
+            });
+         }
+      });
+
+      new ItemTouchHelper(simpleCallback).attachToRecyclerView(binding.recyclerviewCart);
 
       binding.btnCheckOut.setOnClickListener(v -> {
          listCarts.clear();
@@ -76,6 +102,9 @@ public class CartFragment extends Fragment
 
       if (cart != null) {
          cart.addQuantity(quantity);
+         if (cart.getQuantity() == 0) {
+            cartAdapter.removeItem(cart);
+         }
       } else {
          cart = new CartEntity(product, productType, quantity);
          listCarts.add(cart);
@@ -96,6 +125,10 @@ public class CartFragment extends Fragment
          binding.lottieLoading.setVisibility(View.GONE);
          binding.layoutEmptyCart.setVisibility(View.VISIBLE);
          binding.layoutCheckOut.setVisibility(View.GONE);
+      }
+
+      if (navigationListener != null) {
+         navigationListener.setBadge(3, listCarts.size());
       }
    }
 
@@ -129,12 +162,6 @@ public class CartFragment extends Fragment
    @Override
    public void decreaseQuantity(ProductDomain product, String productType) {
       addToCart(product, productType, -1);
-      updateView();
-   }
-
-   @Override
-   public void removeItem(ProductDomain product, String productType) {
-      listCarts.remove(findCartItem(product, productType));
       updateView();
    }
 }

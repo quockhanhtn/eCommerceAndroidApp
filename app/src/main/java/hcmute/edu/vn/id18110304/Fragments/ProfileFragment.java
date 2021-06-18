@@ -5,24 +5,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.fragment.app.Fragment;
-
+import hcmute.edu.vn.id18110304.Interfaces.INavigationListener;
 import hcmute.edu.vn.id18110304.R;
 
 /**
  * ProfileFragment
  *
- * @author  Khanh Lam
+ * @author Khanh Lam
  * @version 1.0
  */
-public class ProfileFragment extends Fragment {
+public class ProfileFragment extends GenericFragment {
 
    public static final String TAG = ProfileFragment.class.getName();
 
    public ProfileFragment() {
-      // Required empty public constructor
    }
 
+   public ProfileFragment(INavigationListener navigationListener) {
+      super(navigationListener);
+   }
 
    public static ProfileFragment newInstance() {
       ProfileFragment fragment = new ProfileFragment();

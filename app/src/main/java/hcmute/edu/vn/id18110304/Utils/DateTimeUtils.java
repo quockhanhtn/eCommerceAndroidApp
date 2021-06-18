@@ -8,7 +8,7 @@ import java.util.Date;
 /**
  * This class provide methods that help you to work with <b>Date time</b>
  *
- * @author  Khanh Lam
+ * @author Khanh Lam
  * @version 1.0
  */
 public class DateTimeUtils {

@@ -34,6 +34,20 @@ public abstract class GenericAdapter<ViewHolderType extends GenericViewHolder, D
       this.notifyDataSetChanged();
    }
 
+   public void removeItem(DataItemType item) {
+      removeItemAt(listItems.indexOf(item));
+   }
+
+   public void removeItemAt(int position) {
+      listItems.remove(position);
+      notifyItemRemoved(position);
+   }
+
+   public void undoRemove(DataItemType item, int position) {
+      listItems.add(position, item);
+      notifyItemInserted(position);
+   }
+
    public Context getContext() {
       return context;
    }

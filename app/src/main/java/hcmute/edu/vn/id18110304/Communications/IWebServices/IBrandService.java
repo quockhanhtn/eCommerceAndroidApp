@@ -7,7 +7,7 @@ import retrofit2.http.GET;
 /**
  * IBrandService
  *
- * @author  Khanh Lam
+ * @author Khanh Lam
  * @version 1.0
  */
 public interface IBrandService {

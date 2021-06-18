@@ -5,7 +5,7 @@ import hcmute.edu.vn.id18110304.Communications.Domains.CategoryDomain;
 /**
  * CategoryResponse
  *
- * @author  Khanh Lam
+ * @author Khanh Lam
  * @version 1.0
  */
 public class CategoryResponse extends GenericResponse<CategoryDomain> {

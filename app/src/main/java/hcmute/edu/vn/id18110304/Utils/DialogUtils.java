@@ -18,12 +18,10 @@ import hcmute.edu.vn.id18110304.R;
 /**
  * DialogUtils
  *
- * @author  Khanh Lam
+ * @author Khanh Lam
  * @version 1.0
  */
 public class DialogUtils {
-
-   enum DialogType {SUCCESS, WARNING, ERROR}
 
    public static void showSuccessDialog(String title, String message, @NotNull Activity activity) {
       showSuccessDialog(title, message, activity, v -> {
@@ -47,7 +45,6 @@ public class DialogUtils {
    public static void showErrorDialog(String title, String message, @NotNull Activity activity, View.OnClickListener btnOkOnClick) {
       showDialog(DialogType.ERROR, title, message, activity, btnOkOnClick, null, null);
    }
-
 
    public static void showDialog(@NotNull DialogType type, String title, String message,
                                  @NotNull Activity activity,
@@ -131,4 +128,7 @@ public class DialogUtils {
       }
       alertDialog.show();
    }
+
+
+   enum DialogType {SUCCESS, WARNING, ERROR}
 }

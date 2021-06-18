@@ -7,7 +7,7 @@ import android.util.Base64;
 /**
  * ConvertUtils
  *
- * @author  Khanh Lam
+ * @author Khanh Lam
  * @version 1.0
  */
 public class ConvertUtils {

@@ -8,7 +8,7 @@ import retrofit2.Callback;
 /**
  * CategoryService
  *
- * @author  Khanh Lam
+ * @author Khanh Lam
  * @version 1.0
  */
 public class CategoryService extends GenericService<ICategoryService, CategoryResponse> {

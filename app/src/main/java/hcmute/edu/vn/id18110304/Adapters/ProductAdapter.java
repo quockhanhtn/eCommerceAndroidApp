@@ -23,17 +23,8 @@ import hcmute.edu.vn.id18110304.databinding.ItemProductBinding;
  */
 public class ProductAdapter extends GenericAdapter<ProductAdapter.ProductItemViewHolder, ProductDomain> {
 
-   public interface IProductAdapterListener {
-      void addToFavorite(ProductDomain product, String productType, int quantity);
-
-      void addToCart(ProductDomain product, String productType, int quantity);
-
-      void buyNow(ProductDomain product, String productType, int quantity);
-   }
-
    public static final String TAG = ProductAdapter.class.getSimpleName();
-   private IProductAdapterListener iProductAdapterListener;
-
+   private final IProductAdapterListener iProductAdapterListener;
    public ProductAdapter(Context c, List<ProductDomain> list, IProductAdapterListener listener) {
       super(c, list);
       iProductAdapterListener = listener;
@@ -45,9 +36,17 @@ public class ProductAdapter extends GenericAdapter<ProductAdapter.ProductItemVie
       return new ProductItemViewHolder(binding, iProductAdapterListener);
    }
 
+   public interface IProductAdapterListener {
+      void addToFavorite(ProductDomain product, String productType, int quantity);
+
+      void addToCart(ProductDomain product, String productType, int quantity);
+
+      void buyNow(ProductDomain product, String productType, int quantity);
+   }
+
    public static class ProductItemViewHolder extends GenericViewHolder<ItemProductBinding, ProductDomain> {
 
-      private IProductAdapterListener adapterListener;
+      private final IProductAdapterListener adapterListener;
 
       public ProductItemViewHolder(ItemProductBinding binding, IProductAdapterListener listener) {
          super(binding);

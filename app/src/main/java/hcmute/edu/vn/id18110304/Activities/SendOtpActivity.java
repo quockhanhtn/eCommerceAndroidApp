@@ -35,6 +35,36 @@ public class SendOtpActivity extends AppCompatActivity implements IGenericActivi
    public static final String TAG = SendOtpActivity.class.getSimpleName();
    ActivitySendOtpBinding binding;
 
+   final PhoneAuthProvider.OnVerificationStateChangedCallbacks otpVerifyCallbacks =
+         new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+            @Override
+            public void onVerificationCompleted(@NonNull @NotNull PhoneAuthCredential phoneAuthCredential) {
+               binding.progressbarGetOtp.setVisibility(View.GONE);
+               binding.buttonGetOtp.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onVerificationFailed(FirebaseException e) {
+               binding.progressbarGetOtp.setVisibility(View.GONE);
+               binding.buttonGetOtp.setVisibility(View.VISIBLE);
+
+               Toast.makeText(SendOtpActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+               Log.e(TAG, e.getMessage());
+            }
+
+            @Override
+            public void onCodeSent(@NonNull String verificationId,
+                                   @NonNull PhoneAuthProvider.ForceResendingToken token) {
+               binding.progressbarGetOtp.setVisibility(View.GONE);
+               binding.buttonGetOtp.setVisibility(View.VISIBLE);
+
+               Intent intent = new Intent(getApplicationContext(), VerifyOtpActivity.class);
+               intent.putExtra(Cons.KEY_OTP_PHONE_NUMBER, binding.ccpPhoneNumber.getFormattedFullNumber());
+               intent.putExtra(Cons.KEY_OTP_VERIFICATION_ID, verificationId);
+               startActivity(intent);
+               finish();
+            }
+         };
    FirebaseAuth firebaseAuth;
    PhoneAuthOptions phoneAuthOptions;
 
@@ -79,35 +109,4 @@ public class SendOtpActivity extends AppCompatActivity implements IGenericActivi
          PhoneAuthProvider.verifyPhoneNumber(phoneAuthOptions);
       });
    }
-
-   final PhoneAuthProvider.OnVerificationStateChangedCallbacks otpVerifyCallbacks =
-         new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-            @Override
-            public void onVerificationCompleted(@NonNull @NotNull PhoneAuthCredential phoneAuthCredential) {
-               binding.progressbarGetOtp.setVisibility(View.GONE);
-               binding.buttonGetOtp.setVisibility(View.VISIBLE);
-            }
-
-            @Override
-            public void onVerificationFailed(FirebaseException e) {
-               binding.progressbarGetOtp.setVisibility(View.GONE);
-               binding.buttonGetOtp.setVisibility(View.VISIBLE);
-
-               Toast.makeText(SendOtpActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-               Log.e(TAG, e.getMessage());
-            }
-
-            @Override
-            public void onCodeSent(@NonNull String verificationId,
-                                   @NonNull PhoneAuthProvider.ForceResendingToken token) {
-               binding.progressbarGetOtp.setVisibility(View.GONE);
-               binding.buttonGetOtp.setVisibility(View.VISIBLE);
-
-               Intent intent = new Intent(getApplicationContext(), VerifyOtpActivity.class);
-               intent.putExtra(Cons.KEY_OTP_PHONE_NUMBER, binding.ccpPhoneNumber.getFormattedFullNumber());
-               intent.putExtra(Cons.KEY_OTP_VERIFICATION_ID, verificationId);
-               startActivity(intent);
-               finish();
-            }
-         };
 }
