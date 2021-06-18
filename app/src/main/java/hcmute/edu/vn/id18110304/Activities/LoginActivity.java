@@ -6,7 +6,6 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import hcmute.edu.vn.id18110304.Interfaces.IGenericActivity;
 import hcmute.edu.vn.id18110304.Utils.DialogUtils;
 import hcmute.edu.vn.id18110304.databinding.ActivityLogInBinding;
 
@@ -16,7 +15,7 @@ import hcmute.edu.vn.id18110304.databinding.ActivityLogInBinding;
  * @author Khanh Lam
  * @version 1.0
  */
-public class LoginActivity extends AppCompatActivity implements IGenericActivity {
+public class LoginActivity extends AppCompatActivity {
 
    ActivityLogInBinding binding;
 
@@ -32,11 +31,9 @@ public class LoginActivity extends AppCompatActivity implements IGenericActivity
       setViewListeners();
    }
 
-   @Override
    public void initialVariables() {
    }
 
-   @Override
    public void setViewListeners() {
       binding.btnLogin.setOnClickListener(v -> {
          String phoneNumber = binding.edittextPhoneNumber.getText().toString();

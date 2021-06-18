@@ -13,7 +13,6 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
 import hcmute.edu.vn.id18110304.Cons;
-import hcmute.edu.vn.id18110304.Interfaces.IGenericActivity;
 import hcmute.edu.vn.id18110304.R;
 import hcmute.edu.vn.id18110304.Utils.DialogUtils;
 import hcmute.edu.vn.id18110304.databinding.ActivityVerifyOtpBinding;
@@ -24,7 +23,7 @@ import hcmute.edu.vn.id18110304.databinding.ActivityVerifyOtpBinding;
  * @author Khanh Lam
  * @version 1.0
  */
-public class VerifyOtpActivity extends AppCompatActivity implements IGenericActivity {
+public class VerifyOtpActivity extends AppCompatActivity {
 
    public static final String TAG = VerifyOtpActivity.class.getSimpleName();
 
@@ -44,7 +43,6 @@ public class VerifyOtpActivity extends AppCompatActivity implements IGenericActi
       setViewListeners();
    }
 
-   @Override
    public void initialVariables() {
       binding.textviewInputPhone.setText(getIntent().getStringExtra(Cons.KEY_OTP_PHONE_NUMBER));
       verificationId = getIntent().getStringExtra(Cons.KEY_OTP_VERIFICATION_ID);
@@ -58,7 +56,6 @@ public class VerifyOtpActivity extends AppCompatActivity implements IGenericActi
       };
    }
 
-   @Override
    public void setViewListeners() {
       binding.buttonVerifyOtp.setOnClickListener(v -> {
          String code = getUserInputOtp();

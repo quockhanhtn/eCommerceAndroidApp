@@ -21,7 +21,6 @@ import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 import hcmute.edu.vn.id18110304.Cons;
-import hcmute.edu.vn.id18110304.Interfaces.IGenericActivity;
 import hcmute.edu.vn.id18110304.databinding.ActivitySendOtpBinding;
 
 /**
@@ -30,7 +29,7 @@ import hcmute.edu.vn.id18110304.databinding.ActivitySendOtpBinding;
  * @author Khanh Lam
  * @version 1.0
  */
-public class SendOtpActivity extends AppCompatActivity implements IGenericActivity {
+public class SendOtpActivity extends AppCompatActivity {
 
    public static final String TAG = SendOtpActivity.class.getSimpleName();
    ActivitySendOtpBinding binding;
@@ -79,7 +78,6 @@ public class SendOtpActivity extends AppCompatActivity implements IGenericActivi
       setViewListeners();
    }
 
-   @Override
    public void initialVariables() {
       firebaseAuth = FirebaseAuth.getInstance();
       firebaseAuth.setLanguageCode(Locale.getDefault().getLanguage());
@@ -88,7 +86,6 @@ public class SendOtpActivity extends AppCompatActivity implements IGenericActivi
       binding.ccpPhoneNumber.isValidFullNumber();
    }
 
-   @Override
    public void setViewListeners() {
       binding.buttonGetOtp.setOnClickListener(v -> {
          if (binding.edittextPhoneNumber.getText().toString().trim().isEmpty()) {

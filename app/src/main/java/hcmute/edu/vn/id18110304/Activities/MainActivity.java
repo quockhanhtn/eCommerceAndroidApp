@@ -19,7 +19,6 @@ import hcmute.edu.vn.id18110304.Fragments.CategoryFragment;
 import hcmute.edu.vn.id18110304.Fragments.HomeFragment;
 import hcmute.edu.vn.id18110304.Fragments.ProfileFragment;
 import hcmute.edu.vn.id18110304.Fragments.SavedFragment;
-import hcmute.edu.vn.id18110304.Interfaces.IGenericActivity;
 import hcmute.edu.vn.id18110304.Interfaces.INavigationListener;
 import hcmute.edu.vn.id18110304.R;
 import hcmute.edu.vn.id18110304.databinding.ActivityMainBinding;
@@ -32,7 +31,7 @@ import nl.joery.animatedbottombar.AnimatedBottomBar;
  * @version 1.0
  */
 public class MainActivity extends AppCompatActivity
-      implements IGenericActivity, INavigationListener, HomeFragment.IAddCartListener {
+      implements INavigationListener, HomeFragment.IAddCartListener {
 
    public static final String TAG = MainActivity.class.getSimpleName();
    final List<Fragment> listFragments = Arrays.asList(
@@ -64,7 +63,6 @@ public class MainActivity extends AppCompatActivity
       setViewListeners();
    }
 
-   @Override
    public void initialVariables() {
       // region Init fragment
       for (int i = 0; i < listFragments.size(); i++) {
@@ -80,7 +78,6 @@ public class MainActivity extends AppCompatActivity
       // endregion
    }
 
-   @Override
    public void setViewListeners() {
       binding.bottomNavigation.setOnTabSelectListener(new AnimatedBottomBar.OnTabSelectListener() {
          @Override

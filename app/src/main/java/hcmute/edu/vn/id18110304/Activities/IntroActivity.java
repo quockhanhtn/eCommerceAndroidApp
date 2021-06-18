@@ -5,7 +5,6 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import hcmute.edu.vn.id18110304.Interfaces.IGenericActivity;
 import hcmute.edu.vn.id18110304.databinding.ActivityIntroBinding;
 
 /**
@@ -14,7 +13,7 @@ import hcmute.edu.vn.id18110304.databinding.ActivityIntroBinding;
  * @author Khanh Lam
  * @version 1.0
  */
-public class IntroActivity extends AppCompatActivity implements IGenericActivity {
+public class IntroActivity extends AppCompatActivity {
 
    private ActivityIntroBinding binding;
 
@@ -30,12 +29,10 @@ public class IntroActivity extends AppCompatActivity implements IGenericActivity
       setViewListeners();
    }
 
-   @Override
    public void initialVariables() {
 
    }
 
-   @Override
    public void setViewListeners() {
 
    }

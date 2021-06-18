@@ -14,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import hcmute.edu.vn.id18110304.Interfaces.IGenericActivity;
 import hcmute.edu.vn.id18110304.Utils.AppUtils;
 import hcmute.edu.vn.id18110304.databinding.ActivitySignUpBinding;
 
@@ -24,7 +23,7 @@ import hcmute.edu.vn.id18110304.databinding.ActivitySignUpBinding;
  * @author Khanh Lam
  * @version 1.0
  */
-public class SignUpActivity extends AppCompatActivity implements IGenericActivity {
+public class SignUpActivity extends AppCompatActivity {
 
    public static final String TAG = SignUpActivity.class.getSimpleName();
    private static final int SELECT_PICTURE = 100;
@@ -105,11 +104,9 @@ public class SignUpActivity extends AppCompatActivity implements IGenericActivit
       setViewListeners();
    }
 
-   @Override
    public void initialVariables() {
    }
 
-   @Override
    public void setViewListeners() {
       binding.textviewReturnLogin.setOnClickListener(v -> finish());
 

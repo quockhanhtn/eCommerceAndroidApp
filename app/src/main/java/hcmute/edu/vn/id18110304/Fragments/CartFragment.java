@@ -33,9 +33,9 @@ public class CartFragment extends GenericFragment
       implements CartAdapter.ICartAdapterListener {
 
    public static final String TAG = CartFragment.class.getSimpleName();
+   private final List<CartEntity> listCarts = new ArrayList<>();
    CartAdapter cartAdapter = null;
    private FragmentCartBinding binding;
-   private final List<CartEntity> listCarts = new ArrayList<>();
 
    public CartFragment() {
    }

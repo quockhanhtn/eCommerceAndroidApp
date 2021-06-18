@@ -5,7 +5,6 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import hcmute.edu.vn.id18110304.Interfaces.IGenericActivity;
 import hcmute.edu.vn.id18110304.databinding.ActivityViewProductBinding;
 
 /**
@@ -14,7 +13,7 @@ import hcmute.edu.vn.id18110304.databinding.ActivityViewProductBinding;
  * @author Khanh Lam
  * @version 1.0
  */
-public class ViewProductActivity extends AppCompatActivity implements IGenericActivity {
+public class ViewProductActivity extends AppCompatActivity {
 
    public static final String TAG = ViewProductActivity.class.getSimpleName();
    private ActivityViewProductBinding binding;
@@ -30,12 +29,10 @@ public class ViewProductActivity extends AppCompatActivity implements IGenericAc
       setViewListeners();
    }
 
-   @Override
    public void initialVariables() {
 
    }
 
-   @Override
    public void setViewListeners() {
 
    }

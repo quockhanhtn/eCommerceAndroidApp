@@ -25,6 +25,7 @@ public class ProductAdapter extends GenericAdapter<ProductAdapter.ProductItemVie
 
    public static final String TAG = ProductAdapter.class.getSimpleName();
    private final IProductAdapterListener iProductAdapterListener;
+
    public ProductAdapter(Context c, List<ProductDomain> list, IProductAdapterListener listener) {
       super(c, list);
       iProductAdapterListener = listener;
