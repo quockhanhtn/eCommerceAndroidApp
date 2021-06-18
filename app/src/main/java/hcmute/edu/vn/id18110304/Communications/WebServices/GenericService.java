@@ -8,10 +8,10 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 /**
  * GenericService
  *
- * @author  Khanh Lam
+ * @author Khanh Lam
  * @version 1.0
  */
-public class GenericService<IWebServiceType, ResponseType> {
+public abstract class GenericService<IWebServiceType, ResponseType> {
    Retrofit retrofit = null;
    IWebServiceType service;
 
@@ -24,6 +24,5 @@ public class GenericService<IWebServiceType, ResponseType> {
       service = retrofit.create(iWebServiceTypeClass);
    }
 
-   public void getAll(Callback<ResponseType> cb) {
-   }
+   public abstract void getAll(Callback<ResponseType> cb);
 }
