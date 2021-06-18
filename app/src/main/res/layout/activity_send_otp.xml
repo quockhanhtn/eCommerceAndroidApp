@@ -23,7 +23,7 @@
         android:scaleType="centerCrop"
         app:lottie_rawRes="@raw/lottie_paper_plane"
         app:lottie_autoPlay="true"
-        app:lottie_loop="true"/>
+        app:lottie_loop="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -82,7 +82,7 @@
           app:ccp_countryPreference="VN"
           app:ccp_hintExampleNumber="true"
           app:ccp_hintExampleNumberType="FIXED_LINE"
-          app:ccp_useDummyEmojiForPreview="true"/>
+          app:ccp_useDummyEmojiForPreview="true" />
 
 
       <EditText

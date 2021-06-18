@@ -20,6 +20,7 @@
 
   <View style="@style/ViewDivider" />
 
+  <!--region Product image, name, price-->
   <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
@@ -107,7 +108,7 @@
               android:textAlignment="center"
               android:text="-12%"
               android:textSize="14sp"
-              android:textStyle="bold"/>
+              android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -117,6 +118,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
   </LinearLayout>
+  <!--endregion-->
 
   <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
@@ -151,6 +153,7 @@
       android:background="@color/colorPrimary">
 
     <TableRow>
+
       <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -185,6 +188,7 @@
     </TableRow>
 
     <TableRow>
+
       <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -226,7 +230,6 @@
       android:id="@+id/layout_product_option"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-
       android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -269,8 +272,6 @@
 
       </RadioGroup>
     </HorizontalScrollView>
-
-
   </LinearLayout>
   <!--endregion-->
 

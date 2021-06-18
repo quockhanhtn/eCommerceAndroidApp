@@ -1,8 +1,14 @@
 package hcmute.edu.vn.id18110304.Utils;
 
+import android.annotation.SuppressLint;
 import android.os.Build;
 import android.text.Html;
+import android.text.method.ScrollingMovementMethod;
+import android.widget.FrameLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
+
+import androidx.core.widget.NestedScrollView;
 
 /**
  * TextViewUtils
@@ -17,5 +23,20 @@ public class TextViewUtils {
       } else {
          tv.setText(Html.fromHtml(htmlContent));
       }
+   }
+
+   @SuppressLint("ClickableViewAccessibility")
+   public static void enableScrollableInScrollView(TextView tv, FrameLayout scrollView) {
+      tv.setMovementMethod(new ScrollingMovementMethod());
+
+      scrollView.setOnTouchListener((v, event) -> {
+         tv.getParent().requestDisallowInterceptTouchEvent(false);
+         return false;
+      });
+
+      tv.setOnTouchListener((v, event) -> {
+         tv.getParent().requestDisallowInterceptTouchEvent(true);
+         return false;
+      });
    }
 }

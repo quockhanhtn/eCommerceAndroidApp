@@ -172,7 +172,7 @@
                 android:background="@drawable/bg_button_facebook"
                 android:paddingTop="5dp"
                 android:paddingBottom="10dp"
-                android:layout_margin="5dp"/>
+                android:layout_margin="5dp" />
 
             <ImageButton
                 android:id="@+id/btn_login_with_gg"
@@ -183,7 +183,7 @@
                 android:background="@drawable/bg_button_google"
                 android:paddingTop="8dp"
                 android:paddingBottom="7dp"
-                android:layout_margin="5dp"/>
+                android:layout_margin="5dp" />
           </LinearLayout>
 
           <LinearLayout

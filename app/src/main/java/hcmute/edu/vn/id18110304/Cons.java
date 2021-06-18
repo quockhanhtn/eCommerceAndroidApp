@@ -12,6 +12,8 @@ public class Cons {
    public static final String KEY_OTP_PHONE_NUMBER = "phoneNumber";
    public static final String KEY_OTP_VERIFICATION_ID = "verificationId";
 
+   public static final String KEY_SELECT_PRODUCT = "selectProduct";
+
    /**
     *
     */

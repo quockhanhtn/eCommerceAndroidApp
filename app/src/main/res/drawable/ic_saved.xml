@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<vector
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:name="vector"
     android:width="24dp"
     android:height="24dp"
@@ -11,5 +10,5 @@
       android:pathData="M 16 8.064 C 13.026 5.311 8.204 5.311 5.23 8.064 C 2.256 10.817 2.256 15.279 5.23 18.032 L 16 28 L 26.77 18.032 C 29.744 15.279 29.744 10.817 26.77 8.064 C 23.796 5.311 18.974 5.312 16 8.064 Z"
       android:strokeColor="#000000"
       android:strokeWidth="2"
-      android:strokeLineJoin="round"/>
+      android:strokeLineJoin="round" />
 </vector>

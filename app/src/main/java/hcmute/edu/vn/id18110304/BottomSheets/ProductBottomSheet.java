@@ -2,6 +2,7 @@ package hcmute.edu.vn.id18110304.BottomSheets;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +11,9 @@ import android.widget.LinearLayout;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.squareup.picasso.Picasso;
 
+import hcmute.edu.vn.id18110304.Activities.ViewProductActivity;
 import hcmute.edu.vn.id18110304.Communications.Domains.ProductDomain;
+import hcmute.edu.vn.id18110304.Cons;
 import hcmute.edu.vn.id18110304.CustomViews.MyRadioButton;
 import hcmute.edu.vn.id18110304.R;
 import hcmute.edu.vn.id18110304.Utils.TextViewUtils;
@@ -78,6 +81,13 @@ public class ProductBottomSheet {
          } else {
             listener.addToCart(product, null, 1);
          }
+         bottomSheetDialog.dismiss();
+      });
+
+      binding.btnView.setOnClickListener(v -> {
+         Intent intent = new Intent(context, ViewProductActivity.class);
+         intent.putExtra(Cons.KEY_SELECT_PRODUCT, product);
+         context.startActivity(intent);
          bottomSheetDialog.dismiss();
       });
 

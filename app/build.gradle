@@ -125,4 +125,8 @@ dependencies {
    // Animated Bottom Bar
    // https://github.com/Droppers/AnimatedBottomBar
    implementation 'nl.joery.animatedbottombar:library:1.1.0'
+
+   // Android Image Slider
+   // https://github.com/smarteist/Android-Image-Slider
+   implementation 'com.github.smarteist:autoimageslider:1.4.0'
 }

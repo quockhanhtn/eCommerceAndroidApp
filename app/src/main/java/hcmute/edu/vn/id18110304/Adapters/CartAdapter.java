@@ -1,6 +1,7 @@
 package hcmute.edu.vn.id18110304.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -11,8 +12,10 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import hcmute.edu.vn.id18110304.Activities.ViewProductActivity;
 import hcmute.edu.vn.id18110304.Communications.Domains.CartEntity;
 import hcmute.edu.vn.id18110304.Communications.Domains.ProductDomain;
+import hcmute.edu.vn.id18110304.Cons;
 import hcmute.edu.vn.id18110304.Utils.TextViewUtils;
 import hcmute.edu.vn.id18110304.databinding.ItemCartBinding;
 
@@ -96,6 +99,11 @@ public class CartAdapter extends GenericAdapter<CartAdapter.CartItemViewHolder, 
       }
 
       void setListener(ProductDomain product, String productType) {
+         bd.tvProductName.setOnClickListener(v -> {
+            Intent intent = new Intent(context, ViewProductActivity.class);
+            intent.putExtra(Cons.KEY_SELECT_PRODUCT, product);
+            context.startActivity(intent);
+         });
          bd.btnAdd.setOnClickListener(v -> adapterListener.increaseQuantity(product, productType));
          bd.btnSubtract.setOnClickListener(v -> adapterListener.decreaseQuantity(product, productType));
 

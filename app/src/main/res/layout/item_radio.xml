@@ -5,4 +5,4 @@
     android:text="sasded"
     android:layout_marginEnd="15dp"
     android:layout_height="30dp"
-    android:layout_width="wrap_content"/>
+    android:layout_width="wrap_content" />

@@ -58,7 +58,7 @@
             android:paddingHorizontal="15dp"
             android:paddingVertical="15dp"
             android:drawableStart="@drawable/ic_search"
-            android:drawablePadding="10dp"/>
+            android:drawablePadding="10dp" />
 
       </LinearLayout>
       <!--endregion-->
