@@ -13,7 +13,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import hcmute.edu.vn.id18110304.Activities.ViewProductActivity;
-import hcmute.edu.vn.id18110304.Communications.Domains.CartEntity;
+import hcmute.edu.vn.id18110304.Communications.Domains.CartDomain;
 import hcmute.edu.vn.id18110304.Communications.Domains.ProductDomain;
 import hcmute.edu.vn.id18110304.Cons;
 import hcmute.edu.vn.id18110304.Utils.TextViewUtils;
@@ -25,12 +25,12 @@ import hcmute.edu.vn.id18110304.databinding.ItemCartBinding;
  * @author Khanh Lam
  * @version 1.0
  */
-public class CartAdapter extends GenericAdapter<CartAdapter.CartItemViewHolder, CartEntity> {
+public class CartAdapter extends GenericAdapter<CartAdapter.CartItemViewHolder, CartDomain> {
 
    public static final String TAG = CartAdapter.class.getSimpleName();
    ICartAdapterListener iCartAdapterListener;
 
-   public CartAdapter(Context c, List<CartEntity> list, ICartAdapterListener listener) {
+   public CartAdapter(Context c, List<CartDomain> list, ICartAdapterListener listener) {
       super(c, list);
       iCartAdapterListener = listener;
    }
@@ -49,7 +49,7 @@ public class CartAdapter extends GenericAdapter<CartAdapter.CartItemViewHolder, 
       void decreaseQuantity(ProductDomain product, String productType);
    }
 
-   public class CartItemViewHolder extends GenericViewHolder<ItemCartBinding, CartEntity> {
+   public class CartItemViewHolder extends GenericViewHolder<ItemCartBinding, CartDomain> {
 
       ICartAdapterListener adapterListener;
 
@@ -75,7 +75,7 @@ public class CartAdapter extends GenericAdapter<CartAdapter.CartItemViewHolder, 
       }
 
       @Override
-      public void updateView(CartEntity cart) {
+      public void updateView(CartDomain cart) {
          ProductDomain product = cart.getProduct();
          String productType = cart.getProductType();
 

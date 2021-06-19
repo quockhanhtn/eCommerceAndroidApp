@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import hcmute.edu.vn.id18110304.Adapters.CartAdapter;
-import hcmute.edu.vn.id18110304.Communications.Domains.CartEntity;
+import hcmute.edu.vn.id18110304.Communications.Domains.CartDomain;
 import hcmute.edu.vn.id18110304.Communications.Domains.ProductDomain;
 import hcmute.edu.vn.id18110304.CustomViews.RVItemTouchHelper;
 import hcmute.edu.vn.id18110304.Interfaces.INavigationListener;
@@ -33,7 +33,7 @@ public class CartFragment extends GenericFragment
       implements CartAdapter.ICartAdapterListener {
 
    public static final String TAG = CartFragment.class.getSimpleName();
-   private final List<CartEntity> listCarts = new ArrayList<>();
+   private final List<CartDomain> listCarts = new ArrayList<>();
    CartAdapter cartAdapter = null;
    private FragmentCartBinding binding;
 
@@ -57,7 +57,7 @@ public class CartFragment extends GenericFragment
       ItemTouchHelper.SimpleCallback simpleCallback = new RVItemTouchHelper(0, ItemTouchHelper.LEFT, holder -> {
          if (holder instanceof CartAdapter.CartItemViewHolder) {
             int pos = holder.getAbsoluteAdapterPosition();
-            CartEntity cartDelete = listCarts.get(pos);
+            CartDomain cartDelete = listCarts.get(pos);
 
             cartAdapter.removeItemAt(pos);
             updateView();
@@ -65,7 +65,7 @@ public class CartFragment extends GenericFragment
             String snackbarMess = getString(R.string.txt_remove_item) + " \"" + cartDelete.getProduct().getName() + "\"";
             SnackbarUtils.showLong(binding.getRoot(), snackbarMess, getString(R.string.txt_undo), v ->
             {
-               cartAdapter.undoRemove(cartDelete, pos);
+               cartAdapter.addItemAt(cartDelete, pos);
                binding.recyclerviewCart.scrollToPosition(pos);
                updateView();
             });
@@ -87,7 +87,7 @@ public class CartFragment extends GenericFragment
       return binding.getRoot();
    }
 
-   CartEntity findCartItem(ProductDomain product, String productType) {
+   CartDomain findCartItem(ProductDomain product, String productType) {
       for (int i = 0; i < listCarts.size(); i++) {
          if (listCarts.get(i).getProduct().getProductId() == product.getProductId()
                && listCarts.get(i).getProductType().equals(productType)) {
@@ -98,7 +98,7 @@ public class CartFragment extends GenericFragment
    }
 
    public int addToCart(ProductDomain product, String productType, int quantity) {
-      CartEntity cart = findCartItem(product, productType);
+      CartDomain cart = findCartItem(product, productType);
 
       if (cart != null) {
          cart.addQuantity(quantity);
@@ -106,7 +106,7 @@ public class CartFragment extends GenericFragment
             cartAdapter.removeItem(cart);
          }
       } else {
-         cart = new CartEntity(product, productType, quantity);
+         cart = new CartDomain(product, productType, quantity);
          listCarts.add(cart);
       }
 
@@ -135,7 +135,7 @@ public class CartFragment extends GenericFragment
    void updateTotal() {
       long total = 0, totalOrigin = 0;
 
-      for (CartEntity cart : listCarts) {
+      for (CartDomain cart : listCarts) {
          total += cart.getProduct().getPrice() * cart.getQuantity();
          totalOrigin += cart.getProduct().getMarketPrice() * cart.getQuantity();
       }
@@ -146,7 +146,7 @@ public class CartFragment extends GenericFragment
 
    @Override
    public void changeQuantity(ProductDomain product, String productType, int quantity) {
-      CartEntity cart = findCartItem(product, productType);
+      CartDomain cart = findCartItem(product, productType);
       if (cart != null) {
          cart.setQuantity(quantity);
       }

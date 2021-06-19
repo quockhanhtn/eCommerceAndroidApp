@@ -310,6 +310,10 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent">
 
+      <View
+          style="@style/ViewDivider"
+          android:background="@color/colorPrimary" />
+
       <!--region Product options-->
       <androidx.cardview.widget.CardView
           android:id="@+id/layout_product_option"
@@ -338,6 +342,7 @@
           <View style="@style/ViewDivider" />
 
           <HorizontalScrollView
+              android:scrollbars="none"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content">
 
@@ -408,7 +413,7 @@
 
         </LinearLayout>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_add_to_carts"
             android:layout_width="fill_parent"
             android:layout_height="40dp"

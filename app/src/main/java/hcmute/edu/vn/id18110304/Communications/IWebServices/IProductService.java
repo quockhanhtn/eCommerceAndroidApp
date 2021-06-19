@@ -3,6 +3,7 @@ package hcmute.edu.vn.id18110304.Communications.IWebServices;
 import hcmute.edu.vn.id18110304.Communications.Response.ProductResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Query;
 
 /**
  * IProductService
@@ -14,5 +15,5 @@ public interface IProductService {
    String API_RESOURCE = "products";
 
    @GET(API_RESOURCE)
-   Call<ProductResponse> getAll();
+   Call<ProductResponse> get(@Query("_q") String q, @Query("_page") int page, @Query("_limit") int limit);
 }

@@ -25,9 +25,14 @@ public class ProductService extends GenericService<IProductService, ProductRespo
       return instance;
    }
 
+   public void get(String searchText, int page, int limit, Callback<ProductResponse> cb) {
+      Call<ProductResponse> call = service.get(searchText, page, limit);
+      call.enqueue(cb);
+   }
+
    @Override
    public void getAll(Callback<ProductResponse> cb) {
-      Call<ProductResponse> call = service.getAll();
+      Call<ProductResponse> call = service.get(null, 1, 10);
       call.enqueue(cb);
    }
 }

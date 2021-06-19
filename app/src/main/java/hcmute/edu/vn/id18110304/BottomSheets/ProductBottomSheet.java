@@ -84,6 +84,20 @@ public class ProductBottomSheet {
          bottomSheetDialog.dismiss();
       });
 
+      binding.btnBuyNow.setOnClickListener(v -> {
+         if (hasProductType) {
+            @SuppressLint("ResourceType") int typeIndex = binding.radioGroup.getCheckedRadioButtonId() - 100;
+            listener.buyNow(
+                  product,
+                  product.getProductTypes().get(typeIndex),
+                  1
+            );
+         } else {
+            listener.buyNow(product, null, 1);
+         }
+         bottomSheetDialog.dismiss();
+      });
+
       binding.btnView.setOnClickListener(v -> {
          Intent intent = new Intent(context, ViewProductActivity.class);
          intent.putExtra(Cons.KEY_SELECT_PRODUCT, product);

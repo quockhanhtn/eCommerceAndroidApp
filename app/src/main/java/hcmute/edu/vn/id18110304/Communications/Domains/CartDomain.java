@@ -6,7 +6,7 @@ package hcmute.edu.vn.id18110304.Communications.Domains;
  * @author Khanh Lam
  * @version 1.0
  */
-public class CartEntity {
+public class CartDomain {
    boolean isSelected;
    private int order;
    private String productUuid;
@@ -14,10 +14,10 @@ public class CartEntity {
    private String productType;
    private int quantity;
 
-   public CartEntity() {
+   public CartDomain() {
    }
 
-   public CartEntity(ProductDomain product, String productType, int quantity) {
+   public CartDomain(ProductDomain product, String productType, int quantity) {
       this.product = product;
       this.productType = productType;
       this.quantity = quantity;

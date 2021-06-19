@@ -99,7 +99,7 @@ public class ProductAdapter extends GenericAdapter<ProductAdapter.ProductItemVie
 
             @Override
             public void buyNow(ProductDomain product, String productType, int quantity) {
-               adapterListener.addToCart(product, productType, quantity);
+               adapterListener.buyNow(product, productType, quantity);
             }
          });
       }
