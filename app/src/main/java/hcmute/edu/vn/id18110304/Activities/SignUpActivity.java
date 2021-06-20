@@ -118,33 +118,37 @@ public class SignUpActivity extends AppCompatActivity {
       });
 
       binding.btnSignUp.setOnClickListener(v -> {
-         String pass = binding.etPassword.getText().toString();
-         String rePass = binding.etRePassword.getText().toString();
+         DialogUtils.showSuccessDialog("", "", this);
+         finish();
+         return;
 
-         if (!pass.equals(rePass)) {
-            DialogUtils.showErrorDialog("Error", "Pasword not match", this);
-            return;
-         }
-
-         UserService.getInstance().signup(
-               binding.etPhoneNumber.getText().toString(),
-               binding.etPassword.getText().toString(),
-               imageUri,
-               "",
-               "",
-               0,
-               new Callback<UserResponse>() {
-                  @Override
-                  public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
-
-                  }
-
-                  @Override
-                  public void onFailure(Call<UserResponse> call, Throwable t) {
-
-                  }
-               }
-         );
+//         String pass = binding.etPassword.getText().toString();
+//         String rePass = binding.etRePassword.getText().toString();
+//
+//         if (!pass.equals(rePass)) {
+//            DialogUtils.showErrorDialog("Error", "Pasword not match", this);
+//            return;
+//         }
+//
+//         UserService.getInstance().signup(
+//               binding.etPhoneNumber.getText().toString(),
+//               binding.etPassword.getText().toString(),
+//               imageUri,
+//               "",
+//               "",
+//               0,
+//               new Callback<UserResponse>() {
+//                  @Override
+//                  public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+//
+//                  }
+//
+//                  @Override
+//                  public void onFailure(Call<UserResponse> call, Throwable t) {
+//
+//                  }
+//               }
+//         );
       });
    }
 }

@@ -70,6 +70,10 @@ public class ProductBottomSheet {
          binding.layoutProductOption.setVisibility(View.GONE);
       }
 
+      binding.tvProductBrand.setOnClickListener(v -> {
+         BrandBottomSheet.show(context, product.getBrand());
+      });
+
       binding.layoutBtnAddToCarts.setOnClickListener(v -> {
          if (hasProductType) {
             @SuppressLint("ResourceType") int typeIndex = binding.radioGroup.getCheckedRadioButtonId() - 100;

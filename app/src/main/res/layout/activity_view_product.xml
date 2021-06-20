@@ -30,6 +30,16 @@
           android:background="@android:color/transparent"
           app:tint="@color/colorWhite" />
 
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:layout_marginStart="5dp"
+          android:text="@string/txt_product_detail"
+          android:textStyle="bold"
+          android:textSize="20sp"
+          android:textColor="@color/colorWhite" />
+
     </LinearLayout>
     <!--endregion-->
   </com.google.android.material.appbar.AppBarLayout>
@@ -144,8 +154,6 @@
                   android:textStyle="bold" />
 
             </LinearLayout>
-
-
           </androidx.cardview.widget.CardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -311,8 +319,8 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
       <View
-          style="@style/ViewDivider"
-          android:background="@color/colorPrimary" />
+          android:layout_marginTop="5dp"
+          style="@style/ViewDivider" />
 
       <!--region Product options-->
       <androidx.cardview.widget.CardView

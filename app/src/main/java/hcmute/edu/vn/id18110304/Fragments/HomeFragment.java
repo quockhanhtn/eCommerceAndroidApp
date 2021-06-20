@@ -180,7 +180,8 @@ public class HomeFragment extends GenericFragment {
 
    void loadProduct() {
       binding.lottieLoadingProducts.setVisibility(View.VISIBLE);
-      ProductService.getInstance().get(null, currentProductPage, 10, new Callback<ProductResponse>() {
+      binding.btnLoadMore.setVisibility(View.GONE);
+      ProductService.getInstance().get(null, currentProductPage, 4, new Callback<ProductResponse>() {
          @Override
          public void onResponse(Call<ProductResponse> call, Response<ProductResponse> response) {
             if (!response.isSuccessful()) {
@@ -204,6 +205,8 @@ public class HomeFragment extends GenericFragment {
 
                if (!hasMoreProduct) {
                   binding.btnLoadMore.setVisibility(View.GONE);
+               } else {
+                  binding.btnLoadMore.setVisibility(View.VISIBLE);
                }
 
                binding.lottieLoadingProducts.setVisibility(View.GONE);

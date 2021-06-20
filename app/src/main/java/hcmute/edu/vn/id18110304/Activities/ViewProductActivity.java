@@ -14,6 +14,7 @@ import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
 import hcmute.edu.vn.id18110304.Adapters.SliderImageAdapter;
+import hcmute.edu.vn.id18110304.BottomSheets.BrandBottomSheet;
 import hcmute.edu.vn.id18110304.Communications.Domains.ProductDomain;
 import hcmute.edu.vn.id18110304.Cons;
 import hcmute.edu.vn.id18110304.CustomViews.MyRadioButton;
@@ -114,6 +115,10 @@ public class ViewProductActivity extends AppCompatActivity {
    }
 
    public void setViewListeners() {
+      binding.tvProductBrand.setOnClickListener(v -> {
+         BrandBottomSheet.show(getApplicationContext(), product.getBrand());
+      });
+
       binding.btnBack.setOnClickListener(v -> this.finish());
       binding.btnAdd.setOnClickListener(v -> {
          int currentQuantity = StringUtils.toInt(binding.etQuantity.getText().toString());

@@ -63,4 +63,10 @@
   <string name="txt_undo">Hoàn tác</string>
   <string name="txt_remove_item">Xóa mục</string>
   <string name="txt_product_desc">Mô tả sản phẩm</string>
+  <string name="txt_load_more">Xem thêm</string>
+  <string name="txt_user_image">Ảnh</string>
+  <string name="txt_close">Đóng</string>
+  <string name="txt_product_detail">Chi tiết sản phẩm</string>
+  <string name="txt_this_feature_is_under_constructor">Chức năng đang được xây dựng</string>
+  <string name="txt_your_cart">Giỏ hàng của bạn</string>
 </resources>

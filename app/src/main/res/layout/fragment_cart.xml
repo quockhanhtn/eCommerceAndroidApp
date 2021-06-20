@@ -8,7 +8,8 @@
 
   <androidx.coordinatorlayout.widget.CoordinatorLayout
       android:layout_width="match_parent"
-      android:layout_height="match_parent">
+      android:layout_height="match_parent"
+      android:background="@color/colorWhite">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -39,12 +40,13 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="@string/txt_cart"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAllCaps="true"
+            android:textAlignment="center"
+            android:text="@string/txt_your_cart"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:textAlignment="center"
             android:textColor="@color/colorWhite" />
       </LinearLayout>
 
@@ -53,6 +55,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorWhite"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
       <LinearLayout
