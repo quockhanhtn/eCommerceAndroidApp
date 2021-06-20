@@ -6,8 +6,15 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import hcmute.edu.vn.id18110304.Communications.Response.UserResponse;
+import hcmute.edu.vn.id18110304.Communications.WebServices.UserService;
+import hcmute.edu.vn.id18110304.Cons;
 import hcmute.edu.vn.id18110304.Utils.DialogUtils;
+import hcmute.edu.vn.id18110304.Utils.SharedPreferencesUtils;
 import hcmute.edu.vn.id18110304.databinding.ActivityLogInBinding;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * LoginActivity
@@ -38,6 +45,33 @@ public class LoginActivity extends AppCompatActivity {
       binding.btnLogin.setOnClickListener(v -> {
          String phoneNumber = binding.edittextPhoneNumber.getText().toString();
          String password = binding.edittextPassword.getText().toString();
+
+         String loginJson = "{\"phone\": \"" + phoneNumber + "\", \"password\": \"" + password + "\"}";
+
+//         UserService.getInstance().login(loginJson, new Callback<UserResponse.LoginResponse>() {
+//            @Override
+//            public void onResponse(Call<UserResponse.LoginResponse> call, Response<UserResponse.LoginResponse> response) {
+//               if (response.isSuccessful()) {
+//                  UserResponse.LoginResponse loginResponse = response.body();
+//                  String errorMess = "";
+//                  if (loginResponse.getSuccess()) {
+//                     SharedPreferencesUtils.putValue(
+//                           getApplicationContext(),
+//                           Cons.KEY_SP_LOGIN,
+//                           Cons.KEY_SP_LOGIN_TOKEN,
+//                           loginResponse.getData().getToken());
+//                     runOnUiThread(() -> finish());
+//                     return;
+//                  }
+//               }
+//               runOnUiThread(() -> loginFailed());
+//            }
+//
+//            @Override
+//            public void onFailure(Call<UserResponse.LoginResponse> call, Throwable t) {
+//               runOnUiThread(() -> loginFailed());
+//            }
+//         });
       });
 
       binding.btnLoginWithFb.setOnClickListener(v -> DialogUtils.showErrorDialog(
@@ -57,5 +91,9 @@ public class LoginActivity extends AppCompatActivity {
          startActivity(intent);
          finish();
       });
+   }
+
+   void loginFailed() {
+      DialogUtils.showErrorDialog("Error", "", this);
    }
 }

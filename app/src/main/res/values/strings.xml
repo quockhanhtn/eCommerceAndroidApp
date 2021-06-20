@@ -76,5 +76,6 @@
   <string name="txt_remove_item">Remove item</string>
   <string name="txt_product_desc">Product description</string>
   <string name="txt_load_more">Load more</string>
+  <string name="txt_user_image">Image</string>
 
 </resources>

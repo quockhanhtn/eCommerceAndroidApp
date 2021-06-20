@@ -11,7 +11,7 @@ import retrofit2.Callback;
  * @author Khanh Lam
  * @version 1.0
  */
-public class ProductService extends GenericService<IProductService, ProductResponse> {
+public class ProductService extends GenericService<IProductService> {
    private static ProductService instance = null;
 
    private ProductService() {
@@ -30,7 +30,6 @@ public class ProductService extends GenericService<IProductService, ProductRespo
       call.enqueue(cb);
    }
 
-   @Override
    public void getAll(Callback<ProductResponse> cb) {
       Call<ProductResponse> call = service.get(null, 1, 10);
       call.enqueue(cb);

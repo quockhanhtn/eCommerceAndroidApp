@@ -1,15 +1,21 @@
 package hcmute.edu.vn.id18110304.Utils;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
 import android.provider.MediaStore;
 import android.provider.Settings;
+
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 /**
  * AppUtils
@@ -18,6 +24,23 @@ import android.provider.Settings;
  * @version 1.0
  */
 public class AppUtils {
+
+   public static void handlePermission(Activity activity, int requestCode) {
+      if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+         return;
+      }
+
+      if (ContextCompat.checkSelfPermission(
+            activity.getApplicationContext(),
+            Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+         //ask for permission
+         ActivityCompat.requestPermissions(
+               activity,
+               new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+               requestCode
+         );
+      }
+   }
 
    public static void openAppSettings(final Activity context) {
       if (context == null) {

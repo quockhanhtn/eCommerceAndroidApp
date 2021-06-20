@@ -1,5 +1,6 @@
 package hcmute.edu.vn.id18110304.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -79,6 +80,9 @@ public class VerifyOtpActivity extends AppCompatActivity {
                      binding.buttonVerifyOtp.setVisibility(View.VISIBLE);
 
                      if (task.isSuccessful()) {
+                        Intent intent = new Intent();
+                        intent.putExtra(Cons.KEY_VERIFY_PHONE_NUMBER, binding.textviewInputPhone.getText());
+                        setResult(100, intent);
                         finish();
                      } else {
                         DialogUtils.showErrorDialog(

@@ -11,7 +11,7 @@ import retrofit2.Callback;
  * @author Khanh Lam
  * @version 1.0
  */
-public class BrandService extends GenericService<IBrandService, BrandResponse> {
+public class BrandService extends GenericService<IBrandService> {
    private static BrandService instance = null;
 
    private BrandService() {
@@ -25,7 +25,6 @@ public class BrandService extends GenericService<IBrandService, BrandResponse> {
       return instance;
    }
 
-   @Override
    public void getAll(Callback<BrandResponse> cb) {
       Call<BrandResponse> call = service.getAll();
       call.enqueue(cb);

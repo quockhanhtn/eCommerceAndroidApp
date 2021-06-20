@@ -11,7 +11,7 @@ import retrofit2.Callback;
  * @author Khanh Lam
  * @version 1.0
  */
-public class CategoryService extends GenericService<ICategoryService, CategoryResponse> {
+public class CategoryService extends GenericService<ICategoryService> {
    private static CategoryService instance = null;
 
    private CategoryService() {
@@ -25,7 +25,6 @@ public class CategoryService extends GenericService<ICategoryService, CategoryRe
       return instance;
    }
 
-   @Override
    public void getAll(Callback<CategoryResponse> cb) {
       Call<CategoryResponse> call = service.getAll();
       call.enqueue(cb);
